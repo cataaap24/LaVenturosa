@@ -140,5 +140,13 @@ public class MedicionRestController {
      * Representa la estructura del JSON que el ESP32 debe enviar.
      */
     public record MedicionRequest(double valor, String variable, String puntoMonitoreo) {}
+    // Endpoint de prueba — no toca BD, solo confirma que llegó el dato
+
+    //prueba
+@PostMapping("/test")
+public ResponseEntity<String> test(@RequestBody String body) {
+    System.out.println("[TEST] Recibido desde ESP32: " + body);
+    return ResponseEntity.ok("✓ Datos recibidos correctamente: " + body);
+}
 }
 
