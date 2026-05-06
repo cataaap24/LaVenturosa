@@ -3,14 +3,14 @@ package com.laventurosa.entities;
 import java.time.LocalDateTime;
 
 public class Medicion {
-    private String id;
+    private Long id;
     private Variable variable;
     private double valor;
     private LocalDateTime fechaHora;
     private EstadoCriticidad estado;
     private String puntoMonitoreo;
 
-    public Medicion(String id, Variable variable, double valor, LocalDateTime fechaHora, EstadoCriticidad estado, String puntoMonitoreo) {
+    public Medicion(Long id, Variable variable, double valor, LocalDateTime fechaHora, EstadoCriticidad estado, String puntoMonitoreo) {
         this.id = id;
         this.variable = variable;
         this.valor = valor;

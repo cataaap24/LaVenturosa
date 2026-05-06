@@ -1,7 +1,7 @@
 package com.laventurosa.entities;
 
 public class Umbral {
-    private String id;
+    private Long id;
     private Variable variable;
     private String puntoMonitoreo;   
     private double minCritico;
@@ -9,7 +9,7 @@ public class Umbral {
     private double maxAdvertencia;
     private double maxCritico;
 
-    public Umbral(String id, Variable variable, String puntoMonitoreo, double minCritico, double minAdvertencia, double maxAdvertencia, double maxCritico) {
+    public Umbral(Long id, Variable variable, String puntoMonitoreo, double minCritico, double minAdvertencia, double maxAdvertencia, double maxCritico) {
         validar(variable, minCritico, minAdvertencia, maxAdvertencia, maxCritico);
         this.id = id;
         this.variable = variable;

@@ -18,12 +18,12 @@ public class ConfiguracionAlarma {
       }
   }
 
-    private String id;
+    private Long id;
     private String emailDestinatario;
     private NivelNotificacion nivelNotificacion;
     private boolean activo;
 
-    public ConfiguracionAlarma(String id, String emailDestinatario, NivelNotificacion nivelNotificacion, boolean activo) {
+    public ConfiguracionAlarma(Long id, String emailDestinatario, NivelNotificacion nivelNotificacion, boolean activo) {
         this.id = id;
         this.emailDestinatario = emailDestinatario;
         this.nivelNotificacion = nivelNotificacion;

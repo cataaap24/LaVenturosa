@@ -3,7 +3,7 @@ package com.laventurosa.entities;
 import java.time.LocalDateTime;
 
 public class Alerta {
-    private String id;
+    private Long id;
     private Variable variable;
     private EstadoCriticidad nivel;
     private double valorRegistrado;
@@ -12,7 +12,7 @@ public class Alerta {
     private String puntoMonitoreo;
     private LocalDateTime fechaHora;
 
-    public Alerta(String id, Variable variable, EstadoCriticidad nivel, double valorRegistrado, double umbralMinNormal, double umbralMaxNormal, String puntoMonitoreo, LocalDateTime fechaHora) {
+    public Alerta(Long id, Variable variable, EstadoCriticidad nivel, double valorRegistrado, double umbralMinNormal, double umbralMaxNormal, String puntoMonitoreo, LocalDateTime fechaHora) {
         this.id = id;
         this.variable = variable;
         this.nivel = nivel;
