@@ -8,26 +8,23 @@ public class DatabaseConfig {
     private static final String USUARIO;
     private static final String PASSWORD;
 
-    static {
-        String envUrl = System.getenv("DATABASE_URL");
-        if (envUrl != null && !envUrl.isBlank()) {
-            // Normalizar prefijo
-            envUrl = envUrl.replace("postgres://", "jdbc:postgresql://").replace("postgresql://", "jdbc:postgresql://");
-            // Extraer user:pass@host/db
-            String sinJdbc = envUrl.replace("jdbc:postgresql://", "");
-            String userPass = sinJdbc.substring(0, sinJdbc.indexOf("@"));
-            String hostDb = sinJdbc.substring(sinJdbc.indexOf("@") + 1);
-            USUARIO  = userPass.substring(0, userPass.indexOf(":"));
-            PASSWORD = userPass.substring(userPass.indexOf(":") + 1);
-            URL = "jdbc:postgresql://" + hostDb + "?sslmode=require";
-        } else {
-            URL = "jdbc:postgresql://localhost:5432/laventurosa_db";
-            USUARIO = "postgres";
-            PASSWORD = "tu_password_local";
+        static {
+            String envUrl = System.getenv("DATABASE_URL");
+            if (envUrl != null && !envUrl.isBlank()) {
+                // Normalizar prefijo
+                envUrl = envUrl.replace("postgres://", "jdbc:postgresql://").replace("postgresql://", "jdbc:postgresql://");
+                // Extraer user:pass@host/db
+                String sinJdbc = envUrl.replace("jdbc:postgresql://", "");
+                String userPass = sinJdbc.substring(0, sinJdbc.indexOf("@"));
+                String hostDb = sinJdbc.substring(sinJdbc.indexOf("@") + 1);
+                USUARIO  = userPass.substring(0, userPass.indexOf(":"));
+                PASSWORD = userPass.substring(userPass.indexOf(":") + 1);
+                URL = "jdbc:postgresql://" + hostDb + "?sslmode=require";
+            } else {
+                throw new RuntimeException("ERROR: No se encontró la variable DATABASE_URL en el entorno.");
+            }
         }
-    }
-
-    private static Connection conexion;
+            private static Connection conexion;
 
     public static Connection obtenerConexion() { 
         try {
