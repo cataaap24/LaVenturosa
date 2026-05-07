@@ -28,16 +28,16 @@ public class GmailNotificacionService implements NotificacionService {
 
     @Override
     public void enviar(String emailDestinatario, String asunto, String mensaje) {
-        // Config protocolo SMTP
         Properties props = new Properties();
-        props.put("mail.smtp.auth", "true"); // Requiere usuario y clave
-        props.put("mail.smtp.starttls.enable", "true"); // Cifrado de seguridad
-        props.put("mail.smtp.host", "smtp.gmail.com"); // Servidor de Google
-        props.put("mail.smtp.port", "587"); // Puerto estándar para TLS
-        props.put("mail.smtp.ssl.trust", "smtp.gmail.com"); // Confianza en el certificado
-
-        // Crear sesión
-        // Se usa un Authenticator para pasar el REMITENTE y la APP_PASSWORD de forma segura
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "465");
+        props.put("mail.smtp.ssl.enable", "true"); 
+        props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+        
+        props.put("mail.smtp.connectiontimeout", "10000"); 
+        props.put("mail.smtp.timeout", "10000");
+        
         Session session = Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
