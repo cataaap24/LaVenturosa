@@ -1,6 +1,7 @@
 package com.laventurosa.infrastructure.config;
 
 import java.sql.*;
+import java.net.URI;
 
 public class DatabaseConfig {
 
@@ -12,25 +13,25 @@ public class DatabaseConfig {
                 String envUrl = System.getenv("DATABASE_URL");
                 
                 if (envUrl == null || envUrl.isBlank()) {
-                    throw new RuntimeException("Variable DATABASE_URL no configurada en Render");
+                    throw new RuntimeException("DATABASE_URL no configurada.");
                 }
 
-                String jdbcUrl = envUrl.replace("postgres://", "jdbc:postgresql://")
-                                       .replace("postgresql://", "jdbc:postgresql://");
-                if (!jdbcUrl.contains("sslmode")) {
-                    jdbcUrl += (jdbcUrl.contains("?") ? "&" : "?") + "sslmode=require";
-                }
+                URI dbUri = new URI(envUrl);
+
+                String username = dbUri.getUserInfo().split(":")[0];
+                String password = dbUri.getUserInfo().split(":")[1];
+                
+                String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ":" + dbUri.getPort() + dbUri.getPath() + "?sslmode=require";
 
                 Class.forName("org.postgresql.Driver");
-        
-                conexion = DriverManager.getConnection(jdbcUrl);
+                conexion = DriverManager.getConnection(dbUrl, username, password);
                 
-                System.out.println("[BD] Conexión establecida con éxito");
+                System.out.println("[BD] ¡Conexión exitosa a la laguna!");
             }
             return conexion;
         } catch (Exception e) {
-            System.err.println("[BD Error] " + e.getMessage());
-            throw new RuntimeException("Error crítico en base de datos: " + e.getMessage(), e);
+            System.err.println("[BD Error Real] " + e.getMessage());
+            throw new RuntimeException("Error en BD: " + e.getMessage(), e);
         }
     }
 
@@ -38,7 +39,7 @@ public class DatabaseConfig {
         try { 
             if (conexion != null && !conexion.isClosed()) conexion.close();
         } catch (SQLException e) {
-            System.err.println("[BD] Error al cerrar: " + e.getMessage()); 
+            System.err.println("[BD] " + e.getMessage()); 
         }
     }
 }
