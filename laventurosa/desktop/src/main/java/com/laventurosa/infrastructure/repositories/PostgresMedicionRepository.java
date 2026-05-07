@@ -15,7 +15,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
 
     @Override
     public Medicion guardar(Medicion medicion) {
-        String sqlInstruction = "INSERT INTO Medicion (variable, valor, fechaHora, estado, puntoMonitoreo) " +
+        String sqlInstruction = "INSERT INTO \"Medicion\" (variable, valor, \"fechaHora\", estado, \"puntoMonitoreo\") " +
         "VALUES (?, ?, ?, ?, ?) RETURNING *";
 
         try (Connection conn = DatabaseConfig.obtenerConexion();
@@ -179,7 +179,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
                 queryResult.getDouble("valor"),
                 queryResult.getObject("fechaHora", LocalDateTime.class),
                 EstadoCriticidad.valueOf(queryResult.getString("estado")),
-                queryResult.getString("punto_monitoreo")
+                queryResult.getString("puntoMonitoreo")
         );
     }
 }
