@@ -89,7 +89,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
             System.err.println("Error obteniendo mediciones: " + e.getMessage());
         }
 
-        return null;
+        return mediciones;
     }
 
     @Override
@@ -118,7 +118,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
             System.err.println("Error obteniendo mediciones: " + e.getMessage());
         }
 
-        return null;
+        return mediciones;
     }
 
     @Override
@@ -145,7 +145,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
             System.err.println("Error obteniendo mediciones: " + e.getMessage());
         }
 
-        return null;
+        return mediciones;
     }
 
     @Override
@@ -169,7 +169,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
             System.err.println("Error obteniendo mediciones: " + e.getMessage());
         }
 
-        return null;
+        return mediciones;
     }
 
     private Medicion mapearAMedicion(ResultSet queryResult) throws SQLException {
