@@ -17,14 +17,14 @@ public class PostgresUmbralRepository implements UmbralRepository {
          * existentes con los nuevos (EXCLUDED) que vienen del formulario
          */
         String sql = """
-                INSERT INTO umbral (variable, puntoMonitoreo, minCritico, 
-                    minAdvertencia, maxAdvertencia, maxCritico)
+                INSERT INTO umbral (variable, "puntoMonitoreo", "minCritico", 
+                    "minAdvertencia", "maxAdvertencia", "maxCritico")
                 VALUES (?, ?, ?, ?, ?, ?)
-                ON CONFLICT (variable, puntoMonitoreo)
-                DO UPDATE SET minCritico = EXCLUDED.minCritico,
-                              minAdvertencia = EXCLUDED.minAdvertencia,
-                              maxAdvertencia = EXCLUDED.maxAdvertencia,
-                              maxCritico = EXCLUDED.maxCritico
+                ON CONFLICT (variable, "puntoMonitoreo")
+                DO UPDATE SET "minCritico" = EXCLUDED."minCritico",
+                              "minAdvertencia" = EXCLUDED."minAdvertencia",
+                              "maxAdvertencia" = EXCLUDED."maxAdvertencia",
+                              "maxCritico" = EXCLUDED."maxCritico"
                 RETURNING id
                 """;
 
@@ -53,9 +53,10 @@ public class PostgresUmbralRepository implements UmbralRepository {
     @Override
     public Optional<Umbral> obtenerPorVariable(String nombreVariable) {
         String sql = """
-        SELECT id, variable, puntoMonitoreo, minCritico,
-               minAdvertencia, maxAdvertencia, maxCritico
-        FROM umbral WHERE variable = ? AND puntoMonitoreo = 'GLOBAL'
+        SELECT id, variable, "puntoMonitoreo", "minCritico",
+               "minAdvertencia", "maxAdvertencia", "maxCritico"
+        FROM umbral 
+        WHERE variable = ? AND "puntoMonitoreo" = 'GLOBAL'
         LIMIT 1
         """;
 
@@ -77,8 +78,8 @@ public class PostgresUmbralRepository implements UmbralRepository {
     @Override
     public List<Umbral> listarTodos() {
         String sql = """
-        SELECT id, variable, puntoMonitoreo, minCritico, 
-               minAdvertencia, maxAdvertencia, maxCritico 
+        SELECT id, variable, "puntoMonitoreo", "minCritico", 
+               "minAdvertencia", "maxAdvertencia", "maxCritico" 
         FROM umbral
         """;
 
