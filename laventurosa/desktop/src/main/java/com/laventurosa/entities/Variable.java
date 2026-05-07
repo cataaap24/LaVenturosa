@@ -16,9 +16,15 @@ public class Variable {
         this.rangoFisicoMax = rangoFisicoMax;
     }
 
-    public static Variable pH() { return new Variable("pH", "pH", 0.0, 14.0); }
-    //public static Variable oxigenoDisuelto() { return new Variable("OxigenoDisuelto", "mg/L", 0.0, 20.0); }
-    //public static Variable temperatura() { return new Variable("Temperatura", "°C", 0.0, 0.0); }
+    //se requiere para poder mapear correctamente en donde se necesite el objeto Variable
+    public static Variable fromNombre(String nombre) {
+        switch (nombre) {
+            case "pH": return new Variable("pH", "pH", 0.0, 14.0);
+            //case "OxigenoDisuelto": return new Variable("OxigenoDisuelto", "mg/L", 0.0, 20.0);
+            //case "Temperatura": return new Variable("Temperatura", "°C", 0.0, 0.0);
+            default: throw new IllegalArgumentException("Variable desconocida: " + nombre);
+        }
+    }
 
     public boolean esValorFisicoValido(double valor) {
         return valor >= rangoFisicoMin && valor <= rangoFisicoMax;

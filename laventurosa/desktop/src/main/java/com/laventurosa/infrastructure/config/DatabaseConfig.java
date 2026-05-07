@@ -25,6 +25,11 @@ public class DatabaseConfig {
         URL = props.getProperty("db.url");
         USUARIO = props.getProperty("db.user");
         PASSWORD = props.getProperty("db.password");
+
+        // Diagnóstico: imprime lo que realmente se está leyendo
+        System.out.println("[DB] URL leída     : " + URL);
+        System.out.println("[DB] Usuario leído : " + USUARIO);
+        System.out.println("[DB] Password leído: " + (PASSWORD != null ? "****" : "NULL"));
     }
 
     private static Connection conexion;
@@ -38,6 +43,12 @@ public class DatabaseConfig {
 
             } catch (ClassNotFoundException e) {
                 throw new SQLException("Driver PostgreSQL no encontrado en el proyecto.", e);
+            } catch (SQLException e) {
+                System.err.println("[DB] SQLException al conectar:");
+                System.err.println("     Mensaje  : " + e.getMessage());
+                System.err.println("     SQLState : " + e.getSQLState());
+                System.err.println("     Código   : " + e.getErrorCode());
+                throw e;
             }
         }
         return conexion;
