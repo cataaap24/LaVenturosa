@@ -33,7 +33,18 @@ public class PostgresConfiguracionAlarmaRepository implements ConfiguracionAlarm
 
     @Override
     public List<ConfiguracionAlarma> listarTodas() {
-        return List.of();
+        String sql = "SELECT id,email_destinatario,nivel_notificacion,activo FROM configuracion_alarma ORDER BY id";
+        List<ConfiguracionAlarma> lista = new ArrayList<>();
+        try (Connection conn = DatabaseConfig.obtenerConexion();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ResultSet rs = ps.executeQuery();
+            while (rs.next())
+                lista.add(new ConfiguracionAlarma(rs.getLong("id"), rs.getString("email_destinatario"), ConfiguracionAlarma.NivelNotificacion.valueOf(rs.getString("nivel_notificacion")),
+                        rs.getBoolean("activo")));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return lista;
     }
 
     @Override
@@ -41,7 +52,8 @@ public class PostgresConfiguracionAlarmaRepository implements ConfiguracionAlarm
         String sql = "DELETE FROM configuracion_alarma WHERE id = ?";
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setLong(1, id); ps.executeUpdate();
+            ps.setLong(1, id);
+            ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
