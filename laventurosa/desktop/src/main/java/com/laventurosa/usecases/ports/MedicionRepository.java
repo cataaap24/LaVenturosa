@@ -1,6 +1,8 @@
 package com.laventurosa.usecases.ports;
 
 import com.laventurosa.entities.Medicion;
+import com.laventurosa.usecases.dto.MedicionDTO;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
