@@ -58,12 +58,12 @@ public class ImplementationTesting {
 
     public OperationResult testUpsertUmbrales() {
         // INSERT — Oxigeno no existe, debe crear
-        Umbral oxigeno = new Umbral(null, Variable.fromNombre("OxigenoDisuelto"), "Laguna-Entrada", 2.0, 4.0, 7.0, 9.0);
+        Umbral oxigeno = new Umbral(null, Variable.fromNombre("OxigenoDisuelto"), "GLOBAL", 2.0, 4.0, 7.0, 9.0);
         OperationResult insertResult = umbralRepoTestingUseCase.executeSQLUpsertInjection(oxigeno);
         System.out.println("[UPSERT INSERT Oxigeno] " + insertResult.getMessage());
 
         // UPDATE — pH ya existe, debe modificar valores
-        Umbral ph = new Umbral(null, Variable.fromNombre("pH"), "Laguna-Entrada", 5.0, 6.0, 8.5, 9.5);
+        Umbral ph = new Umbral(null, Variable.fromNombre("pH"), "GLOBAL", 5.0, 6.0, 8.5, 9.5);
         OperationResult updateResult = umbralRepoTestingUseCase.executeSQLUpsertInjection(ph);
         System.out.println("[UPSERT UPDATE pH]      " + updateResult.getMessage());
 
