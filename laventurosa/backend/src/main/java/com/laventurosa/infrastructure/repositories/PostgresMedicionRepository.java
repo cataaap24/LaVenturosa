@@ -22,7 +22,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
             
             ps.setString(1, medicion.getVariable().getNombre());
             ps.setDouble(2, medicion.getValor());
-            ps.setObject(3, medicion.getFechaHora()); 
+            ps.setObject(3, medicion.getFechaHora()); // Uso de setObject para fecha
             ps.setString(4, medicion.getEstado().name());
             ps.setString(5, medicion.getPuntoMonitoreo());
     
@@ -36,6 +36,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
         }
         return null;
     }
+
     @Override
     public Optional<Medicion> obtenerUltimaPorPunto(String punto) {
         String sql = """
@@ -43,13 +44,13 @@ public class PostgresMedicionRepository implements MedicionRepository {
             FROM medicion WHERE punto_monitoreo = ?
             ORDER BY fecha_hora DESC LIMIT 1
             """;
-        // try-with-resources. Cierra conexiones
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, punto);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                return Optional.of(mapear(rs));
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return Optional.of(mapear(rs));
+                }
             }
             return Optional.empty();
         } catch (SQLException e) {
@@ -67,8 +68,8 @@ public class PostgresMedicionRepository implements MedicionRepository {
             """;
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setTimestamp(1, Timestamp.valueOf(desde));
-            ps.setTimestamp(2, Timestamp.valueOf(hasta));
+            ps.setObject(1, desde);
+            ps.setObject(2, hasta);
             ps.setString(3, punto);
             return listar(ps);
         } catch (SQLException e) {
@@ -86,8 +87,8 @@ public class PostgresMedicionRepository implements MedicionRepository {
             """;
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setTimestamp(1, Timestamp.valueOf(desde));
-            ps.setTimestamp(2, Timestamp.valueOf(hasta));
+            ps.setObject(1, desde);
+            ps.setObject(2, hasta);
             ps.setString(3, variable);
             return listar(ps);
         } catch (SQLException e) {
@@ -104,8 +105,8 @@ public class PostgresMedicionRepository implements MedicionRepository {
             """;
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setTimestamp(1, Timestamp.valueOf(desde));
-            ps.setTimestamp(2, Timestamp.valueOf(hasta));
+            ps.setObject(1, desde);
+            ps.setObject(2, hasta);
             return listar(ps);
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -138,7 +139,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
     private Medicion mapear(ResultSet rs) throws SQLException {
         return new Medicion(
                 rs.getLong("id"),
-                Variable.fromNombre(rs.getString("variable")),
+                resolverVariable(rs.getString("variable")),
                 rs.getDouble("valor"),
                 rs.getObject("fecha_hora", LocalDateTime.class), 
                 EstadoCriticidad.valueOf(rs.getString("estado")),
