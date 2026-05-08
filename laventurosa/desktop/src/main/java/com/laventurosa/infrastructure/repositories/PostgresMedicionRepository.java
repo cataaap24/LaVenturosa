@@ -15,7 +15,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
 
     @Override
     public Medicion guardar(Medicion medicion) {
-        String sqlInstruction = "INSERT INTO \"Medicion\" (variable, valor, \"fechaHora\", estado, \"puntoMonitoreo\") " +
+        String sqlInstruction = "INSERT INTO medicion (variable, valor, \"fechaHora\", estado, \"puntoMonitoreo\") " +
         "VALUES (?, ?, ?, ?, ?) RETURNING *";
 
         try (Connection conn = DatabaseConfig.obtenerConexion();
@@ -41,7 +41,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
 
     @Override
     public Optional<Medicion> obtenerUltimaPorPunto(String puntoMonitoreo) {
-        String sqlInstruction = "SELECT * FROM Medicion " +
+        String sqlInstruction = "SELECT * FROM medicion " +
                 "WHERE puntoMonitoreo = ? " +
                 "ORDER BY fechaHora DESC " +
                 "LIMIT 1;";
@@ -65,7 +65,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
     }
     @Override
     public List<Medicion> obtenerPorRangoYPunto(LocalDateTime desde, LocalDateTime hasta, String puntoMedicion) {
-        String sqlInstruction = "SELECT * FROM Medicion " +
+        String sqlInstruction = "SELECT * FROM medicion " +
                 "WHERE puntoMonitoreo = ? AND fechaHora BETWEEN ? AND ? " +
                 "ORDER BY fechaHora DESC";
 
@@ -94,7 +94,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
 
     @Override
     public List<Medicion> obtenerPorRangoYVariable(LocalDateTime desde, LocalDateTime hasta, String variable) {
-        String sqlInstruction = "SELECT * FROM Medicion " +
+        String sqlInstruction = "SELECT * FROM medicion " +
                 "WHERE variable = ? AND fechaHora BETWEEN ? AND ? " +
                 "ORDER BY fechaHora DESC";
 
@@ -123,7 +123,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
 
     @Override
     public List<Medicion> obtenerPorRango(LocalDateTime desde, LocalDateTime hasta) {
-        String sqlInstruction = "SELECT * FROM Medicion " +
+        String sqlInstruction = "SELECT * FROM medicion " +
                 "WHERE fechaHora BETWEEN ? AND ? " +
                 "ORDER BY fechaHora DESC";
         List<Medicion> mediciones = new ArrayList<>();
@@ -150,7 +150,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
 
     @Override
     public List<Medicion> obtenerUltimoMes() {
-        String sqlInstruction = "SELECT * FROM Medicion " +
+        String sqlInstruction = "SELECT * FROM medicion " +
                 "WHERE fechaHora >= CURRENT_DATE - INTERVAL '1 month' " +
                 "ORDER BY fechaHora DESC";
 

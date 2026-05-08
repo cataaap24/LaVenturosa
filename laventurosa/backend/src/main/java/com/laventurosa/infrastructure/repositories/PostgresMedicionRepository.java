@@ -13,7 +13,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
     @Override
     public Medicion guardar(Medicion medicion) {
         String sql = """
-            INSERT INTO medicion (variable, valor, "fechaHora", estado, "puntoMonitoreo")
+            INSERT INTO medicion (variable, valor, fecha_hora, estado, punto_monitoreo)
             VALUES (?, ?, ?, ?, ?) RETURNING id
             """;
         try (Connection conn = DatabaseConfig.obtenerConexion();
@@ -36,9 +36,9 @@ public class PostgresMedicionRepository implements MedicionRepository {
     @Override
     public Optional<Medicion> obtenerUltimaPorPunto(String punto) {
         String sql = """
-            SELECT id, variable, valor, "fechaHora", estado, "puntoMonitoreo"
-            FROM medicion WHERE "puntoMonitoreo" = ?
-            ORDER BY "fechaHora" DESC LIMIT 1
+            SELECT id, variable, valor, fecha_hora, estado, punto_monitoreo
+            FROM medicion WHERE punto_monitoreo = ?
+            ORDER BY fecha_hora DESC LIMIT 1
             """;
         // try-with-resources. Cierra conexiones
         try (Connection conn = DatabaseConfig.obtenerConexion();
@@ -57,10 +57,10 @@ public class PostgresMedicionRepository implements MedicionRepository {
     @Override
     public List<Medicion> obtenerPorRangoYPunto(LocalDateTime desde, LocalDateTime hasta, String punto) {
         String sql = """
-            SELECT id, variable, valor, "fechaHora", estado, "puntoMonitoreo"
+            SELECT id, variable, valor, fecha_hora, estado, punto_monitoreo
             FROM medicion
-            WHERE "fechaHora" BETWEEN ? AND ? AND "puntoMonitoreo" = ?
-            ORDER BY "fechaHora" ASC
+            WHERE fecha_hora BETWEEN ? AND ? AND punto_monitoreo = ?
+            ORDER BY fecha_hora ASC
             """;
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -76,10 +76,10 @@ public class PostgresMedicionRepository implements MedicionRepository {
     @Override
     public List<Medicion> obtenerPorRangoYVariable(LocalDateTime desde, LocalDateTime hasta, String variable) {
         String sql = """
-            SELECT id, variable, valor, "fechaHora", estado, "puntoMonitoreo"
+            SELECT id, variable, valor, fecha_hora, estado, punto_monitoreo
             FROM medicion
-            WHERE "fechaHora" BETWEEN ? AND ? AND variable = ?
-            ORDER BY "fechaHora" ASC
+            WHERE fecha_hora BETWEEN ? AND ? AND variable = ?
+            ORDER BY fecha_hora ASC
             """;
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -95,9 +95,9 @@ public class PostgresMedicionRepository implements MedicionRepository {
     @Override
     public List<Medicion> obtenerPorRango(LocalDateTime desde, LocalDateTime hasta) {
         String sql = """
-            SELECT id, variable, valor, "fechaHora", estado, "puntoMonitoreo"
-            FROM medicion WHERE "fechaHora" BETWEEN ? AND ?
-            ORDER BY "fechaHora" ASC
+            SELECT id, variable, valor, fecha_hora, estado, punto_monitoreo
+            FROM medicion WHERE fecha_hora BETWEEN ? AND ?
+            ORDER BY fecha_hora ASC
             """;
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -112,9 +112,9 @@ public class PostgresMedicionRepository implements MedicionRepository {
     @Override
     public List<Medicion> obtenerUltimoMes() {
         String sql = """
-            SELECT id, variable, valor, "fechaHora", estado, "puntoMonitoreo"
-            FROM medicion WHERE "fechaHora" >= NOW() - INTERVAL '1 month'
-            ORDER BY "fechaHora" ASC
+            SELECT id, variable, valor, fecha_hora, estado, punto_monitoreo
+            FROM medicion WHERE fecha_hora >= NOW() - INTERVAL '1 month'
+            ORDER BY fecha_hora ASC
             """;
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -136,9 +136,9 @@ public class PostgresMedicionRepository implements MedicionRepository {
         Variable variable = resolverVariable(rs.getString("variable"));
         return new Medicion(
                 rs.getLong("id"), variable, rs.getDouble("valor"),
-                rs.getTimestamp("fechaHora").toLocalDateTime(),
+                rs.getTimestamp("fecha_hora").toLocalDateTime(),
                 EstadoCriticidad.valueOf(rs.getString("estado")),
-                rs.getString("puntoMonitoreo"));
+                rs.getString("punto_monitoreo"));
     }
 
     private Variable resolverVariable(String nombre) {
