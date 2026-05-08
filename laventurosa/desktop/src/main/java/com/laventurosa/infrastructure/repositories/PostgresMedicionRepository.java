@@ -7,7 +7,7 @@ import com.laventurosa.usecases.ports.MedicionRepository;
 import com.laventurosa.infrastructure.config.DatabaseConfig;
 
 import java.sql.*;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.*;
 
 public class PostgresMedicionRepository implements MedicionRepository {
@@ -15,7 +15,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
 
     @Override
     public Medicion guardar(Medicion medicion) {
-        String sqlInstruction = "INSERT INTO medicion (variable, valor, \"fechaHora\", estado, \"puntoMonitoreo\") " +
+        String sqlInstruction = "INSERT INTO medicion (variable, valor, \"fecha_hora\", estado, \"punto_monitoreo\") " +
         "VALUES (?, ?, ?, ?, ?) RETURNING *";
 
         try (Connection conn = DatabaseConfig.obtenerConexion();
@@ -40,16 +40,16 @@ public class PostgresMedicionRepository implements MedicionRepository {
     }
 
     @Override
-    public Optional<Medicion> obtenerUltimaPorPunto(String puntoMonitoreo) {
+    public Optional<Medicion> obtenerUltimaPorPunto(String punto_monitoreo) {
         String sqlInstruction = "SELECT * FROM medicion " +
-                "WHERE puntoMonitoreo = ? " +
-                "ORDER BY fechaHora DESC " +
+                "WHERE punto_monitoreo = ? " +
+                "ORDER BY fecha_hora DESC " +
                 "LIMIT 1;";
 
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement stmt = conn.prepareStatement(sqlInstruction)) {
 
-            stmt.setString(1, puntoMonitoreo);
+            stmt.setString(1, punto_monitoreo);
 
             try (ResultSet queryResult = stmt.executeQuery()) {
                 if (queryResult.next()) {
@@ -64,10 +64,10 @@ public class PostgresMedicionRepository implements MedicionRepository {
         return Optional.empty();
     }
     @Override
-    public List<Medicion> obtenerPorRangoYPunto(LocalDateTime desde, LocalDateTime hasta, String puntoMedicion) {
+    public List<Medicion> obtenerPorRangoYPunto(OffsetDateTime desde, OffsetDateTime hasta, String puntoMedicion) {
         String sqlInstruction = "SELECT * FROM medicion " +
-                "WHERE puntoMonitoreo = ? AND fechaHora BETWEEN ? AND ? " +
-                "ORDER BY fechaHora DESC";
+                "WHERE punto_monitoreo = ? AND fecha_hora BETWEEN ? AND ? " +
+                "ORDER BY fecha_hora DESC";
 
         List<Medicion> mediciones = new ArrayList<>();
 
@@ -93,10 +93,10 @@ public class PostgresMedicionRepository implements MedicionRepository {
     }
 
     @Override
-    public List<Medicion> obtenerPorRangoYVariable(LocalDateTime desde, LocalDateTime hasta, String variable) {
+    public List<Medicion> obtenerPorRangoYVariable(OffsetDateTime desde, OffsetDateTime hasta, String variable) {
         String sqlInstruction = "SELECT * FROM medicion " +
-                "WHERE variable = ? AND fechaHora BETWEEN ? AND ? " +
-                "ORDER BY fechaHora DESC";
+                "WHERE variable = ? AND fecha_hora BETWEEN ? AND ? " +
+                "ORDER BY fecha_hora DESC";
 
         List<Medicion> mediciones = new ArrayList<>();
 
@@ -122,10 +122,10 @@ public class PostgresMedicionRepository implements MedicionRepository {
     }
 
     @Override
-    public List<Medicion> obtenerPorRango(LocalDateTime desde, LocalDateTime hasta) {
+    public List<Medicion> obtenerPorRango(OffsetDateTime desde, OffsetDateTime hasta) {
         String sqlInstruction = "SELECT * FROM medicion " +
-                "WHERE fechaHora BETWEEN ? AND ? " +
-                "ORDER BY fechaHora DESC";
+                "WHERE fecha_hora BETWEEN ? AND ? " +
+                "ORDER BY fecha_hora DESC";
         List<Medicion> mediciones = new ArrayList<>();
 
         try (Connection conn = DatabaseConfig.obtenerConexion();
@@ -151,8 +151,8 @@ public class PostgresMedicionRepository implements MedicionRepository {
     @Override
     public List<Medicion> obtenerUltimoMes() {
         String sqlInstruction = "SELECT * FROM medicion " +
-                "WHERE fechaHora >= CURRENT_DATE - INTERVAL '1 month' " +
-                "ORDER BY fechaHora DESC";
+                "WHERE fecha_hora >= CURRENT_DATE - INTERVAL '1 month' " +
+                "ORDER BY fecha_hora DESC";
 
         List<Medicion> mediciones = new ArrayList<>();
         try (Connection conn = DatabaseConfig.obtenerConexion();
@@ -177,9 +177,9 @@ public class PostgresMedicionRepository implements MedicionRepository {
                 queryResult.getLong("id"),
                 Variable.fromNombre(queryResult.getString("variable")),
                 queryResult.getDouble("valor"),
-                queryResult.getObject("fechaHora", LocalDateTime.class),
+                queryResult.getObject("fecha_hora", OffsetDateTime.class),
                 EstadoCriticidad.valueOf(queryResult.getString("estado")),
-                queryResult.getString("puntoMonitoreo")
+                queryResult.getString("punto_monitoreo")
         );
     }
 }

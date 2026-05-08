@@ -15,8 +15,15 @@ public class PostgresUmbralRepository implements UmbralRepository {
 
     @Override
     public Umbral guardar(Umbral umbral) {
+        //Integrando UPSERT, permitiendo agregar en caso de que no exista o modificar en caso de que exista
         String sqlInstruction = "INSERT INTO umbral (variable, \"puntoMonitoreo\", \"minCritico\", " +
-                "\"minAdvertencia\", \"maxAdvertencia\",\"maxCritico\") VALUES (?, ?, ?, ?, ?, ?) RETURNING *";
+                "\"minAdvertencia\", \"maxAdvertencia\",\"maxCritico\") VALUES (?, ?, ?, ?, ?, ?) " +
+                "ON CONFLICT (variable, punto_monitoreo) " +
+                "DO UPDATE SET min_critico = EXCLUDED.min_critico, " +
+                               "min_advertencia = EXCLUDED.min_advertencia, " +
+                               "max_advertencia = EXCLUDED.max_advertencia, " +
+                               "max_critico = EXCLUDED.max_critico " +
+                "RETURNING *";
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement stmt = conn.prepareStatement(sqlInstruction)) {
 
