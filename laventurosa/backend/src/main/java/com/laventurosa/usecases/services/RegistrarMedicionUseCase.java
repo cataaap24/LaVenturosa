@@ -5,6 +5,8 @@ import com.laventurosa.usecases.dto.OperationResult;
 import com.laventurosa.usecases.ports.*;
 import java.util.Optional;
 import java.time.LocalDateTime;
+import java.time.ZoneId; 
+import java.time.ZonedDateTime; 
 import java.util.List;
 
 public class RegistrarMedicionUseCase {
@@ -32,16 +34,14 @@ public class RegistrarMedicionUseCase {
                     "Valor " + valor + " fuera del rango físico de " + variable.getNombre()
             );
         }
-
         LocalDateTime fechaHora;
         if (timestamp != null) {
             fechaHora = timestamp;
         } else {
-            fechaHora = LocalDateTime.now();
+            fechaHora = ZonedDateTime.now(ZoneId.of("America/Bogota")).toLocalDateTime();
         }
 
         Umbral umbral;
-
         Optional<Umbral> umbralOptional = umbralRepository.obtenerPorVariable(variable.getNombre());
 
         if (umbralOptional.isPresent()) {
