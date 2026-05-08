@@ -14,25 +14,28 @@ public class PostgresMedicionRepository implements MedicionRepository {
     public Medicion guardar(Medicion medicion) {
         String sql = """
             INSERT INTO medicion (variable, valor, fecha_hora, estado, punto_monitoreo)
-            VALUES (?, ?, ?, ?, ?) RETURNING id
+            VALUES (?, ?, ?, ?, ?) RETURNING id, variable, valor, fecha_hora, estado, punto_monitoreo
             """;
+    
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement ps = conn.prepareStatement(sql)) {
+            
             ps.setString(1, medicion.getVariable().getNombre());
             ps.setDouble(2, medicion.getValor());
-            ps.setTimestamp(3, Timestamp.valueOf(medicion.getFechaHora()));
+            ps.setObject(3, medicion.getFechaHora()); 
             ps.setString(4, medicion.getEstado().name());
             ps.setString(5, medicion.getPuntoMonitoreo());
-            ResultSet rs = ps.executeQuery();
-            if (rs.next())
-                return new Medicion(rs.getLong("id"), medicion.getVariable(), medicion.getValor(),
-                        medicion.getFechaHora(), medicion.getEstado(), medicion.getPuntoMonitoreo());
-            throw new RuntimeException("No se obtuvo ID al guardar medición.");
+    
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return mapear(rs);
+                }
+            }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Error al guardar en Postgres: " + e.getMessage(), e);
         }
+        return null;
     }
-
     @Override
     public Optional<Medicion> obtenerUltimaPorPunto(String punto) {
         String sql = """
@@ -133,12 +136,14 @@ public class PostgresMedicionRepository implements MedicionRepository {
     }
 
     private Medicion mapear(ResultSet rs) throws SQLException {
-        Variable variable = resolverVariable(rs.getString("variable"));
         return new Medicion(
-                rs.getLong("id"), variable, rs.getDouble("valor"),
-                rs.getTimestamp("fecha_hora").toLocalDateTime(),
+                rs.getLong("id"),
+                Variable.fromNombre(rs.getString("variable")),
+                rs.getDouble("valor"),
+                rs.getObject("fecha_hora", LocalDateTime.class), 
                 EstadoCriticidad.valueOf(rs.getString("estado")),
-                rs.getString("punto_monitoreo"));
+                rs.getString("punto_monitoreo")
+        );
     }
 
     private Variable resolverVariable(String nombre) {
