@@ -16,8 +16,8 @@ public class PostgresUmbralRepository implements UmbralRepository {
     @Override
     public Umbral guardar(Umbral umbral) {
         //Integrando UPSERT, permitiendo agregar en caso de que no exista o modificar en caso de que exista
-        String sqlInstruction = "INSERT INTO umbral (variable, \"puntoMonitoreo\", \"minCritico\", " +
-                "\"minAdvertencia\", \"maxAdvertencia\",\"maxCritico\") VALUES (?, ?, ?, ?, ?, ?) " +
+        String sqlInstruction = "INSERT INTO umbral (variable, punto_monitoreo, min_critico, " +
+                "min_advertencia, max_advertencia, max_critico) VALUES (?, ?, ?, ?, ?, ?) " +
                 "ON CONFLICT (variable, punto_monitoreo) " +
                 "DO UPDATE SET min_critico = EXCLUDED.min_critico, " +
                                "min_advertencia = EXCLUDED.min_advertencia, " +
@@ -90,11 +90,11 @@ public class PostgresUmbralRepository implements UmbralRepository {
         return new Umbral(
                 queryResult.getLong("id"),
                 Variable.fromNombre(queryResult.getString("variable")),
-                queryResult.getString("puntoMonitoreo"),
-                queryResult.getDouble("minCritico"),
-                queryResult.getDouble("minAdvertencia"),
-                queryResult.getDouble("maxAdvertencia"),
-                queryResult.getDouble("maxCritico")
+                queryResult.getString("punto_monitoreo"),
+                queryResult.getDouble("min_critico"),
+                queryResult.getDouble("min_advertencia"),
+                queryResult.getDouble("max_advertencia"),
+                queryResult.getDouble("max_critico")
         );
     }
 }

@@ -1,7 +1,5 @@
 package com.laventurosa.usecases.services;
 
-import com.laventurosa.entities.EstadoCriticidad;
-import com.laventurosa.entities.Variable;
 import com.laventurosa.usecases.ports.MedicionRepository;
 import com.laventurosa.entities.Medicion;
 import com.laventurosa.usecases.dto.OperationResult;
@@ -45,8 +43,13 @@ public class MedicionRepoTestingUseCase {
     // (I guess that this function will never be used, but this is an example)
     public OperationResult executeSQLInsertInjection(Medicion medicion) {
         if (medicion == null) {
+            return OperationResult.fail("No se encontró la medición");
+        }
+        Medicion medicion_guardada = medicionRepository.guardar(medicion);
+        if (medicion_guardada == null) {
             return OperationResult.fail("Error al guardar la medicion");
         }
+
         return OperationResult.ok("Medicion guardada correctamente");
     }
 
