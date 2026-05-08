@@ -17,14 +17,14 @@ public class PostgresUmbralRepository implements UmbralRepository {
          * existentes con los nuevos (EXCLUDED) que vienen del formulario
          */
         String sql = """
-                INSERT INTO umbral (variable, "puntoMonitoreo", "minCritico", 
-                    "minAdvertencia", "maxAdvertencia", "maxCritico")
+                INSERT INTO umbral (variable, punto_monitreo, min_critico, 
+                    min_advertencia, max_advertencia, max_critico)
                 VALUES (?, ?, ?, ?, ?, ?)
-                ON CONFLICT (variable, "puntoMonitoreo")
-                DO UPDATE SET "minCritico" = EXCLUDED."minCritico",
-                              "minAdvertencia" = EXCLUDED."minAdvertencia",
-                              "maxAdvertencia" = EXCLUDED."maxAdvertencia",
-                              "maxCritico" = EXCLUDED."maxCritico"
+                ON CONFLICT (variable, punto_monitoreo)
+                DO UPDATE SET min_critico = EXCLUDED. min_critico,
+                              min_advertencia = EXCLUDED.min_advertencia,
+                              max_advertencia = EXCLUDED.max_advertencia,
+                              max_critico = EXCLUDED.max_critico
                 RETURNING id
                 """;
 
@@ -53,10 +53,10 @@ public class PostgresUmbralRepository implements UmbralRepository {
     @Override
     public Optional<Umbral> obtenerPorVariable(String nombreVariable) {
         String sql = """
-        SELECT id, variable, "puntoMonitoreo", "minCritico",
-               "minAdvertencia", "maxAdvertencia", "maxCritico"
+        SELECT id, variable, punto_monitoreo, min_critico,
+               min_advertencia, max_advertencia, max_critico
         FROM umbral 
-        WHERE variable = ? AND "puntoMonitoreo" = 'GLOBAL'
+        WHERE variable = ? AND punto_monitoreo = 'GLOBAL'
         LIMIT 1
         """;
 
@@ -78,8 +78,8 @@ public class PostgresUmbralRepository implements UmbralRepository {
     @Override
     public List<Umbral> listarTodos() {
         String sql = """
-        SELECT id, variable, "puntoMonitoreo", "minCritico", 
-               "minAdvertencia", "maxAdvertencia", "maxCritico" 
+        SELECT id, variable, punto_monitoreo, min_critico, 
+               min_advertencia, max_advertencia, max_critico
         FROM umbral
         """;
 
@@ -99,10 +99,10 @@ public class PostgresUmbralRepository implements UmbralRepository {
     }
     private Umbral mapear(ResultSet rs) throws SQLException {
         Variable var = resolverVariable(rs.getString("variable"));
-        String punto = rs.getString("puntoMonitoreo");
+        String punto = rs.getString("punto_monitoreo");
         return new Umbral(rs.getLong("id"), var,
                 "GLOBAL".equals(punto) ? null : punto, // Si es GLOBAL, en Java es null
-                rs.getDouble("minCritico"), rs.getDouble("minAdvertencia"), rs.getDouble("maxAdvertencia"), rs.getDouble("maxCritico"));
+                rs.getDouble("min_critico"), rs.getDouble("min_advertencia"), rs.getDouble("max_advertencia"), rs.getDouble("max_critico"));
     }
     private Variable resolverVariable(String nombre) {
         Variable variableResultante;
