@@ -12,13 +12,13 @@ El proyecto está construido bajo los principios de **Clean Architecture** y **A
 | Capa | Descripción |
 |------|-------------|
 | **Entities (Dominio)** | Objetos de negocio puros: `Medicion`, `Variable`, `Umbral` |
-| **Use Cases (Aplicación)** | Lógica de los procesos del sistema: `VisualizarEstado`, `ConsultarHistorial`, `ConfigurarUmbrales` |
+| **Use Cases (Ejemplos)** | Lógica de los procesos del sistema: `VisualizarEstado`, `ConsultarHistorial`, `ConfigurarUmbrales` |
 | **Ports (Puertos)** | Interfaces que definen la comunicación entre el núcleo y el exterior |
 | **Infrastructure (Adaptadores)** | Implementaciones reales: `PostgresMedicionRepository` y la interfaz gráfica en JavaFX |
  
 ---
  
-## 🚀 Funcionalidades Principales
+## 🚀 Funcionalidades Parciales
  
 | ID | Caso de Uso | Descripción |
 |----|-------------|-------------|
@@ -55,7 +55,7 @@ db.password=tu_password
  
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/venturosa-system.git
+   git clone https://github.com/tu-usuario/LaVenturosa.git
    ```
 2. Asegúrate de tener el **PostgreSQL Driver** incluido en las dependencias de tu IDE.
 3. Configura tus credenciales en `application.properties`.
