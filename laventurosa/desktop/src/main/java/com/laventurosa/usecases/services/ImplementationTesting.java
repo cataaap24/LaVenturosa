@@ -1,7 +1,10 @@
 package com.laventurosa.usecases.services;
+import com.laventurosa.entities.ConfiguracionAlarma;
 import com.laventurosa.entities.Umbral;
 import com.laventurosa.entities.Variable;
+import com.laventurosa.infrastructure.repositories.PostgresConfiguracionAlarmaRepository;
 import com.laventurosa.infrastructure.repositories.PostgresUmbralRepository;
+import com.laventurosa.usecases.ports.ConfiguracionAlarmaRepository;
 import com.laventurosa.usecases.ports.MedicionRepository;
 import com.laventurosa.infrastructure.repositories.PostgresMedicionRepository;
 import com.laventurosa.usecases.dto.OperationResult;
@@ -12,14 +15,20 @@ import java.time.OffsetDateTime;
 public class ImplementationTesting {
     private MedicionRepoTestingUseCase medicionRepoTestingUseCase;
     private UmbralRepoTestingUseCase umbralRepoTestingUseCase;
+    private ConfiguracionAlarmaRepoTestingUseCase configuracionAlarmaRepoTestingUseCase;
+
     private MedicionRepository medicionRepository;
     private UmbralRepository umbralRepository;
+    private ConfiguracionAlarmaRepository configuracionAlarmaRepository;
+
 
     public ImplementationTesting() {
         this.medicionRepository = new PostgresMedicionRepository();
         this.medicionRepoTestingUseCase = new MedicionRepoTestingUseCase(medicionRepository);
         this.umbralRepository = new PostgresUmbralRepository();
         this.umbralRepoTestingUseCase = new UmbralRepoTestingUseCase(umbralRepository);
+        this.configuracionAlarmaRepository = new PostgresConfiguracionAlarmaRepository();
+        this.configuracionAlarmaRepoTestingUseCase = new ConfiguracionAlarmaRepoTestingUseCase(configuracionAlarmaRepository);
     }
 
     public ImplementationTesting(MedicionRepository medicionRepository) {
@@ -82,5 +91,29 @@ public class ImplementationTesting {
         return umbralRepoTestingUseCase.executeAllQuery();
     }
 
-    //=========================
+    //========================= Test for PostgresConfiguracionAlarmaRepository ===================
+
+    public OperationResult testInsertConfiguracion() {
+        // INSERT activo
+        ConfiguracionAlarma c1 = new ConfiguracionAlarma(null, "admin@laventurosa.com",
+                ConfiguracionAlarma.NivelNotificacion.valueOf("SOLO_CRITICO"), true);
+        OperationResult r1 = configuracionAlarmaRepoTestingUseCase.executeInsert(c1);
+        System.out.println("[INSERT c1] " + r1.getMessage());
+
+        // INSERT inactivo
+        ConfiguracionAlarma c2 = new ConfiguracionAlarma(null, "monitor@laventurosa.com",
+                ConfiguracionAlarma.NivelNotificacion.valueOf("ADVERTENCIA_Y_CRITICO"), false);
+        OperationResult r2 = configuracionAlarmaRepoTestingUseCase.executeInsert(c2);
+        System.out.println("[INSERT c2] " + r2.getMessage());
+
+        return OperationResult.ok("Test insert completado");
+    }
+
+    public OperationResult testEliminarConfiguracion(Long id) {
+        return configuracionAlarmaRepoTestingUseCase.executeEliminar(id);
+    }
+
+    public OperationResult consultarTodasLasConfiguraciones() {
+        return configuracionAlarmaRepoTestingUseCase.executeListarTodas();
+    }
 }
