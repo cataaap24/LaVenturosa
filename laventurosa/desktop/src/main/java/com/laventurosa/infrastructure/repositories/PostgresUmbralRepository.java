@@ -46,15 +46,16 @@ public class PostgresUmbralRepository implements UmbralRepository {
     }
 
     @Override
-    public Optional<Umbral> obtenerPorVariable(String nombreVariable) {
+    public Optional<Umbral> obtenerPorPuntoYVariable(String puntoMonitoreo, String nombreVariable) {
         String sqlInstruction = "SELECT * FROM umbral " +
-                "WHERE variable = ? " +
+                "WHERE punto_monitoreo = ? AND variable = ? " +
                 "LIMIT 1";
 
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement stmt = conn.prepareStatement(sqlInstruction)) {
 
-            stmt.setString(1, nombreVariable);
+            stmt.setString(1, puntoMonitoreo);
+            stmt.setString(2, nombreVariable);
 
             try (ResultSet queryResult = stmt.executeQuery()) {
                 if (queryResult.next()) {
@@ -62,7 +63,7 @@ public class PostgresUmbralRepository implements UmbralRepository {
                 }
             }
         } catch (SQLException e) {
-            System.err.println("Error obteniendo umbral: " + e.getMessage());
+            System.err.println("Error obteniendo umbral específico: " + e.getMessage());
         }
         return Optional.empty();
     }
@@ -82,6 +83,27 @@ public class PostgresUmbralRepository implements UmbralRepository {
             }
         } catch (SQLException e) {
             System.err.println("Error obteniendo umbrales: " + e.getMessage());
+        }
+        return umbrales;
+    }
+
+    @Override
+    public List<Umbral> listarPorPunto(String puntoMonitoreo) {
+        String sqlInstruction = "SELECT * FROM umbral WHERE punto_monitoreo = ? ORDER BY variable ASC";
+        List<Umbral> umbrales = new ArrayList<>();
+
+        try (Connection conn = DatabaseConfig.obtenerConexion();
+             PreparedStatement stmt = conn.prepareStatement(sqlInstruction)) {
+
+            stmt.setString(1, puntoMonitoreo);
+
+            try (ResultSet queryResult = stmt.executeQuery()) {
+                while (queryResult.next()) {
+                    umbrales.add(mapearAUmbral(queryResult));
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al listar umbrales por punto: " + e.getMessage());
         }
         return umbrales;
     }

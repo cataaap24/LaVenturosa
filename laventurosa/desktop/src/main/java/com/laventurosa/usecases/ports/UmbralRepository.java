@@ -6,6 +6,7 @@ import java.util.Optional;
 
 public interface UmbralRepository {
     Umbral guardar(Umbral umbral);
-    Optional<Umbral> obtenerPorVariable(String nombreVariable);
+    Optional<Umbral> obtenerPorPuntoYVariable(String puntoMonitoreo, String nombreVariable);
     List<Umbral> listarTodos();
+    List<Umbral> listarPorPunto(String puntoMonitoreo);
 }
