@@ -1,27 +1,25 @@
 package com.laventurosa.adapters.ui;
 
-
-import com.laventurosa.usecases.services.ImplementationTesting;
-import com.laventurosa.infrastructure.repositories.PostgresMedicionRepository;
-import com.laventurosa.infrastructure.repositories.PostgresUmbralRepository;
-import com.laventurosa.usecases.ports.MedicionRepository;
-import com.laventurosa.usecases.ports.UmbralRepository;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.Pane;
 
 public class MainView {
-    private ImplementationTesting implementationTesting;
 
-    private VBox catalogBox;
-    private VBox cartBox;
-    private Label totalLabel;
+    @FXML
+    private Button BtnPrueba;
 
-    public MainView() {
-        MedicionRepository medicionRepository = new PostgresMedicionRepository();
-        UmbralRepository umbralRepository = new PostgresUmbralRepository();
+    @FXML
+    private Label label_resultado_UseCase;
 
-        catalogBox = new VBox(10);
-        cartBox = new VBox(10);
-        totalLabel = new Label("Total: $ 0.0");
+    @FXML
+    private Pane pane_wall;
+
+    @FXML
+    void ejecutar_usecase_event(ActionEvent event) {
+
     }
+
 }

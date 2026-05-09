@@ -1,18 +1,36 @@
 package com.laventurosa.adapters.ui;
 
-/*import javafx.scene.Scene;
-import javafx.stage.Stage;
 import javafx.application.Application;
-import javafx.application.Platform;*/
-import com.laventurosa.usecases.services.ImplementationTesting;
-import com.laventurosa.usecases.dto.OperationResult;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
+import java.io.IOException;
 
-public class MainApp {
-   
+public class MainApp extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainView.fxml"));
+
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+
+            primaryStage.setTitle("Sistema de Monitoreo - La Venturosa");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Error al cargar el archivo FXML. Revisa la ruta.");
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println("Ya todas las pruebas se hicieron, falta el reportePDF");
+        launch(args);
     }
 }

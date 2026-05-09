@@ -1,32 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="pane_wall" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.laventurosa.adapters.ui.MainView">
    <children>
-      <GridPane layoutX="140.0" layoutY="106.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="33.60001220703125" minHeight="0.0" prefHeight="29.60001220703125" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="60.8" minHeight="10.0" prefHeight="33.6" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="38.400000000000006" minHeight="10.0" prefHeight="29.599999999999994" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="1">
-              <buttons>
-                <Button mnemonicParsing="false" text="Button" />
-              </buttons>
-            </ButtonBar>
-         </children>
-      </GridPane>
+    <Button fx:id="BtnPrueba" layoutX="248.0" layoutY="148.0" mnemonicParsing="false" onAction="#ejecutar_usecase_event" text="Ejecutar" />
+      <Label layoutX="120.0" layoutY="152.0" prefHeight="17.0" prefWidth="113.0" text="Llamado UseCase" />
+      <Label fx:id="label_resultado_UseCase" layoutX="359.0" layoutY="152.0" text="Resultado Aquí" />
    </children>
 </Pane>
