@@ -20,7 +20,7 @@ public class Variable {
     public static Variable fromNombre(String nombre) {
         switch (nombre) {
             case "pH": return new Variable("pH", "pH", 0.0, 14.0);
-            //case "OxigenoDisuelto": return new Variable("OxigenoDisuelto", "mg/L", 0.0, 20.0);
+            case "OxigenoDisuelto": return new Variable("OxigenoDisuelto", "mg/L", 0.0, 20.0);
             //case "Temperatura": return new Variable("Temperatura", "°C", 0.0, 0.0);
             default: throw new IllegalArgumentException("Variable desconocida: " + nombre);
         }

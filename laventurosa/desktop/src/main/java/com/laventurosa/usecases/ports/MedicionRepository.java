@@ -3,7 +3,7 @@ package com.laventurosa.usecases.ports;
 import com.laventurosa.entities.Medicion;
 import com.laventurosa.usecases.dto.MedicionDTO;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,9 +15,9 @@ import java.util.Optional;
 public interface MedicionRepository {
     Medicion guardar(Medicion medicion);
     Optional<Medicion> obtenerUltimaPorPunto(String puntoMonitoreo);
-    List<Medicion> obtenerPorRangoYPunto(LocalDateTime desde, LocalDateTime hasta, String puntoMonitoreo);
-    List<Medicion> obtenerPorRangoYVariable(LocalDateTime desde, LocalDateTime hasta, String variable);
-    List<Medicion> obtenerPorRango(LocalDateTime desde, LocalDateTime hasta);
+    List<Medicion> obtenerPorRangoYPunto(OffsetDateTime desde, OffsetDateTime hasta, String puntoMonitoreo);
+    List<Medicion> obtenerPorRangoYVariable(OffsetDateTime desde, OffsetDateTime hasta, String variable);
+    List<Medicion> obtenerPorRango(OffsetDateTime desde, OffsetDateTime hasta);
     List<Medicion> obtenerUltimoMes();
 }
 

@@ -1,30 +1,16 @@
 package com.laventurosa.adapters.ui;
 
 
-import com.laventurosa.usecases.services.Application;
+import com.laventurosa.usecases.services.ImplementationTesting;
 import com.laventurosa.infrastructure.repositories.PostgresMedicionRepository;
 import com.laventurosa.infrastructure.repositories.PostgresUmbralRepository;
-import com.laventurosa.usecases.ports.ConfiguracionAlarmaRepository;
 import com.laventurosa.usecases.ports.MedicionRepository;
-import com.laventurosa.usecases.ports.ReporteService;
 import com.laventurosa.usecases.ports.UmbralRepository;
-import com.laventurosa.usecases.services.VisualizarEstadoLagunaUseCase;
-import com.laventurosa.usecases.services.Application;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 
-import java.util.List;
-
 public class MainView {
-    private Application application;
+    private ImplementationTesting implementationTesting;
 
     private VBox catalogBox;
     private VBox cartBox;
