@@ -18,12 +18,13 @@ El proyecto está construido bajo los principios de **Clean Architecture** y **A
  
 ---
  
-## 🚀 Funcionalidades Parciales
+## 🚀 Funcionalidades Principales
  
 | ID | Caso de Uso | Descripción |
 |----|-------------|-------------|
 | UC-01 | **Visualizar Estado de la Laguna** | Presentación visual de los datos más recientes, comparándolos con umbrales para determinar si el estado es *Normal*, *Advertencia* o *Crítico* |
 | UC-02 | **Consultar Historial** | Filtrado de mediciones por rangos de fecha y puntos de monitoreo específicos |
+| UC-03 | **Generar Reporte** | Generación de documentos que evidencian el comportamiento de las variables fisicoquímicas en un periodo determinado  |
 | UC-04 | **Configurar Umbrales** | Permite al técnico establecer los límites lógicos de las variables para cada punto de monitoreo |
 | UC-05 | **Configurar Sistema de Alarmas** | Gestión de notificaciones basadas en la criticidad de los datos |
  
@@ -34,7 +35,7 @@ El proyecto está construido bajo los principios de **Clean Architecture** y **A
 - **Lenguaje:** Java 17+
 - **Interfaz Gráfica:** JavaFX con FXML
 - **Base de Datos:** PostgreSQL (alojado en Supabase)
-- **Gestión de Dependencias:** Maven / Gradle
+- **Gestión de Dependencias:** Maven
 - **Arquitectura:** Clean Architecture
  
 ---
