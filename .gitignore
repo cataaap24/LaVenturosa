@@ -1,0 +1,23 @@
+# --- Java & Maven ---
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# --- IntelliJ IDEA ---
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# --- Sistemas Operativos ---
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# --- Logs y Temporales ---
+*.log
+temp/
+tmp/
