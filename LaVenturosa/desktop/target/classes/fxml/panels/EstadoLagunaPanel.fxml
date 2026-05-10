@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #f4f7f6;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.laventurosa.adapters.ui.panels.EstadoLagunaPanel">
+   <children>
+      <VBox spacing="20.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <Label text="Monitoreo Fisicoquimico de la Laguna - Estado laguna" textFill="#2447A4">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+
+            <HBox prefHeight="137.0" prefWidth="598.0" spacing="80.0">
+               <children>
+                  <VBox fillWidth="false" prefWidth="280.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5); -fx-padding: 20;">
+                     <children>
+                        <HBox prefHeight="0.0" prefWidth="240.0">
+                           <children>
+                              <Label prefHeight="20.0" prefWidth="178.0" text="SENSOR 1">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="20.0" prefWidth="179.0" text="Hora" textFill="#6f6868">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="246.0" scaleShape="false" text="Zona">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblPH" prefHeight="70.0" prefWidth="150.0" text="7.0 pH" textFill="#2fa0eb">
+                           <font>
+                              <Font name="System Bold" size="40.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblEstadoPH" text="Estado: Normal" textFill="#27ae60">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox fillWidth="false" prefWidth="280.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5); -fx-padding: 20;">
+                     <children>
+                        <HBox prefHeight="0.0" prefWidth="240.0">
+                           <children>
+                              <Label prefHeight="20.0" prefWidth="178.0" text="SENSOR 2">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="20.0" prefWidth="179.0" text="Hora" textFill="#6f6868">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="246.0" scaleShape="false" text="Zona">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblPH1" prefHeight="70.0" prefWidth="150.0" text="7.0 pH" textFill="#3498db">
+                           <font>
+                              <Font name="System Bold" size="40.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblEstadoPH1" text="Estado: Normal" textFill="#27ae60">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
