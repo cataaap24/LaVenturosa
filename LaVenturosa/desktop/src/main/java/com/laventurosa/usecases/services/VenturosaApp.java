@@ -1,16 +1,15 @@
 package com.laventurosa.usecases.services;
 
-import com.laventurosa.entities.EstadoCriticidad;
 import com.laventurosa.entities.Medicion;
-import com.laventurosa.entities.Variable;
 import com.laventurosa.infrastructure.repositories.PostgresConfiguracionAlarmaRepository;
 import com.laventurosa.infrastructure.repositories.PostgresMedicionRepository;
 import com.laventurosa.infrastructure.repositories.PostgresUmbralRepository;
+import com.laventurosa.infrastructure.services.PdfReporteService;
 import com.laventurosa.usecases.dto.OperationResult;
 import com.laventurosa.usecases.ports.ConfiguracionAlarmaRepository;
 import com.laventurosa.usecases.ports.MedicionRepository;
+import com.laventurosa.usecases.ports.ReporteService;
 import com.laventurosa.usecases.ports.UmbralRepository;
-import com.laventurosa.infrastructure.config.DatabaseConfig;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -19,10 +18,12 @@ public class VenturosaApp {
     private MedicionRepository medicionRepository;
     private ConfiguracionAlarmaRepository configuracionAlarmaRepository;
     private UmbralRepository umbralRepository;
+    private ReporteService reporteService;
 
     private ConsultarHistorialUseCase consultarHistorialUseCase;
     private VisualizarEstadoLagunaUseCase visualizarEstadoLagunaUseCase;
     private ConfigurarUmbralesUseCase configurarUmbralesUseCase;
+    private GenerarReporteUseCase generarReporteUseCase;
 
     public VenturosaApp() {
         inicializarComponentes();
@@ -32,10 +33,12 @@ public class VenturosaApp {
         this.medicionRepository = new PostgresMedicionRepository();
         this.configuracionAlarmaRepository = new PostgresConfiguracionAlarmaRepository();
         this.umbralRepository = new PostgresUmbralRepository();
+        this.reporteService = new PdfReporteService();
 
         this.visualizarEstadoLagunaUseCase = new VisualizarEstadoLagunaUseCase(medicionRepository);
         this.consultarHistorialUseCase = new ConsultarHistorialUseCase(medicionRepository);
         this.configurarUmbralesUseCase = new ConfigurarUmbralesUseCase(umbralRepository);
+        this.generarReporteUseCase = new GenerarReporteUseCase(medicionRepository, reporteService);
 
         System.out.println("[APP] Venturosa System inicializado con éxito.");
     }
@@ -67,6 +70,10 @@ public class VenturosaApp {
 
     public OperationResult configurarUmbrales(String punto, String variable, double minC, double minA, double maxA, double maxC) {
         return configurarUmbralesUseCase.execute(punto, variable, minC, minA, maxA, maxC);
+    }
+
+    public OperationResult generarReportePDF(String ruta, OffsetDateTime desde, OffsetDateTime hasta) {
+        return generarReporteUseCase.execute(ruta, desde, hasta);
     }
 
     /** Confirmar para uso
