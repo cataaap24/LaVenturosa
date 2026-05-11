@@ -1,28 +1,28 @@
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\ConfigurarAlarmasPanel.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\EstadoLagunaPanel.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\ports\ReporteService.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\infrastructure\repositories\PostgresConfiguracionAlarmaRepository.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\infrastructure\services\PdfReporteService.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\MainView.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\entities\Umbral.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\ports\MedicionRepository.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\GenerarReportePanel.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\services\ConfigurarUmbralesUseCase.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\dto\OperationResult.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\entities\ConfiguracionAlarma.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\services\VisualizarEstadoLagunaUseCase.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\infrastructure\repositories\PostgresMedicionRepository.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\ports\ConfiguracionAlarmaRepository.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\services\ConsultarHistorialUseCase.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\HistorialPanel.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\MainApp.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\ports\UmbralRepository.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\entities\EstadoCriticidad.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\dto\MedicionDTO.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\dto\EstadoLagunaDTO.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\infrastructure\repositories\PostgresUmbralRepository.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\infrastructure\config\DatabaseConfig.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\entities\Medicion.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\UmbralesDeVariablesPanel.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\services\VenturosaApp.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\entities\Variable.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\infrastructure\services\PdfReporteService.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\services\ConfigurarUmbralesUseCase.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\services\VisualizarEstadoLagunaUseCase.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\ports\MedicionRepository.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\services\VenturosaApp.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\entities\Medicion.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\services\ConsultarHistorialUseCase.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\entities\Variable.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\entities\Umbral.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\ConfigurarAlarmasPanel.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\dto\MedicionDTO.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\MainApp.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\entities\EstadoCriticidad.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\infrastructure\repositories\PostgresConfiguracionAlarmaRepository.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\ports\UmbralRepository.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\ports\ConfiguracionAlarmaRepository.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\EstadoLagunaPanel.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\MainView.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\infrastructure\repositories\PostgresUmbralRepository.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\UmbralesDeVariablesPanel.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\HistorialPanel.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\infrastructure\repositories\PostgresMedicionRepository.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\dto\EstadoLagunaDTO.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\infrastructure\config\DatabaseConfig.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\dto\OperationResult.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\ports\ReporteService.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\GenerarReportePanel.java
+F:\Juan Navarro\Documentos\GitHub Projects\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\entities\ConfiguracionAlarma.java

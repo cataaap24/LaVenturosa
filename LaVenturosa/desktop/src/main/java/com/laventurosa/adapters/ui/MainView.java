@@ -6,6 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
+import javafx.event.ActionEvent;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
@@ -67,6 +71,35 @@ public class MainView {
         cargarFXML("/fxml/panels/ConfigurarAlarmasPanel.fxml");
     }
 
+    // PARA IMPLEMENTACION DE EDITAR UMBRALES
+    @FXML
+    private Button GuardarVarFQ_button;
+
+    @FXML
+    private ChoiceBox<?> choiceVarFQ;
+
+    @FXML
+    private Label label_varFQ;
+
+    @FXML
+    private TextField maxAdver;
+
+    @FXML
+    private TextField maxCritico;
+
+    @FXML
+    private TextField minAdver;
+
+    @FXML
+    private TextField minCritico;
+
+    @FXML
+    void GuardarVarFQ_event(ActionEvent event) {
+        label_varFQ.setText("hola estoy probando");
+    }
+
+
+
     private void cargarFXML(String rutaFXML) {
         try {
             var recurso = getClass().getResource(rutaFXML);
@@ -99,5 +132,7 @@ public class MainView {
             System.err.println("Error técnico al cargar: " + rutaFXML);
             e.printStackTrace();
         }
+
+
     }
 }
