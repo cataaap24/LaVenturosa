@@ -1,32 +1,41 @@
 package com.laventurosa.adapters.ui;
 
+import com.laventurosa.usecases.services.VenturosaApp;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class MainApp extends Application {
+
+    private VenturosaApp venturosaApp;
+
+    @Override
+    public void init() {
+        this.venturosaApp = new VenturosaApp();
+    }
 
     @Override
     public void start(Stage primaryStage) {
         try {
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainView.fxml"));
-
             Parent root = loader.load();
 
-            Scene scene = new Scene(root);
+            MainView mainView = loader.getController();
 
-            primaryStage.setTitle("Sistema de Monitoreo - La Venturosa");
+            if (mainView != null) {
+                mainView.setApp(venturosaApp);
+            }
+
+            Scene scene = new Scene(root);
+            primaryStage.setTitle("VenturosaSystem - Monitoreo de Laguna");
             primaryStage.setScene(scene);
             primaryStage.show();
 
-        } catch (IOException e) {
+        } catch (Exception e) {
+            System.err.println("Error crítico al iniciar la aplicación.");
             e.printStackTrace();
-            System.err.println("Error al cargar el archivo FXML. Revisa la ruta.");
         }
     }
 

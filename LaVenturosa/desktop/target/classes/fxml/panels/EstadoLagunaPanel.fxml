@@ -40,7 +40,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblPH" prefHeight="70.0" prefWidth="150.0" text="7.0 pH" textFill="#2fa0eb">
+                        <Label fx:id="lblPH" prefHeight="70.0" prefWidth="150.0" text="N/A" textFill="#2fa0eb">
                            <font>
                               <Font name="System Bold" size="40.0" />
                            </font>
@@ -73,7 +73,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblPH1" prefHeight="70.0" prefWidth="150.0" text="7.0 pH" textFill="#3498db">
+                        <Label fx:id="lblPH1" prefHeight="70.0" prefWidth="150.0" text="N/A" textFill="#3498db">
                            <font>
                               <Font name="System Bold" size="40.0" />
                            </font>

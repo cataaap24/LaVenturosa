@@ -2,7 +2,6 @@ C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturo
 C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\EstadoLagunaPanel.java
 C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\ports\ReporteService.java
 C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\infrastructure\repositories\PostgresConfiguracionAlarmaRepository.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\services\MedicionRepoTestingUseCase.java
 C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\infrastructure\services\PdfReporteService.java
 C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\MainView.java
 C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\entities\Umbral.java
@@ -19,7 +18,6 @@ C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturo
 C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\MainApp.java
 C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\ports\UmbralRepository.java
 C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\entities\EstadoCriticidad.java
-C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\services\ConfiguracionAlarmaRepoTestingUseCase.java
 C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\dto\MedicionDTO.java
 C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\dto\EstadoLagunaDTO.java
 C:\Users\crist\Documents\TrabajosMartin\IngenieriaSoftware\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\infrastructure\repositories\PostgresUmbralRepository.java

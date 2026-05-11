@@ -1,27 +1,32 @@
 package com.laventurosa.usecases.dto;
 
-public class OperationResult {
-    private boolean success;
-    private String message;
+public class OperationResult<T> {
+    private final boolean success;
+    private final String message;
+    private final T data;
 
-    public OperationResult(boolean success, String message) {
+    private OperationResult(boolean success, String message, T data) {
         this.success = success;
         this.message = message;
+        this.data = data;
     }
 
-    public static OperationResult ok(String message) {
-        return new OperationResult(true, message);
+    // Éxito con datos
+    public static <T> OperationResult<T> ok(String message, T data) {
+        return new OperationResult<>(true, message, data);
     }
 
-    public static OperationResult fail(String message) {
-        return new OperationResult(false, message);
+    // Éxito sin datos (por ejemplo, para un "Guardado correctamente")
+    public static <T> OperationResult<T> ok(String message) {
+        return new OperationResult<>(true, message, null);
     }
 
-    public boolean isSuccess() {
-        return success;
+    // Fallo
+    public static <T> OperationResult<T> fail(String message) {
+        return new OperationResult<>(false, message, null);
     }
 
-    public String getMessage() {
-        return message;
-    }
+    public boolean isSuccess() { return success; }
+    public String getMessage() { return message; }
+    public T getData() { return data; }
 }
