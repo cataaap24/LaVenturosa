@@ -5,7 +5,7 @@ Venturosa System es una solución de ingeniería de software diseñada para el *
  
 ---
  
-## 🏗️ Arquitectura del Proyecto
+## Arquitectura del Proyecto
  
 El proyecto está construido bajo los principios de **Clean Architecture** y **Arquitectura Hexagonal**, lo que permite un desacoplamiento total entre la lógica de negocio y la infraestructura.
  
@@ -18,7 +18,7 @@ El proyecto está construido bajo los principios de **Clean Architecture** y **A
  
 ---
  
-## 🚀 Funcionalidades Principales
+## Funcionalidades Principales
  
 | ID | Caso de Uso | Descripción |
 |----|-------------|-------------|
@@ -30,7 +30,7 @@ El proyecto está construido bajo los principios de **Clean Architecture** y **A
  
 ---
  
-## 🛠️ Stack Tecnológico
+## Stack Tecnológico
  
 - **Lenguaje:** Java 17+
 - **Interfaz Gráfica:** JavaFX con FXML
@@ -40,7 +40,7 @@ El proyecto está construido bajo los principios de **Clean Architecture** y **A
  
 ---
  
-## ⚙️ Configuración de la Base de Datos
+## Configuración de la Base de Datos
  
 El sistema se conecta a una base de datos PostgreSQL en la nube. Para configurar la conexión, edite el archivo `src/main/resources/application.properties`:
  
@@ -52,7 +52,7 @@ db.password=tu_password
  
 ---
  
-## 🚀 Instalación y Ejecución
+## Instalación y Ejecución
  
 1. Clona el repositorio:
    ```bash
@@ -63,7 +63,7 @@ db.password=tu_password
 4. Ejecuta la clase `Main` (o el punto de entrada de JavaFX) para iniciar la aplicación.
 ---
  
-## 👥 Equipo de Desarrollo
+## Equipo de Desarrollo
  
 Desarrollado por el equipo de **Ingeniería de Sistemas** de la Universidad de los Llanos:
  
@@ -74,6 +74,6 @@ Desarrollado por el equipo de **Ingeniería de Sistemas** de la Universidad de l
 | Catalina Pineda Posada | Desarrolladora |
 | Kevin Arturo Panesso | Desarrollador |
  
-> 🏛️ **Institución:** Universidad de los Llanos (Unillanos)
-> 📚 **Programa:** Ingeniería de Sistemas
-> 🔬 **Proyecto:** Sistema de Monitoreo de Variables Fisicoquímicas en una Laguna
+> **Institución:** Universidad de los Llanos (Unillanos)
+> **Programa:** Ingeniería de Sistemas
+> **Proyecto:** Sistema de Monitoreo de Variables Fisicoquímicas en una Laguna
