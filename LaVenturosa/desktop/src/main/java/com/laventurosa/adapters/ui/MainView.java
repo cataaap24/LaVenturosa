@@ -1,5 +1,6 @@
 package com.laventurosa.adapters.ui;
 
+import com.laventurosa.usecases.services.VenturosaApp;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -9,6 +10,13 @@ import javafx.scene.layout.StackPane;
 import java.io.IOException;
 
 public class MainView {
+
+    private VenturosaApp app;
+
+    public void setApp(VenturosaApp app) {
+        this.app = app;
+        mostrarEstado();
+    }
 
     @FXML private Button btnEstado, btnHistorial, btnReportes, btnUmbrales, btnAlarmas;
 
@@ -59,21 +67,31 @@ public class MainView {
         cargarFXML("/fxml/panels/ConfigurarAlarmasPanel.fxml");
     }
 
-    @FXML
-    public void initialize() {
-        mostrarEstado();
-    }
-
     private void cargarFXML(String rutaFXML) {
         try {
             var recurso = getClass().getResource(rutaFXML);
             if (recurso == null) {
-                System.err.println("OJO! No se encontro el archivo en: " + rutaFXML);
+                System.err.println("No se encontro el archivo en: " + rutaFXML);
                 return;
             }
 
             FXMLLoader loader = new FXMLLoader(recurso);
             Parent root = loader.load();
+
+            Object controller = loader.getController();
+
+            // AppEstadoLaguna
+            if (controller instanceof com.laventurosa.adapters.ui.panels.EstadoLagunaPanel) {
+                ((com.laventurosa.adapters.ui.panels.EstadoLagunaPanel) controller).setApp(this.app);
+            } else if (controller instanceof com.laventurosa.adapters.ui.panels.HistorialPanel) {
+                ((com.laventurosa.adapters.ui.panels.HistorialPanel) controller).setApp(this.app);
+            } else if (controller instanceof com.laventurosa.adapters.ui.panels.GenerarReportePanel) {
+                ((com.laventurosa.adapters.ui.panels.GenerarReportePanel) controller).setApp(this.app);
+            } else if (controller instanceof com.laventurosa.adapters.ui.panels.UmbralesDeVariablesPanel) {
+                ((com.laventurosa.adapters.ui.panels.UmbralesDeVariablesPanel) controller).setApp(this.app);
+            } else if (controller instanceof com.laventurosa.adapters.ui.panels.ConfigurarAlarmasPanel) {
+                ((com.laventurosa.adapters.ui.panels.ConfigurarAlarmasPanel) controller).setApp(this.app);
+            }
 
             contentArea.getChildren().setAll(root);
 

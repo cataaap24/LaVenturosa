@@ -4,9 +4,7 @@ com\laventurosa\adapters\ui\panels\HistorialPanel.class
 com\laventurosa\adapters\ui\panels\ConfigurarAlarmasPanel.class
 com\laventurosa\usecases\services\ConsultarHistorialUseCase.class
 com\laventurosa\adapters\ui\panels\GenerarReportePanel.class
-com\laventurosa\usecases\services\MedicionRepoTestingUseCase.class
 com\laventurosa\usecases\services\VisualizarEstadoLagunaUseCase.class
 com\laventurosa\infrastructure\repositories\PostgresConfiguracionAlarmaRepository.class
 com\laventurosa\usecases\dto\EstadoLagunaDTO.class
-com\laventurosa\usecases\services\ConfiguracionAlarmaRepoTestingUseCase.class
 com\laventurosa\usecases\services\ConfigurarUmbralesUseCase.class

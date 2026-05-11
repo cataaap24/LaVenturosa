@@ -14,7 +14,7 @@ public class VisualizarEstadoLagunaUseCase {
         this.medicionRepository = medicionRepository;
     }
 
-    public OperationResult execute(String puntoMonitoreo) {
+    public OperationResult<EstadoLagunaDTO> execute(String puntoMonitoreo) {
         Optional<Medicion> medicionOpt = medicionRepository.obtenerUltimaPorPunto(puntoMonitoreo);
 
         if (medicionOpt.isEmpty()) {
@@ -32,7 +32,7 @@ public class VisualizarEstadoLagunaUseCase {
 
         imprimirLog(informe);
 
-        return OperationResult.ok("Estado de la laguna recuperado exitosamente");
+        return OperationResult.ok("Estado de la laguna recuperado exitosamente", informe);
     }
 
     private void imprimirLog(EstadoLagunaDTO informe) {
