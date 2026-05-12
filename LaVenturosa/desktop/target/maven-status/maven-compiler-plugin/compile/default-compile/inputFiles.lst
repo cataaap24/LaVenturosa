@@ -2,6 +2,7 @@ C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laven
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\infrastructure\repositories\PostgresMedicionRepository.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\infrastructure\repositories\PostgresUmbralRepository.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\EstadoLagunaPanel.java
+C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\infrastructure\cache\EstadoLagunaCache.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\GenerarReportePanel.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\infrastructure\repositories\PostgresConfiguracionAlarmaRepository.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\entities\Variable.java
