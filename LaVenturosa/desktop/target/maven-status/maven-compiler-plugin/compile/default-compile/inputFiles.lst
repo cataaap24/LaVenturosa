@@ -8,11 +8,13 @@ C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laven
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\ConfigurarAlarmasPanel.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\UmbralesDeVariablesPanel.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\infrastructure\services\PdfReporteService.java
+C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\services\GenerarReporteUseCase.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\MainApp.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\services\VenturosaApp.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\entities\Medicion.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\entities\Umbral.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\infrastructure\config\DatabaseConfig.java
+C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\dto\ReporteDTO.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\dto\MedicionDTO.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\MainView.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\dto\EstadoLagunaDTO.java

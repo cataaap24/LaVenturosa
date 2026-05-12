@@ -19,17 +19,17 @@ public class PostgresConfiguracionAlarmaRepository implements ConfiguracionAlarm
     public ConfiguracionAlarma guardar(ConfiguracionAlarma config) {
         String sqlInstruction = "INSERT INTO configuracion_alarma (" +
                 "email_destinatario, nivel_notificacion, activo) " +
-                "VALUES (?, ?, ?) RETURNING *";
+                "VALUES (?, ?, ?) RETURNING id";
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement stmt = conn.prepareStatement(sqlInstruction)) {
-            // mapear objetos java a SQL
+
             stmt.setString(1, config.getEmailDestinatario());
             stmt.setString(2, config.getNivelNotificacion().name());
             stmt.setBoolean(3, config.isActivo());
 
             try (ResultSet queryResult = stmt.executeQuery()) {
                 if (queryResult.next()){
-                    return mapearAConfiguracion(queryResult);
+                    return mapearAConfiguracion(queryResult, config);
                 }
             }
         } catch (SQLException e) {
@@ -75,6 +75,15 @@ public class PostgresConfiguracionAlarmaRepository implements ConfiguracionAlarm
                 queryResult.getString("email_destinatario"),
                 ConfiguracionAlarma.NivelNotificacion.valueOf(queryResult.getString("nivel_notificacion")),
                 queryResult.getBoolean("activo")
+        );
+    }
+
+    private ConfiguracionAlarma mapearAConfiguracion(ResultSet queryResult, ConfiguracionAlarma configuracionAlarma) throws SQLException {
+        return new ConfiguracionAlarma(
+                queryResult.getLong("id"),
+                configuracionAlarma.getEmailDestinatario(),
+                configuracionAlarma.getNivelNotificacion(),
+                configuracionAlarma.isActivo()
         );
     }
 }

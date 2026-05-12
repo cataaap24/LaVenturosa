@@ -1,67 +1,59 @@
 package com.laventurosa.infrastructure.config;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
 import java.sql.*;
 import java.util.Properties;
 import java.io.InputStream;
 
 public class DatabaseConfig {
 
-    private static final Properties props = new Properties();
-    private static final String URL;
-    private static final String USUARIO;
-    private static final String PASSWORD;
+    private static final HikariDataSource dataSource;
 
-    static {
-        try (InputStream input = DatabaseConfig.class.getClassLoader().getResourceAsStream("application.properties")) {
-            if (input != null) {
+        static {
+            try (InputStream input = DatabaseConfig.class.getClassLoader()
+                    .getResourceAsStream("application.properties")) {
+
+                Properties props = new Properties();
                 props.load(input);
-            } else {
-                System.err.println("[DB] Error: No se encontró application.properties en resources");
+
+                HikariConfig config = new HikariConfig();
+                config.setJdbcUrl(props.getProperty("db.url"));
+                config.setUsername(props.getProperty("db.user"));
+                config.setPassword(props.getProperty("db.password"));
+
+                config.setMinimumIdle(2);
+                config.setMaximumPoolSize(10);
+
+                // Timeouts
+                config.setConnectionTimeout(30000);
+                config.setIdleTimeout(600000);
+                config.setMaxLifetime(1800000);
+
+                config.setKeepaliveTime(60000);
+                config.setConnectionTestQuery("SELECT 1");
+
+                config.setPoolName("LaVenturosa-Pool");
+
+                dataSource = new HikariDataSource(config);
+                System.out.println("[DB] HikariCP pool iniciado correctamente.");
+
+            } catch (Exception e) {
+                throw new RuntimeException("[DB] Error iniciando el pool de conexiones: " + e.getMessage(), e);
             }
-        } catch (Exception e) {
-            System.err.println("[DB] Error cargando configuración: " + e.getMessage());
-        }
-
-        URL = props.getProperty("db.url");
-        USUARIO = props.getProperty("db.user");
-        PASSWORD = props.getProperty("db.password");
-
-        // Diagnóstico: imprime lo que realmente se está leyendo
-        System.out.println("[DB] URL leída     : " + URL);
-        System.out.println("[DB] Usuario leído : " + USUARIO);
-        System.out.println("[DB] Password leído: " + (PASSWORD != null ? "****" : "NULL"));
     }
 
     private static Connection conexion;
 
     public static Connection obtenerConexion() throws SQLException {
-        if (conexion == null || conexion.isClosed()) {
-            try {
-                Class.forName("org.postgresql.Driver");
-                conexion = DriverManager.getConnection(URL, USUARIO, PASSWORD);
-                System.out.println("[DB] Conexión exitosa desde el Desktop a Supabase.");
-
-            } catch (ClassNotFoundException e) {
-                throw new SQLException("Driver PostgreSQL no encontrado en el proyecto.", e);
-            } catch (SQLException e) {
-                System.err.println("[DB] SQLException al conectar:");
-                System.err.println("     Mensaje  : " + e.getMessage());
-                System.err.println("     SQLState : " + e.getSQLState());
-                System.err.println("     Código   : " + e.getErrorCode());
-                throw e;
-            }
-        }
-        return conexion;
+        return dataSource.getConnection();
     }
 
     public static void cerrarConexion() {
-        try {
-            if (conexion != null && !conexion.isClosed()) {
-                conexion.close();
-                System.out.println("[DB] Conexión cerrada.");
-            }
-        } catch (SQLException e) {
-            System.err.println("[DB] Error al cerrar: " + e.getMessage());
+        if (dataSource != null && !dataSource.isClosed()) {
+            dataSource.close();
+            System.out.println("[DB] Pool cerrado.");
         }
     }
 }
