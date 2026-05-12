@@ -23,7 +23,7 @@ public class PostgresUmbralRepository implements UmbralRepository {
                                "min_advertencia = EXCLUDED.min_advertencia, " +
                                "max_advertencia = EXCLUDED.max_advertencia, " +
                                "max_critico = EXCLUDED.max_critico " +
-                "RETURNING *";
+                "RETURNING id";
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement stmt = conn.prepareStatement(sqlInstruction)) {
 
@@ -36,7 +36,7 @@ public class PostgresUmbralRepository implements UmbralRepository {
 
             try (ResultSet queryResult = stmt.executeQuery()) {
                 if (queryResult.next()) {
-                    return mapearAUmbral(queryResult);
+                    return mapearAUmbral(queryResult, umbral);
                 }
             }
         } catch (SQLException e) {
@@ -117,6 +117,18 @@ public class PostgresUmbralRepository implements UmbralRepository {
                 queryResult.getDouble("min_advertencia"),
                 queryResult.getDouble("max_advertencia"),
                 queryResult.getDouble("max_critico")
+        );
+    }
+
+    private Umbral mapearAUmbral(ResultSet queryResult, Umbral umbral) throws SQLException {
+        return new Umbral(
+                queryResult.getLong("id"),
+                umbral.getVariable(),
+                umbral.getPuntoMonitoreo(),
+                umbral.getMinCritico(),
+                umbral.getMinAdvertencia(),
+                umbral.getMaxAdvertencia(),
+                umbral.getMaxCritico()
         );
     }
 }

@@ -16,7 +16,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
     @Override
     public Medicion guardar(Medicion medicion) {
         String sqlInstruction = "INSERT INTO medicion (variable, valor, \"fecha_hora\", estado, \"punto_monitoreo\") " +
-        "VALUES (?, ?, ?, ?, ?) RETURNING *";
+        "VALUES (?, ?, ?, ?, ?) RETURNING id";
 
         try (Connection conn = DatabaseConfig.obtenerConexion();
             PreparedStatement stmt = conn.prepareStatement(sqlInstruction)) {
@@ -29,7 +29,7 @@ public class PostgresMedicionRepository implements MedicionRepository {
 
             try (ResultSet queryResult = stmt.executeQuery()) {
                 if (queryResult.next()) {
-                    return mapearAMedicion(queryResult);
+                    return mapearAMedicion(queryResult, medicion);
                 }
             }
         } catch (SQLException e) {
@@ -170,6 +170,17 @@ public class PostgresMedicionRepository implements MedicionRepository {
         }
 
         return mediciones;
+    }
+
+    private Medicion mapearAMedicion(ResultSet queryResult, Medicion medicion) throws SQLException {
+        return new Medicion(
+                queryResult.getLong("id"),
+                medicion.getVariable(),
+                medicion.getValor(),
+                medicion.getFechaHora(),
+                medicion.getEstado(),
+                medicion.getPuntoMonitoreo()
+        );
     }
 
     private Medicion mapearAMedicion(ResultSet queryResult) throws SQLException {
