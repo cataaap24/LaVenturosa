@@ -1,6 +1,7 @@
 package com.laventurosa.usecases.services;
 
 import com.laventurosa.entities.Medicion;
+import com.laventurosa.infrastructure.cache.EstadoLagunaCache;
 import com.laventurosa.infrastructure.repositories.PostgresConfiguracionAlarmaRepository;
 import com.laventurosa.infrastructure.repositories.PostgresMedicionRepository;
 import com.laventurosa.infrastructure.repositories.PostgresUmbralRepository;
@@ -16,6 +17,7 @@ import java.util.List;
 
 public class VenturosaApp {
     private MedicionRepository medicionRepository;
+    private MedicionRepository cacheMedicionRepository;
     private ConfiguracionAlarmaRepository configuracionAlarmaRepository;
     private UmbralRepository umbralRepository;
     private ReporteService reporteService;
@@ -31,11 +33,12 @@ public class VenturosaApp {
 
     private void inicializarComponentes() {
         this.medicionRepository = new PostgresMedicionRepository();
+        this.cacheMedicionRepository = new EstadoLagunaCache(medicionRepository);
         this.configuracionAlarmaRepository = new PostgresConfiguracionAlarmaRepository();
         this.umbralRepository = new PostgresUmbralRepository();
         this.reporteService = new PdfReporteService();
 
-        this.visualizarEstadoLagunaUseCase = new VisualizarEstadoLagunaUseCase(medicionRepository);
+        this.visualizarEstadoLagunaUseCase = new VisualizarEstadoLagunaUseCase(cacheMedicionRepository);
         this.consultarHistorialUseCase = new ConsultarHistorialUseCase(medicionRepository);
         this.configurarUmbralesUseCase = new ConfigurarUmbralesUseCase(umbralRepository);
         this.generarReporteUseCase = new GenerarReporteUseCase(medicionRepository, reporteService);
