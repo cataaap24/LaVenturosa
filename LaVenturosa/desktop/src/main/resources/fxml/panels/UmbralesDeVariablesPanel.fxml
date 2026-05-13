@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #EDF4FB;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.laventurosa.adapters.ui.panels.UmbralesDeVariablesPanel">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #EDF4FB;" stylesheets="@../../styles/app.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.laventurosa.adapters.ui.panels.UmbralesDeVariablesPanel">
     <children>
         <VBox spacing="20.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
             <children>
