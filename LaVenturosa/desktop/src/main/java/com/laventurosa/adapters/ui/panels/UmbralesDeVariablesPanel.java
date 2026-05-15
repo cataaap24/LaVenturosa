@@ -64,7 +64,7 @@ public class UmbralesDeVariablesPanel {
             return;
         }
         variableSeleccionada = choiceVarFQ.getValue();
-        OperationResult<?> resultado = app.configurarUmbrales("nose",variableSeleccionada,v_minCritico,v_minAdver,v_maxAdver,v_maxCritico);
+        OperationResult<?> resultado = app.configurarUmbrales("GLOBAL",variableSeleccionada,v_minCritico,v_minAdver,v_maxAdver,v_maxCritico);
 
         Alert alert = new Alert(resultado.isSuccess() ? Alert.AlertType.INFORMATION : Alert.AlertType.ERROR);
         alert.setContentText(resultado.getMessage());

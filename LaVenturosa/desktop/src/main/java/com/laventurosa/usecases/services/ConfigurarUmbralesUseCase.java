@@ -14,16 +14,17 @@ public class ConfigurarUmbralesUseCase {
 
     public OperationResult execute(String punto, String nombreVar, double minC, double minA, double maxA, double maxC) {
 
-        Variable variable = Variable.fromNombre(nombreVar);
-        if (!(variable.esValorFisicoValido(minC) && variable.esValorFisicoValido(minA) && variable.esValorFisicoValido(maxA) && variable.esValorFisicoValido(maxC) )){
-            return OperationResult.fail("Valores Superan los limites fisicos establecidos");
+        try {
+            Variable variable = Variable.fromNombre(nombreVar);
+
+            Umbral nuevoUmbral = new Umbral(variable, punto, minC, minA, maxA, maxC);
+
+            umbralRepository.guardar(nuevoUmbral);
+
+            return OperationResult.ok("Umbrales actualizados con éxito.");
+
+        } catch (IllegalArgumentException e) {
+            return OperationResult.fail(e.getMessage());
         }
-
-
-        Umbral nuevoUmbral = new Umbral(variable, punto, minC, minA, maxA, maxC);
-
-        umbralRepository.guardar(nuevoUmbral);
-
-        return OperationResult.ok("Umbrales para " + nombreVar + " en " + punto + " actualizados con éxito.");
     }
 }
