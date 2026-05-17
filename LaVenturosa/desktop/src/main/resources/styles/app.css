@@ -26,3 +26,79 @@
     -fx-graphic: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="6"><circle cx="3" cy="3" r="2.5" fill="white"/></svg>');
     -fx-content-display: LEFT;
 }
+
+.choice-box-vq {
+    -fx-background-color: #336BFF;
+    -fx-background-radius: 5px;
+}
+
+.choice-box-vq > .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.choice-box-vq .context-menu .menu-item .label {
+    -fx-text-fill: black;
+    -fx-font-weight: normal;
+}
+
+.choice-box-vq .context-menu .menu-item:focused .label {
+    -fx-text-fill: white;
+}
+
+.choice-box-vq .arrow {
+    -fx-background-color: white;
+}
+
+.choice-box-vq .arrow-button:hover .arrow {
+    -fx-background-color: #E0E0E0;
+}
+
+.text-label-general{
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+}
+
+.panel-choince-vq {
+    -fx-background-color: white;
+    -fx-background-radius: 0px 0px 5px 5px;
+
+    -fx-border-color: #2447A4 transparent transparent transparent,
+    transparent #DCE5F5 #DCE5F5 #DCE5F5;
+    -fx-border-width: 4px 0px 0px 0px,
+    0px 1px 1px 1px;
+    -fx-border-radius: 5px 5px 5px 5px,
+    0px 0px 5px 5px;
+}
+
+.text-field-vq {
+    -fx-background-color: #C3DEF8;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-width: 0px;
+    -fx-text-fill: #1A3066;
+    -fx-padding: 8px 12px;
+}
+
+
+
+.btn-guardar {
+    -fx-background-color: #336BFF;
+
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+}
+
+.btn-guardar:hover {
+    -fx-background-color: #4D7FFF;
+}
+
+

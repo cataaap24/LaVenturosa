@@ -25,3 +25,7 @@ tmp/
 LaVenturosa/desktop/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
 LaVenturosa/desktop/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
 LaVenturosa/desktop/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+LaVenturosa/desktop/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+*.lst
+*.lst
+/LaVenturosa/desktop/target
