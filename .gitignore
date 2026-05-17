@@ -29,3 +29,4 @@ LaVenturosa/desktop/target/maven-status/maven-compiler-plugin/compile/default-co
 *.lst
 *.lst
 /LaVenturosa/desktop/target
+/LaVenturosa/desktop/target
