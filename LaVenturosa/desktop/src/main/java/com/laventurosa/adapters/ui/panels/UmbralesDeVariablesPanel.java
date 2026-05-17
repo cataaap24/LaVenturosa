@@ -35,11 +35,13 @@ public class UmbralesDeVariablesPanel {
     public void initialize() {
         choiceVarFQ.getItems().addAll("pH", "Oxígeno disuelto");
         choiceVarFQ.setValue("pH");
+        label_varFQ.setText("Configuración para pH");
 
         choiceVarFQ.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> {
                     if (newValue != null) {
                         variableSeleccionada = newValue;
+                        label_varFQ.setText("Configuración para "+ variableSeleccionada);
                         System.out.println("Variable seleccionada: " + variableSeleccionada);
                     }
                 }
@@ -67,6 +69,7 @@ public class UmbralesDeVariablesPanel {
         OperationResult<?> resultado = app.configurarUmbrales("GLOBAL",variableSeleccionada,v_minCritico,v_minAdver,v_maxAdver,v_maxCritico);
 
         Alert alert = new Alert(resultado.isSuccess() ? Alert.AlertType.INFORMATION : Alert.AlertType.ERROR);
+        alert.setHeaderText(resultado.isSuccess() ? "Modificación Umbral ÉXITO" : "Modificación Umbral ERROR");
         alert.setContentText(resultado.getMessage());
         alert.show();
     }
