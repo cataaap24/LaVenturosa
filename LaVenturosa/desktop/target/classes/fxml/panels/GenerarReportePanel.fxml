@@ -30,7 +30,7 @@
                                 <DatePicker fx:id="dateFin" promptText="Fecha Fin" />
                             </children>
                         </HBox>
-                        <Button style="-fx-background-color: #2447A4; -fx-text-fill: white;" text="Exportar a PDF" prefHeight="40.0" prefWidth="200.0" />
+                        <Button fx:id="generar_reporte"  onAction="#generarReporte"  style="-fx-background-color: #2447A4; -fx-text-fill: white;" text="Exportar a PDF" prefHeight="40.0" prefWidth="200.0" />
                     </children>
                 </VBox>
             </children>
