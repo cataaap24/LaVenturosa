@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
@@ -37,10 +38,13 @@
                     <children>
                         <Pane prefHeight="56.0" prefWidth="480.0">
                             <children>
-                                <Label fx:id="label_varFQ" layoutX="1.0" layoutY="-3.0" prefHeight="35.0" prefWidth="600.0" styleClass="text-label-general" text="Label Configuracion variable elegida">
+                                <Label fx:id="label_varFQ" layoutY="1.0" prefHeight="37.0" prefWidth="600.0" styleClass="text-label-general" text="Label Configuracion variable elegida">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
                                 </Label>
                             </children>
                         </Pane>
@@ -78,7 +82,7 @@
                         </HBox>
                     </children>
                 </VBox>
-                <Pane prefHeight="86.0" prefWidth="600.0">
+                <Pane prefHeight="86.0" prefWidth="625.0">
                     <children>
                         <Button fx:id="GuardarVarFQ_button" layoutX="258.0" layoutY="14.0" mnemonicParsing="false" onAction="#GuardarVarFQ_event" prefHeight="41.0" prefWidth="115.0" styleClass="btn-guardar" text="Guardar" />
                     </children>

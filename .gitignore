@@ -29,3 +29,5 @@ LaVenturosa/desktop/target/maven-status/maven-compiler-plugin/compile/default-co
 
 /LaVenturosa/desktop/target
 
+/LaVenturosa/desktop/target/classes/fxml/panels
+/LaVenturosa/desktop/target/classes/fxml/panels
