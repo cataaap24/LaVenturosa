@@ -7,6 +7,7 @@ com\laventurosa\adapters\ui\panels\ConfigurarAlarmasPanel.class
 com\laventurosa\infrastructure\services\PdfReporteService$1.class
 com\laventurosa\usecases\services\ConsultarHistorialUseCase.class
 com\laventurosa\adapters\ui\panels\GenerarReportePanel.class
+com\laventurosa\adapters\ui\utils\UIUtils.class
 com\laventurosa\infrastructure\cache\EstadoLagunaCache.class
 com\laventurosa\usecases\dto\ReporteDTO.class
 com\laventurosa\usecases\services\VisualizarEstadoLagunaUseCase.class

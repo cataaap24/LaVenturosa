@@ -1,5 +1,6 @@
 package com.laventurosa.adapters.ui.panels;
 
+import com.laventurosa.adapters.ui.utils.UIUtils;
 import com.laventurosa.usecases.dto.OperationResult;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
@@ -63,9 +64,9 @@ public class GenerarReportePanel {
         //Generar reporte PDF
         OperationResult result = app.generarReportePDF(file.getAbsolutePath(), fecha_inicio, fecha_fin);
         if (result.isSuccess()) {
-            System.out.println("Reporte generado con éxito");
+            UIUtils.showInfo("Reporte ÉXITO", null, result.getMessage());
         } else {
-            System.out.println("Problema al generar reporte: " + result.getMessage());
+            UIUtils.showError("Problema al generar reporte", null, result.getMessage());
         }
     }
 }
