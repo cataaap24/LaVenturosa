@@ -1,5 +1,6 @@
 package com.laventurosa.adapters.ui.panels;
 
+import com.laventurosa.usecases.dto.OperationResult;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.DatePicker;
@@ -9,6 +10,7 @@ import java.io.File;
 import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 
 import javafx.fxml.FXML;
 import com.laventurosa.usecases.services.VenturosaApp;
@@ -39,7 +41,12 @@ public class GenerarReportePanel {
 
         //Configurar ventana emergente de guardado
         FileChooser fc = new FileChooser();
+        OffsetDateTime ahora = OffsetDateTime.now();
         fc.setTitle("Guardar reporte PDF");
+        fc.setInitialDirectory(new File(System.getProperty("user.home")));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String fechaParseada = ahora.format(formatter);
+        fc.setInitialFileName("Reporte laguna " + fechaParseada + ".pdf");
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PDF", "*.pdf");
         fc.getExtensionFilters().add(extFilter);
 
@@ -50,6 +57,11 @@ public class GenerarReportePanel {
         }
 
         //Generar reporte PDF
-        app.generarReportePDF(file.getAbsolutePath(), fecha_inicio, fecha_fin);
+        OperationResult result = app.generarReportePDF(file.getAbsolutePath(), fecha_inicio, fecha_fin);
+        if (result.isSuccess()) {
+            System.out.println("Reporte generado con éxito");
+        } else {
+            System.out.println("Problema al generar reporte: " + result.getMessage());
+        }
     }
 }

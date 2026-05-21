@@ -7,6 +7,7 @@ import com.laventurosa.usecases.ports.MedicionRepository;
 import com.laventurosa.usecases.ports.ReporteService;
 
 import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.List;
 
 public class GenerarReporteUseCase {
@@ -24,11 +25,18 @@ public class GenerarReporteUseCase {
         }
         try {
             List<Medicion> mediciones;
-
             if (desde == null && hasta == null) {
                 mediciones = medicionRepository.obtenerUltimoMes();
             }
             else if (desde != null && hasta != null) {
+                //Verificar que la fecha y hora 'hasta' no sobrepase la fecha y hora actual
+                OffsetDateTime fechahora_actual = OffsetDateTime.now(ZoneOffset.UTC);
+                if (hasta.isAfter(fechahora_actual)) {
+                    return OperationResult.fail("Error, la fecha especificada es superior a la fecha actual");
+                } //Verificar que la fecha desde no este después de la fecha de inicio
+                else if (desde.isAfter(hasta)) {
+                    return OperationResult.fail("Error, la fecha de inicio es superior a la fecha del final");
+                }
                 mediciones = medicionRepository.obtenerPorRango(desde, hasta);
             } else {
                 return OperationResult.fail("Error, datos de fecha inválidos");
