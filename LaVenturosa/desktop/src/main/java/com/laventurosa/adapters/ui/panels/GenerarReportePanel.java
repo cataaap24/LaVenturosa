@@ -34,10 +34,14 @@ public class GenerarReportePanel {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         //Configurar los horarios, se tomará el día mes y año del datePicker pero la hora actual del sistema tanto para fin como para inicio
-        LocalTime localTime = LocalTime.now();
-        ZoneOffset zoneOffset = ZoneOffset.UTC;
-        OffsetDateTime fecha_inicio = OffsetDateTime.of(dateInicio.getValue(), localTime, zoneOffset);
-        OffsetDateTime fecha_fin = OffsetDateTime.of(dateFin.getValue(), localTime, zoneOffset);
+        OffsetDateTime fecha_inicio = null;
+        OffsetDateTime fecha_fin = null;
+        if (dateInicio.getValue() != null && dateFin.getValue() != null) {
+            LocalTime localTime = LocalTime.now();
+            ZoneOffset zoneOffset = ZoneOffset.UTC;
+            fecha_inicio = OffsetDateTime.of(dateInicio.getValue(), localTime, zoneOffset);
+            fecha_fin = OffsetDateTime.of(dateFin.getValue(), localTime, zoneOffset);
+        }
 
         //Configurar ventana emergente de guardado
         FileChooser fc = new FileChooser();
