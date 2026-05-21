@@ -2,6 +2,7 @@ package com.laventurosa.adapters.ui.panels;
 
 import com.laventurosa.usecases.services.VenturosaApp;
 import com.laventurosa.usecases.dto.OperationResult;
+import com.laventurosa.adapters.ui.utils.UIUtils;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
@@ -58,20 +59,17 @@ public class UmbralesDeVariablesPanel {
             v_maxCritico = Double.parseDouble(maxCritico.getText().trim());
 
         } catch (NumberFormatException e) {
-            Alert alerta = new Alert(Alert.AlertType.ERROR);
-            alerta.setTitle("Error de entrada");
-            alerta.setHeaderText("Formato de número inválido");
-            alerta.setContentText("Por favor, asegúrate de ingresar solo números decimales (ej: 10.5) en todos los campos.");
-            alerta.showAndWait();
+            UIUtils.showError("Error de entrada", "Formato de numero inválido", "\"Por favor, asegúrate de ingresar solo números decimales (ej: 10.5) en todos los campos.");
             return;
         }
         variableSeleccionada = choiceVarFQ.getValue();
         OperationResult<?> resultado = app.configurarUmbrales("GLOBAL",variableSeleccionada,v_minCritico,v_minAdver,v_maxAdver,v_maxCritico);
 
-        Alert alert = new Alert(resultado.isSuccess() ? Alert.AlertType.INFORMATION : Alert.AlertType.ERROR);
-        alert.setHeaderText(resultado.isSuccess() ? "Modificación Umbral ÉXITO" : "Modificación Umbral ERROR");
-        alert.setContentText(resultado.getMessage());
-        alert.show();
+        if (resultado.isSuccess()) {
+            UIUtils.showInfo("Modificación Umbral ÉXITO", null, resultado.getMessage());
+        } else {
+            UIUtils.showError("Modificación Umbral ERROR", null, resultado.getMessage());
+        }
     }
 
     public void setApp(VenturosaApp app) {
