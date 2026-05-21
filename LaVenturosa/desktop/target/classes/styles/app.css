@@ -1,11 +1,10 @@
 .button-lateral {
     -fx-background-color: transparent;
     -fx-text-fill: white;
-    -fx-font-size: 14px;
+    -fx-font-size: 14;
     -fx-alignment: CENTER_LEFT;
     -fx-padding: 12 20 12 20;
-    -fx-cursor: hand;
-    -fx-transition: 0.3s;
+
 }
 
 .button-active {
@@ -22,7 +21,72 @@
     -fx-padding: 0 0 0 10;
 }
 
+/* por corregir */
 .button-lateral {
-    -fx-graphic: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="6"><circle cx="3" cy="3" r="2.5" fill="white"/></svg>');
+    -fx-graphic: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjYiPjxjaXJjbGUgY3g9IjMiIGN5PSIzIiByPSIyLjUiIGZpbGw9IndoaXRlIi8+PC9zdmc+');
     -fx-content-display: LEFT;
+}
+
+.choice-box-vq {
+    -fx-background-color: #336BFF;
+    -fx-background-radius: 5;
+}
+
+.choice-box-vq > .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.choice-box-vq .context-menu .menu-item .label {
+    -fx-text-fill: black;
+    -fx-font-weight: normal;
+}
+
+.choice-box-vq .arrow {
+    -fx-background-color: white;
+}
+
+.choice-box-vq .arrow-button:hover .arrow {
+    -fx-background-color: #E0E0E0;
+}
+
+.text-label-general {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+}
+
+.panel-choince-vq {
+    -fx-background-color: white;
+    -fx-background-radius: 0 0 5 5;
+
+    -fx-border-color: #2447A4 transparent transparent transparent,
+    transparent #DCE5F5 #DCE5F5 #DCE5F5;
+    -fx-border-width: 4 0 0 0,
+    0 1 1 1;
+    -fx-border-radius: 5 5 5 5,
+    0 0 5 5;
+}
+
+.text-field-vq {
+    -fx-background-color: #C3DEF8;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-width: 0;
+    -fx-text-fill: #1A3066;
+    -fx-padding: 8 12;
+}
+
+.btn-guardar {
+    -fx-background-color: #336BFF;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14;
+    -fx-padding: 10 20;
+}
+
+.btn-guardar:hover {
+    -fx-background-color: #4D7FFF;
 }

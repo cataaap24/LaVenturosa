@@ -51,13 +51,34 @@ public class PdfReporteService implements ReporteService {
             subtitulo.setSpacingAfter(16);
             doc.add(subtitulo);
 
+            // ── Leyenda ───────────────────────────────────────────────
+            Paragraph tituloLeyenda = new Paragraph("\nLeyenda de estados:",
+                    new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD, BaseColor.BLACK));
+            tituloLeyenda.setSpacingBefore(12);
+            doc.add(tituloLeyenda);
+
+            PdfPTable leyenda = new PdfPTable(2);
+            leyenda.setWidthPercentage(60);
+            leyenda.setWidths(new float[]{1.5f, 5f});
+            leyenda.setHorizontalAlignment(Element.ALIGN_LEFT);
+            leyenda.setSpacingBefore(12);
+
+            agregarCelda(leyenda, "NORMAL",      COLOR_NORMAL,      fuenteLeyenda, Element.ALIGN_CENTER);
+            agregarCelda(leyenda, "pH dentro del rango óptimo (6.5 – 8.5)", COLOR_NORMAL, fuenteLeyenda, Element.ALIGN_LEFT);
+            agregarCelda(leyenda, "ADVERTENCIA", COLOR_ADVERTENCIA, fuenteLeyenda, Element.ALIGN_CENTER);
+            agregarCelda(leyenda, "pH en zona de alerta",            COLOR_ADVERTENCIA, fuenteLeyenda, Element.ALIGN_LEFT);
+            agregarCelda(leyenda, "CRÍTICO",     COLOR_CRITICO,     fuenteLeyenda, Element.ALIGN_CENTER);
+            agregarCelda(leyenda, "pH fuera de rango seguro",        COLOR_CRITICO,     fuenteLeyenda, Element.ALIGN_LEFT);
+            doc.add(leyenda);
+
             // ── Tabla de mediciones ───────────────────────────────────
-            PdfPTable tabla = new PdfPTable(6);
+            PdfPTable tabla = new PdfPTable(5);
             tabla.setWidthPercentage(100);
-            tabla.setWidths(new float[]{1f, 1.8f, 1.2f, 2.8f, 1.8f, 2.2f});
+            tabla.setWidths(new float[]{1.8f, 1.2f, 2.8f, 1.8f, 2.2f});
+            tabla.setSpacingBefore(12);
 
             // Cabecera
-            String[] cabeceras = {"ID", "Variable", "Valor", "Fecha/Hora (COT)", "Estado", "Punto"};
+            String[] cabeceras = {"Variable", "Valor", "Fecha/Hora (COT)", "Estado", "Punto"};
             for (String cab : cabeceras) {
                 PdfPCell cell = new PdfPCell(new Phrase(cab, fuenteCabecera));
                 cell.setBackgroundColor(COLOR_HEADER);
@@ -74,34 +95,13 @@ public class PdfReporteService implements ReporteService {
                         .withOffsetSameInstant(ZoneOffset.of("-05:00"))
                         .format(FORMATO_FECHA);
 
-                agregarCelda(tabla, String.valueOf(m.getId()),             colorFila, fuenteCelda, Element.ALIGN_CENTER);
                 agregarCelda(tabla, m.getVariable().getNombre(),           colorFila, fuenteCelda, Element.ALIGN_CENTER);
                 agregarCelda(tabla, String.format("%.2f", m.getValor()),   colorFila, fuenteCelda, Element.ALIGN_CENTER);
                 agregarCelda(tabla, fechaCOT,                              colorFila, fuenteCelda, Element.ALIGN_CENTER);
                 agregarCelda(tabla, m.getEstado().name(),                  colorFila, fuenteCelda, Element.ALIGN_CENTER);
                 agregarCelda(tabla, m.getPuntoMonitoreo(),                 colorFila, fuenteCelda, Element.ALIGN_LEFT);
             }
-
             doc.add(tabla);
-
-            // ── Leyenda ───────────────────────────────────────────────
-            Paragraph tituloLeyenda = new Paragraph("\nLeyenda de estados:",
-                    new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD, BaseColor.BLACK));
-            tituloLeyenda.setSpacingBefore(12);
-            doc.add(tituloLeyenda);
-
-            PdfPTable leyenda = new PdfPTable(2);
-            leyenda.setWidthPercentage(60);
-            leyenda.setWidths(new float[]{1.5f, 5f});
-            leyenda.setHorizontalAlignment(Element.ALIGN_LEFT);
-
-            agregarCelda(leyenda, "NORMAL",      COLOR_NORMAL,      fuenteLeyenda, Element.ALIGN_CENTER);
-            agregarCelda(leyenda, "pH dentro del rango óptimo (6.5 – 8.5)", COLOR_NORMAL, fuenteLeyenda, Element.ALIGN_LEFT);
-            agregarCelda(leyenda, "ADVERTENCIA", COLOR_ADVERTENCIA, fuenteLeyenda, Element.ALIGN_CENTER);
-            agregarCelda(leyenda, "pH en zona de alerta",            COLOR_ADVERTENCIA, fuenteLeyenda, Element.ALIGN_LEFT);
-            agregarCelda(leyenda, "CRÍTICO",     COLOR_CRITICO,     fuenteLeyenda, Element.ALIGN_CENTER);
-            agregarCelda(leyenda, "pH fuera de rango seguro",        COLOR_CRITICO,     fuenteLeyenda, Element.ALIGN_LEFT);
-            doc.add(leyenda);
 
             System.out.println("[PDF] Reporte generado en: " + rutaSalida);
 
