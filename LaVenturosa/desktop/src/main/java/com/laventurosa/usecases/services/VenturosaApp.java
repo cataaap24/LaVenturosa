@@ -67,7 +67,10 @@ public class VenturosaApp {
     }
      **/
 
-    public List<Medicion> obtenerHistorial (OffsetDateTime desde, OffsetDateTime hasta){
+    public OperationResult<List<MedicionDTO>> obtenerHistorial(OffsetDateTime desde, OffsetDateTime hasta) {
+        if (consultarHistorialUseCase == null) {
+            return OperationResult.fail("El caso de uso de historial no está inicializado.");
+        }
         return consultarHistorialUseCase.execute(desde, hasta);
     }
 
