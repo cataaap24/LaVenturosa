@@ -2,7 +2,6 @@ package com.laventurosa.usecases.services;
 
 import com.laventurosa.entities.Medicion;
 import com.laventurosa.usecases.dto.OperationResult;
-import com.laventurosa.usecases.dto.ReporteDTO;
 import com.laventurosa.usecases.ports.MedicionRepository;
 import com.laventurosa.usecases.ports.ReporteService;
 
@@ -19,7 +18,7 @@ public class GenerarReporteUseCase {
         this.reporteService = reporteService;
     }
 
-    public OperationResult<ReporteDTO> execute(String ruta, OffsetDateTime desde, OffsetDateTime hasta) {
+    public OperationResult execute(String ruta, OffsetDateTime desde, OffsetDateTime hasta) {
         if (ruta == null || ruta.isBlank()) {
             return OperationResult.fail("Error, ruta invalida");
         }
