@@ -1,5 +1,6 @@
 package com.laventurosa.adapters.ui.panels;
 
+import com.laventurosa.adapters.ui.utils.AppAware;
 import com.laventurosa.adapters.ui.utils.UIUtils;
 import com.laventurosa.usecases.dto.OperationResult;
 import javafx.event.ActionEvent;
@@ -16,7 +17,7 @@ import java.time.format.DateTimeFormatter;
 import javafx.fxml.FXML;
 import com.laventurosa.usecases.services.VenturosaApp;
 
-public class GenerarReportePanel {
+public class GenerarReportePanel implements AppAware {
     private VenturosaApp app;
 
     @FXML
@@ -25,12 +26,13 @@ public class GenerarReportePanel {
     @FXML
     private DatePicker dateFin;
 
+    @Override
     public void setApp(VenturosaApp app) {
         this.app = app;
     }
 
     @FXML
-    void generarReporte(ActionEvent event) {
+    void generarReporte(ActionEvent event)  {
         //Obtener el nodo de la escena para a partir de ella generar la ventana emergente de guardado
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 

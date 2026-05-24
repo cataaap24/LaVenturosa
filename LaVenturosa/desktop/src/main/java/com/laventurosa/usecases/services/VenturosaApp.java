@@ -1,5 +1,6 @@
 package com.laventurosa.usecases.services;
 
+import com.laventurosa.entities.ConfiguracionAlarma;
 import com.laventurosa.entities.Medicion;
 import com.laventurosa.infrastructure.cache.EstadoLagunaCache;
 import com.laventurosa.infrastructure.repositories.PostgresConfiguracionAlarmaRepository;
@@ -26,6 +27,7 @@ public class VenturosaApp {
     private VisualizarEstadoLagunaUseCase visualizarEstadoLagunaUseCase;
     private ConfigurarUmbralesUseCase configurarUmbralesUseCase;
     private GenerarReporteUseCase generarReporteUseCase;
+    private ConfigurarAlarmaUseCase configurarAlarmaUseCase;
 
     public VenturosaApp() {
         inicializarComponentes();
@@ -42,6 +44,7 @@ public class VenturosaApp {
         this.consultarHistorialUseCase = new ConsultarHistorialUseCase(medicionRepository);
         this.configurarUmbralesUseCase = new ConfigurarUmbralesUseCase(umbralRepository);
         this.generarReporteUseCase = new GenerarReporteUseCase(medicionRepository, reporteService);
+        this.configurarAlarmaUseCase = new ConfigurarAlarmaUseCase(configuracionAlarmaRepository);
 
         System.out.println("[APP] Venturosa System inicializado con éxito.");
     }
@@ -71,12 +74,24 @@ public class VenturosaApp {
         return consultarHistorialUseCase.execute(desde, hasta);
     }
 
+    public List<ConfiguracionAlarma> obtenerConfiguracionesDeAlarma() {
+        return configuracionAlarmaRepository.listarTodas();
+    }
+
     public OperationResult configurarUmbrales(String punto, String variable, double minC, double minA, double maxA, double maxC) {
         return configurarUmbralesUseCase.execute(punto, variable, minC, minA, maxA, maxC);
     }
 
     public OperationResult generarReportePDF(String ruta, OffsetDateTime desde, OffsetDateTime hasta) {
         return generarReporteUseCase.execute(ruta, desde, hasta);
+    }
+
+    public OperationResult agregarNuevaConfiguracionAlarma(String email, String nivel_notificacion) {
+        return configurarAlarmaUseCase.execute(email, nivel_notificacion);
+    }
+
+    public OperationResult modificarEstadoConfiguracionAlarmaExistente(String email, String nivel_notificacion, boolean nuevoEstado) {
+        return configurarAlarmaUseCase.execute(email, nivel_notificacion, nuevoEstado);
     }
 
     /** Confirmar para uso

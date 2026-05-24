@@ -1,5 +1,6 @@
 package com.laventurosa.adapters.ui.panels;
 
+import com.laventurosa.adapters.ui.utils.AppAware;
 import com.laventurosa.usecases.services.VenturosaApp;
 import com.laventurosa.usecases.dto.OperationResult;
 import com.laventurosa.usecases.dto.EstadoLagunaDTO;
@@ -7,7 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 
-public class EstadoLagunaPanel {
+public class EstadoLagunaPanel implements AppAware {
 
     @FXML private Label lblPH;
     @FXML private Label lblEstadoPH;
@@ -17,6 +18,7 @@ public class EstadoLagunaPanel {
 
     private VenturosaApp app;
 
+    @Override
     public void setApp(VenturosaApp app) {
         this.app = app;
         // Testeo con datos reales
