@@ -4,17 +4,24 @@ import com.laventurosa.entities.ConfiguracionAlarma;
 import com.laventurosa.usecases.dto.OperationResult;
 import com.laventurosa.usecases.ports.ConfiguracionAlarmaRepository;
 
+import java.util.regex.Pattern;
+
 public class ConfigurarAlarmaUseCase {
     private ConfiguracionAlarmaRepository configuracionAlarmaRepository;
+
+    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[\\w._%+\\-]+@[\\w.\\-]+\\.[a-zA-Z]{2,}$");
 
     public ConfigurarAlarmaUseCase(ConfiguracionAlarmaRepository configuracionAlarmaRepository) {
         this.configuracionAlarmaRepository = configuracionAlarmaRepository;
     }
 
     //En caso de que se vaya a agregar una nueva configuración
-    public OperationResult execute(String email, String nivel_notificacion) {
-        if (email.isBlank() || nivel_notificacion.isBlank()) {
+    public OperationResult<ConfiguracionAlarma> execute(String email, String nivel_notificacion) {
+        if (email == null || email.isBlank() || nivel_notificacion.isBlank()) {
             return OperationResult.fail("Campos vacíos");
+        }
+        if (!EMAIL_PATTERN.matcher(email.trim()).matches()) {
+            return OperationResult.fail("El email no tiene un formato válido.");
         }
         try {
             ConfiguracionAlarma config = new ConfiguracionAlarma(email, ConfiguracionAlarma.NivelNotificacion.valueOf(nivel_notificacion));
@@ -29,7 +36,14 @@ public class ConfigurarAlarmaUseCase {
     }
 
     //En caso de que se vaya a habilitar o inhabilitar una configuración {nuevoEstado: false para inhabilitar, true para habilitar}
-    public OperationResult execute(String email, String nivel_notificacion, boolean nuevoEstado) {
+    public OperationResult<ConfiguracionAlarma> execute(String email, String nivel_notificacion, boolean nuevoEstado) {
+        if (email == null || email.isBlank() || nivel_notificacion.isBlank()) {
+            return OperationResult.fail("Campos vacíos");
+        }
+        if (!EMAIL_PATTERN.matcher(email.trim()).matches()) {
+            return OperationResult.fail("El email no tiene un formato válido.");
+        }
+
         try {
             ConfiguracionAlarma config = new ConfiguracionAlarma(email, ConfiguracionAlarma.NivelNotificacion.valueOf(nivel_notificacion));
             config.setActivo(nuevoEstado);

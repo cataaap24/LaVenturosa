@@ -91,11 +91,11 @@ public class VenturosaApp {
         return generarReporteUseCase.execute(ruta, desde, hasta);
     }
 
-    public OperationResult agregarNuevaConfiguracionAlarma(String email, String nivel_notificacion) {
+    public OperationResult<ConfiguracionAlarma> agregarNuevaConfiguracionAlarma(String email, String nivel_notificacion) {
         return configurarAlarmaUseCase.execute(email, nivel_notificacion);
     }
 
-    public OperationResult modificarEstadoConfiguracionAlarmaExistente(String email, String nivel_notificacion, boolean nuevoEstado) {
+    public OperationResult<ConfiguracionAlarma> modificarEstadoConfiguracionAlarmaExistente(String email, String nivel_notificacion, boolean nuevoEstado) {
         return configurarAlarmaUseCase.execute(email, nivel_notificacion, nuevoEstado);
     }
 

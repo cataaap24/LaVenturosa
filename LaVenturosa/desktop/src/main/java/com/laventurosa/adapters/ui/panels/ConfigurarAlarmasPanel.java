@@ -41,7 +41,7 @@ public class ConfigurarAlarmasPanel implements AppAware {
     }
 
     private void cargarDatos() {
-        observableList.setAll(app.obtenerConfiguracionesDeAlarma()); // ← setAll en lugar de reasignar
+        observableList.setAll(app.obtenerConfiguracionesDeAlarma());
     }
 
     @FXML
@@ -84,9 +84,13 @@ public class ConfigurarAlarmasPanel implements AppAware {
                         String email = config.getEmailDestinatario();
                         String nivel_notificacion = String.valueOf(config.getNivelNotificacion());
                         boolean estadoActual = config.isActivo();
-                        app.modificarEstadoConfiguracionAlarmaExistente(email, nivel_notificacion, !estadoActual);
-                        config.setActivo(!estadoActual);
-                        tablaCorreos.refresh();
+                        OperationResult<ConfiguracionAlarma> result = app.modificarEstadoConfiguracionAlarmaExistente(email, nivel_notificacion, !estadoActual);
+                        if (result.isSuccess()) {
+                            config.setActivo(!estadoActual);
+                            tablaCorreos.refresh();
+                        } else {
+                            UIUtils.showError("Error al modificar el estado", null, result.getMessage());
+                        }
                     });
 
                     setGraphic(btn);
@@ -138,7 +142,7 @@ public class ConfigurarAlarmasPanel implements AppAware {
                  return;
             }
 
-            OperationResult result = app.agregarNuevaConfiguracionAlarma(correo, nivelNotificacion);
+            OperationResult<ConfiguracionAlarma> result = app.agregarNuevaConfiguracionAlarma(correo, nivelNotificacion);
             if (result.isSuccess()) {
                 UIUtils.showInfo("Guardado exitoso", null, result.getMessage());
             } else {
