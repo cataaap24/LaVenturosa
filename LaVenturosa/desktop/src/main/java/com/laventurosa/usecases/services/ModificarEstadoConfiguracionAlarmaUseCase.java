@@ -15,16 +15,9 @@ public class ModificarEstadoConfiguracionAlarmaUseCase {
     }
 
     //En caso de que se vaya a habilitar o inhabilitar una configuración {nuevoEstado: false para inhabilitar, true para habilitar}
-    public OperationResult<ConfiguracionAlarma> execute(String email, String nivel_notificacion, boolean nuevoEstado) {
-        if (email == null || email.isBlank() || nivel_notificacion.isBlank()) {
-            return OperationResult.fail("Campos vacíos");
-        }
-        if (!EMAIL_PATTERN.matcher(email.trim()).matches()) {
-            return OperationResult.fail("El email no tiene un formato válido.");
-        }
-
+    public OperationResult<ConfiguracionAlarma> execute(String email, boolean nuevoEstado) {
         try {
-            ConfiguracionAlarma config = new ConfiguracionAlarma(email, ConfiguracionAlarma.NivelNotificacion.valueOf(nivel_notificacion));
+            ConfiguracionAlarma config = configuracionAlarmaRepository.obtenerConfiguracionAlarma(email);
             config.setActivo(nuevoEstado);
             ConfiguracionAlarma resultConfig = configuracionAlarmaRepository.guardar(config);
             if (resultConfig != null) {

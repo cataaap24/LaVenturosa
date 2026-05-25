@@ -44,6 +44,23 @@ public class PostgresConfiguracionAlarmaRepository implements ConfiguracionAlarm
     }
 
     @Override
+    public ConfiguracionAlarma obtenerConfiguracionAlarma(String email) {
+        String sqlInstruction = "SELECT * FROM configuracion_alarma WHERE email_destinatario = ?";
+        try (Connection conn = DatabaseConfig.obtenerConexion()) {
+            PreparedStatement stmt = conn.prepareStatement(sqlInstruction);
+            stmt.setString(1, email);
+            try (ResultSet queryResult = stmt.executeQuery()) {
+                if (queryResult.next()){
+                    return mapearAConfiguracion(queryResult);
+                }
+            }
+        } catch(SQLException e) {
+            System.err.println("Error obteniendo de alarma: " + e.getMessage());
+        }
+        return null;
+    }
+
+    @Override
     public List<ConfiguracionAlarma> listarTodas() {
         String sqlInstruction = "SELECT * FROM configuracion_alarma";
         List<ConfiguracionAlarma> configuracionAlarmas = new ArrayList<>();
