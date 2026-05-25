@@ -1,4 +1,5 @@
 com\laventurosa\adapters\ui\panels\UmbralesDeVariablesPanel.class
+com\laventurosa\adapters\ui\panels\ConfigurarAlarmasPanel$1.class
 com\laventurosa\usecases\services\VenturosaApp.class
 com\laventurosa\usecases\services\GenerarReporteUseCase.class
 com\laventurosa\adapters\ui\panels\HistorialPanel.class
@@ -7,10 +8,13 @@ com\laventurosa\adapters\ui\panels\ConfigurarAlarmasPanel.class
 com\laventurosa\infrastructure\services\PdfReporteService$1.class
 com\laventurosa\usecases\services\ConsultarHistorialUseCase.class
 com\laventurosa\adapters\ui\panels\GenerarReportePanel.class
+com\laventurosa\adapters\ui\panels\ConfigurarAlarmasPanel$2.class
 com\laventurosa\adapters\ui\utils\UIUtils.class
 com\laventurosa\infrastructure\cache\EstadoLagunaCache.class
 com\laventurosa\usecases\dto\ReporteDTO.class
 com\laventurosa\usecases\services\VisualizarEstadoLagunaUseCase.class
 com\laventurosa\infrastructure\repositories\PostgresConfiguracionAlarmaRepository.class
+com\laventurosa\adapters\ui\utils\AppAware.class
 com\laventurosa\usecases\dto\EstadoLagunaDTO.class
+com\laventurosa\usecases\services\ConfigurarAlarmaUseCase.class
 com\laventurosa\usecases\services\ConfigurarUmbralesUseCase.class

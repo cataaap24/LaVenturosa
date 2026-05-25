@@ -1,5 +1,6 @@
 package com.laventurosa.adapters.ui;
 
+import com.laventurosa.adapters.ui.utils.AppAware;
 import com.laventurosa.usecases.services.VenturosaApp;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -80,17 +81,8 @@ public class MainView {
 
             Object controller = loader.getController();
 
-            // AppEstadoLaguna
-            if (controller instanceof com.laventurosa.adapters.ui.panels.EstadoLagunaPanel) {
-                ((com.laventurosa.adapters.ui.panels.EstadoLagunaPanel) controller).setApp(this.app);
-            } else if (controller instanceof com.laventurosa.adapters.ui.panels.HistorialPanel) {
-                ((com.laventurosa.adapters.ui.panels.HistorialPanel) controller).setApp(this.app);
-            } else if (controller instanceof com.laventurosa.adapters.ui.panels.GenerarReportePanel) {
-                ((com.laventurosa.adapters.ui.panels.GenerarReportePanel) controller).setApp(this.app);
-            } else if (controller instanceof com.laventurosa.adapters.ui.panels.UmbralesDeVariablesPanel) {
-                ((com.laventurosa.adapters.ui.panels.UmbralesDeVariablesPanel) controller).setApp(this.app);
-            } else if (controller instanceof com.laventurosa.adapters.ui.panels.ConfigurarAlarmasPanel) {
-                ((com.laventurosa.adapters.ui.panels.ConfigurarAlarmasPanel) controller).setApp(this.app);
+            if (controller instanceof AppAware) {
+                ((AppAware) controller).setApp(this.app);
             }
 
             contentArea.getChildren().setAll(root);

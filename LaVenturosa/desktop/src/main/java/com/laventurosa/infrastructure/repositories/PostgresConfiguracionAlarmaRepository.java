@@ -19,7 +19,12 @@ public class PostgresConfiguracionAlarmaRepository implements ConfiguracionAlarm
     public ConfiguracionAlarma guardar(ConfiguracionAlarma config) {
         String sqlInstruction = "INSERT INTO configuracion_alarma (" +
                 "email_destinatario, nivel_notificacion, activo) " +
-                "VALUES (?, ?, ?) RETURNING id";
+                "VALUES (?, ?, ?) " +
+                "ON CONFLICT (email_destinatario)" +
+                "DO UPDATE SET " +
+                "nivel_notificacion = EXCLUDED.nivel_notificacion, " +
+                "activo = EXCLUDED.activo " +
+                "RETURNING id";
         try (Connection conn = DatabaseConfig.obtenerConexion();
              PreparedStatement stmt = conn.prepareStatement(sqlInstruction)) {
 

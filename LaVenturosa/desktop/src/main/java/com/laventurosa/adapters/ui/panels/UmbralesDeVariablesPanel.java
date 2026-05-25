@@ -1,18 +1,18 @@
 package com.laventurosa.adapters.ui.panels;
 
+import com.laventurosa.adapters.ui.utils.AppAware;
 import com.laventurosa.usecases.services.VenturosaApp;
 import com.laventurosa.usecases.dto.OperationResult;
 import com.laventurosa.adapters.ui.utils.UIUtils;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class UmbralesDeVariablesPanel {
+public class UmbralesDeVariablesPanel implements AppAware {
 
     private VenturosaApp app;
     private String variableSeleccionada;
@@ -72,6 +72,7 @@ public class UmbralesDeVariablesPanel {
         }
     }
 
+    @Override
     public void setApp(VenturosaApp app) {
         this.app = app;
     }
