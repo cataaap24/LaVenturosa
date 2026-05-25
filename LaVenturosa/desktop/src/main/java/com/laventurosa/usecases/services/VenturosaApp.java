@@ -1,12 +1,12 @@
 package com.laventurosa.usecases.services;
 
 import com.laventurosa.entities.ConfiguracionAlarma;
-import com.laventurosa.entities.Medicion;
 import com.laventurosa.infrastructure.cache.EstadoLagunaCache;
 import com.laventurosa.infrastructure.repositories.PostgresConfiguracionAlarmaRepository;
 import com.laventurosa.infrastructure.repositories.PostgresMedicionRepository;
 import com.laventurosa.infrastructure.repositories.PostgresUmbralRepository;
 import com.laventurosa.infrastructure.services.PdfReporteService;
+import com.laventurosa.usecases.dto.MedicionDTO;
 import com.laventurosa.usecases.dto.OperationResult;
 import com.laventurosa.usecases.ports.ConfiguracionAlarmaRepository;
 import com.laventurosa.usecases.ports.MedicionRepository;
@@ -27,7 +27,8 @@ public class VenturosaApp {
     private VisualizarEstadoLagunaUseCase visualizarEstadoLagunaUseCase;
     private ConfigurarUmbralesUseCase configurarUmbralesUseCase;
     private GenerarReporteUseCase generarReporteUseCase;
-    private ConfigurarAlarmaUseCase configurarAlarmaUseCase;
+    private AgregarNuevaConfiguracionAlarmaUseCase agregarNuevaConfiguracionAlarmaUseCase;
+    private ModificarEstadoConfiguracionAlarmaUseCase modificarEstadoConfiguracionAlarmaUseCase;
 
     public VenturosaApp() {
         inicializarComponentes();
@@ -44,7 +45,8 @@ public class VenturosaApp {
         this.consultarHistorialUseCase = new ConsultarHistorialUseCase(medicionRepository);
         this.configurarUmbralesUseCase = new ConfigurarUmbralesUseCase(umbralRepository);
         this.generarReporteUseCase = new GenerarReporteUseCase(medicionRepository, reporteService);
-        this.configurarAlarmaUseCase = new ConfigurarAlarmaUseCase(configuracionAlarmaRepository);
+        this.agregarNuevaConfiguracionAlarmaUseCase = new AgregarNuevaConfiguracionAlarmaUseCase(configuracionAlarmaRepository);
+        this.modificarEstadoConfiguracionAlarmaUseCase = new ModificarEstadoConfiguracionAlarmaUseCase(configuracionAlarmaRepository);
 
         System.out.println("[APP] Venturosa System inicializado con éxito.");
     }
@@ -90,12 +92,12 @@ public class VenturosaApp {
         return generarReporteUseCase.execute(ruta, desde, hasta);
     }
 
-    public OperationResult agregarNuevaConfiguracionAlarma(String email, String nivel_notificacion) {
-        return configurarAlarmaUseCase.execute(email, nivel_notificacion);
+    public OperationResult<ConfiguracionAlarma> agregarNuevaConfiguracionAlarma(String email, String nivel_notificacion) {
+        return agregarNuevaConfiguracionAlarmaUseCase.execute(email, nivel_notificacion);
     }
 
-    public OperationResult modificarEstadoConfiguracionAlarmaExistente(String email, String nivel_notificacion, boolean nuevoEstado) {
-        return configurarAlarmaUseCase.execute(email, nivel_notificacion, nuevoEstado);
+    public OperationResult<ConfiguracionAlarma> modificarEstadoConfiguracionAlarmaExistente(String email, String nivel_notificacion, boolean nuevoEstado) {
+        return modificarEstadoConfiguracionAlarmaUseCase.execute(email, nivel_notificacion, nuevoEstado);
     }
 
     /** Confirmar para uso
