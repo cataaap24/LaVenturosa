@@ -6,6 +6,7 @@ C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laven
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\infrastructure\cache\EstadoLagunaCache.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\utils\UIUtils.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\GenerarReportePanel.java
+C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\services\ModificarEstadoConfiguracionAlarmaUseCase.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\infrastructure\repositories\PostgresConfiguracionAlarmaRepository.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\entities\Variable.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\ConfigurarAlarmasPanel.java
@@ -29,5 +30,5 @@ C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laven
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\entities\EstadoCriticidad.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\dto\OperationResult.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\services\ConsultarHistorialUseCase.java
-C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\services\ConfigurarAlarmaUseCase.java
+C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\services\AgregarNuevaConfiguracionAlarmaUseCase.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\HistorialPanel.java
