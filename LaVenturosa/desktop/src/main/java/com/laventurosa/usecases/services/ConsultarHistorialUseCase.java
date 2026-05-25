@@ -31,7 +31,6 @@ public class ConsultarHistorialUseCase {
         List<MedicionDTO> dtos = mediciones.stream().map(m -> new MedicionDTO(
                         m.getId(),
                         m.getVariable().getNombre(),
-                        m.getVariable().getUnidad(),
                         m.getValor(),
                         m.getFechaHora(),
                         m.getEstado(),

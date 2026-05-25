@@ -11,7 +11,6 @@ com\laventurosa\adapters\ui\panels\GenerarReportePanel.class
 com\laventurosa\adapters\ui\panels\ConfigurarAlarmasPanel$2.class
 com\laventurosa\adapters\ui\utils\UIUtils.class
 com\laventurosa\infrastructure\cache\EstadoLagunaCache.class
-com\laventurosa\usecases\dto\ReporteDTO.class
 com\laventurosa\usecases\services\VisualizarEstadoLagunaUseCase.class
 com\laventurosa\infrastructure\repositories\PostgresConfiguracionAlarmaRepository.class
 com\laventurosa\adapters\ui\utils\AppAware.class

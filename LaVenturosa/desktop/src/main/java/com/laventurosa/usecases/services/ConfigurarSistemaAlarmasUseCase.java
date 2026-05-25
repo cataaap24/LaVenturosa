@@ -22,10 +22,10 @@ public class ConfigurarSistemaAlarmasUseCase {
     // Retorna el objeto ConfiguracionAlarma persistido dentro del OperationResult para que la UI tengan acceso inmediato a los datos sin necesidad de hacer una consulta adicional
     public OperationResult<ConfiguracionAlarma> agregar(String email, ConfiguracionAlarma.NivelNotificacion nivel) {
         if (email == null || email.isBlank()){
-            return OperationResult.error("El email no puede estar vacío.");
+            return OperationResult.fail("El email no puede estar vacío.");
         }
         if (!EMAIL_PATTERN.matcher(email.trim()).matches()){
-            return OperationResult.error("El email no tiene un formato válido.");
+            return OperationResult.fail("El email no tiene un formato válido.");
         }
         ConfiguracionAlarma config = new ConfiguracionAlarma(email.trim(), nivel);
         ConfiguracionAlarma guardada = configuracionAlarmaRepository.guardar(config);

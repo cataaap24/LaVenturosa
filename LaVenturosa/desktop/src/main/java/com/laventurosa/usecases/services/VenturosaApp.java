@@ -7,6 +7,7 @@ import com.laventurosa.infrastructure.repositories.PostgresConfiguracionAlarmaRe
 import com.laventurosa.infrastructure.repositories.PostgresMedicionRepository;
 import com.laventurosa.infrastructure.repositories.PostgresUmbralRepository;
 import com.laventurosa.infrastructure.services.PdfReporteService;
+import com.laventurosa.usecases.dto.MedicionDTO;
 import com.laventurosa.usecases.dto.OperationResult;
 import com.laventurosa.usecases.ports.ConfiguracionAlarmaRepository;
 import com.laventurosa.usecases.ports.MedicionRepository;
