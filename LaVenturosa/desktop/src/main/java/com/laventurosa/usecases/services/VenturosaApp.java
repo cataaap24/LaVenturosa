@@ -66,8 +66,12 @@ public class VenturosaApp {
         return OperationResult.fail("Error al intentar guardar la medición.");
     }
      **/
-
-    public List<Medicion> obtenerHistorial (OffsetDateTime desde, OffsetDateTime hasta){
+    
+    // Luego se delegará correctamente en el panel
+    public OperationResult<List<MedicionDTO>> obtenerHistorial(OffsetDateTime desde, OffsetDateTime hasta) {
+        if (consultarHistorialUseCase == null) {
+            return OperationResult.fail("El caso de uso de historial no está inicializado.");
+        }
         return consultarHistorialUseCase.execute(desde, hasta);
     }
 
