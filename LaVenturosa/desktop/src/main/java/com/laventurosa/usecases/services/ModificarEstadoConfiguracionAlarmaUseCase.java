@@ -4,12 +4,9 @@ import com.laventurosa.entities.ConfiguracionAlarma;
 import com.laventurosa.usecases.dto.OperationResult;
 import com.laventurosa.usecases.ports.ConfiguracionAlarmaRepository;
 
-import java.util.regex.Pattern;
-
 public class ModificarEstadoConfiguracionAlarmaUseCase {
     private ConfiguracionAlarmaRepository configuracionAlarmaRepository;
-    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[\\w._%+\\-]+@[\\w.\\-]+\\.[a-zA-Z]{2,}$");
-
+    
     public ModificarEstadoConfiguracionAlarmaUseCase(ConfiguracionAlarmaRepository configuracionAlarmaRepository) {
         this.configuracionAlarmaRepository = configuracionAlarmaRepository;
     }
