@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "author": "CATALINA PINEDA POSADA",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 38.4, "left": -4.76, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -51.4,
+      "left": 144,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -39.7, "left": -230.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": -49.3, "left": -144.2, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot3", "top": -39.7, "left": -326.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pot2:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "v86.4", "h115.2" ] ],
+    [ "pot3:GND", "esp:GND.1", "black", [ "v182.4", "h86.4" ] ],
+    [ "pot2:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot3:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "esp:32", "pot3:SIG", "purple", [ "h0" ] ],
+    [ "esp:33", "pot1:SIG", "limegreen", [ "h0" ] ],
+    [ "esp:34", "pot2:SIG", "yellow", [ "h0" ] ],
+    [ "btn1:2.l", "esp:GND.3", "green", [ "h0" ] ],
+    [ "btn1:1.l", "esp:12", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
