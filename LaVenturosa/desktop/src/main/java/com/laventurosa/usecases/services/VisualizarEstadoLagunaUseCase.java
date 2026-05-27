@@ -4,6 +4,8 @@ import com.laventurosa.entities.Medicion;
 import com.laventurosa.usecases.dto.EstadoLagunaDTO;
 import com.laventurosa.usecases.dto.OperationResult;
 import com.laventurosa.usecases.ports.MedicionRepository;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.util.Optional;
 
@@ -23,6 +25,37 @@ public class VisualizarEstadoLagunaUseCase {
 
         Medicion medicion = medicionOpt.get();
 
+        /*
+            List<Medicion> recientes = medicionRepository.obtenerPorRangoYPunto(
+            medicion.getFechaHora().minusHours(48),
+            medicion.getFechaHora(),
+            puntoMonitoreo);
+            
+            private static final int PUNTOS_GRAFICA = 20; // fuera del método --> en el UC
+            int inicio = Math.max(0, recientes.size() - PUNTOS_GRAFICA);
+            List<MedicionDTO> historialDTO = new ArrayList<>();
+            for (int i = inicio; i < recientes.size(); i++) {
+                Medicion med = recientes.get(i);
+                
+                historialDTO.add(new MedicionDTO(
+                    med.getId(),
+                    med.getVariable().getNombre(),
+                    med.getVariable().getUnidad(),
+                    med.getValor(),
+                    med.getFechaHora(),
+                    med.getEstado(),
+                    med.getPuntoMonitoreo()
+                ));
+            }
+
+            return OperationResult.ok("Ok", new EstadoLagunaDTO(
+            m.getValor(),
+            m.getVariable().getUnidad(),
+            m.getEstado(),
+            m.getFechaHora(),
+            m.getPuntoMonitoreo(),
+            historialDTO));
+        */
         EstadoLagunaDTO informe = new EstadoLagunaDTO(
                 medicion.getValor(),
                 medicion.getFechaHora(),
