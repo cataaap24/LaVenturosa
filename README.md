@@ -1,79 +1,125 @@
+
 # 🌊 Venturosa System
+
 ### Sistema de Monitoreo de Variables Fisicoquímicas
- 
-Venturosa System es una solución de ingeniería de software diseñada para el **monitoreo en tiempo real** y la **gestión de datos ambientales** de una laguna. El sistema permite a técnicos ambientales supervisar variables críticas como el pH y el oxígeno disuelto, configurar alertas y consultar históricos de datos para la toma de decisiones informadas.
- 
+
+Venturosa System es una solución de ingeniería de software diseñada para el **monitoreo en tiempo real**, **telemetría IoT** y la **gestión de datos ambientales** de una laguna. El sistema permite a técnicos ambientales supervisar variables críticas como el pH y el oxígeno disuelto, configurar alertas automatizadas y consultar históricos de datos para la toma de decisiones informadas.
+
 ---
- 
+
 ## Arquitectura del Proyecto
- 
-El proyecto está construido bajo los principios de **Clean Architecture** y **Arquitectura Hexagonal**, lo que permite un desacoplamiento total entre la lógica de negocio y la infraestructura.
- 
-| Capa | Descripción |
-|------|-------------|
-| **Entities (Dominio)** | Objetos de negocio puros: `Medicion`, `Variable`, `Umbral` |
-| **Use Cases (Ejemplos)** | Lógica de los procesos del sistema: `VisualizarEstado`, `ConsultarHistorial`, `ConfigurarUmbrales` |
-| **Ports (Puertos)** | Interfaces que definen la comunicación entre el núcleo y el exterior |
-| **Infrastructure (Adaptadores)** | Implementaciones reales: `PostgresMedicionRepository` y la interfaz gráfica en JavaFX |
- 
+
+El proyecto está construido bajo los principios de **Clean Architecture** y **Arquitectura Hexagonal**, lo que permite un desacoplamiento total entre la lógica de negocio, las interfaces de usuario y los dispositivos de captura de datos (Hardware).
+
+| Capa | Descripción | Ejemplos del Componente |
+| :--- | :--- | :--- |
+| **Entities (Dominio)** | Objetos de negocio puros e invariables. | `Medicion`, `Variable`, `Umbral` |
+| **Use Cases (Ejemplos)** | Lógica de los procesos y reglas de negocio del sistema. | `RegistrarMedicionUseCase`, `VisualizarEstado`, `ConsultarHistorial`, `ConfigurarUmbrales` |
+| **Ports (Puertos)** | Interfaces que definen la comunicación entre el núcleo y el exterior. | `MedicionRepository`, `NotificacionService` |
+| **Infrastructure (Adaptadores)** | Implementaciones reales de los puertos e interfaces del sistema. | `PostgresMedicionRepository`, `ResendNotificacionService`, `MedicionRestController` (API para IoT), Interfaz JavaFX |
+
 ---
- 
+
+## 📡 Módulo de Telemetría e Internet de las Cosas (IoT)
+
+El sistema integra un nodo sensor inalámbrico simulado en **Wokwi** basado en el microcontrolador **ESP32**, el cual actúa como una estación externa encargada de recopilar de manera remota los datos fisicoquímicos en tres puntos estratégicos de la laguna.
+
+### Especificaciones del Hardware
+* **Microcontrolador:** ESP32 (NodeMCU DevKit v4).
+* **Sensores Simulados:** 3 Potenciómetros lineales calibrados para mapear valores reales de pH (0.00 a 14.00).
+* **Puntos de Monitoreo Estáticos:**
+  * **P1:** Entrada de la Laguna (`Pin IO32`)
+  * **P2:** Zona de Producción (`Pin IO33`)
+  * **P3:** Caño de Salida (`Pin IO34`)
+* **Actuador:** Botón físico de interrupción manual (`Pin IO12`) con resistencia *Pull-Up* interna.
+
+### Flujo de Transmisión de Datos (Batch)
+1. **Sincronización Temporal:** Al encenderse, el ESP32 se conecta a la red inalámbrica y sincroniza su reloj interno con el servidor NTP de Google (`time.google.com`) bajo la zona horaria UTC-5 (Colombia).
+2. **Estrategia de Envío Automático:** El dispositivo está programado en base al reloj del sistema para realizar envíos automáticos en tres franjas horarias críticas: **06:00, 12:00 y 18:00**.
+3. **Mecanismo de Envío Manual:** El operario en campo puede forzar una transmisión síncrona inmediata en cualquier momento presionando el botón físico del nodo.
+4. **Serialización:** Las 3 lecturas son empaquetadas en un arreglo de objetos JSON e inyectadas mediante una petición HTTP POST segura (SSL/HTTPS con cliente seguro) directo al endpoint expuesto por el backend.
+
+> 🌐 **Simulación del Hardware en Vivo:** Puede ver, inspeccionar y ejecutar el circuito de telemetría directamente desde el navegador en el siguiente enlace:  
+>  **https://wokwi.com/projects/431478408378378241**
+
+---
+
 ## Funcionalidades Principales
- 
-| ID | Caso de Uso | Descripción |
-|----|-------------|-------------|
-| UC-01 | **Visualizar Estado de la Laguna** | Presentación visual de los datos más recientes, comparándolos con umbrales para determinar si el estado es *Normal*, *Advertencia* o *Crítico* |
-| UC-02 | **Consultar Historial** | Filtrado de mediciones por rangos de fecha y puntos de monitoreo específicos |
-| UC-03 | **Generar Reporte** | Generación de documentos que evidencian el comportamiento de las variables fisicoquímicas en un periodo determinado  |
-| UC-04 | **Configurar Umbrales** | Permite al técnico establecer los límites lógicos de las variables para cada punto de monitoreo |
-| UC-05 | **Configurar Sistema de Alarmas** | Gestión de notificaciones basadas en la criticidad de los datos |
- 
+
+| ID | Caso de Uso | Descripción | Componente Relacionado |
+|----|-------------|-------------|------------------------|
+| UC-01 | **Visualizar Estado de la Laguna** | Presentación visual de los datos más recientes, comparándolos con umbrales para determinar si el estado es *Normal*, *Advertencia* o *Crítico* | Interfaz JavaFX / API REST |
+| UC-02 | **Consultar Historial** | Filtrado de mediciones por rangos de fecha y puntos de monitoreo específicos | Base de Datos PostgreSQL |
+| UC-03 | **Generar Reporte** | Generación de documentos que evidencian el comportamiento de las variables fisicoquímicas en un periodo determinado  | Lógica del Sistema |
+| UC-04 | **Configurar Umbrales** | Permite al técnico establecer los límites lógicos de las variables para cada punto de monitoreo | Lógica de Dominio |
+| UC-05 | **Configurar Sistema de Alarmas** | Gestión de notificaciones automáticas por correo electrónico (vía API Resend) basadas en la criticidad extrema de los datos | Adaptador de Infraestructura |
+
 ---
- 
+
 ## Stack Tecnológico
- 
-- **Lenguaje:** Java 17+
-- **Interfaz Gráfica:** JavaFX con FXML
-- **Base de Datos:** PostgreSQL (alojado en Supabase)
-- **Gestión de Dependencias:** Maven
-- **Arquitectura:** Clean Architecture
- 
+
+- **Lenguajes de Programación:** Java 17+ (Backend/Escritorio) y C++ (Microcontrolador ESP32).
+- **Interfaz Gráfica:** JavaFX con FXML.
+- **Framework Core (API REST):** Spring Boot 3.2.0 (Desplegado en la nube a través de **Render**).
+- **Gestor de Notificaciones (Mailing):** API de Resend (`ResendNotificacionService`).
+- **Base de Datos:** PostgreSQL (Alojado remotamente en **Supabase**).
+- **Gestor de Dependencias:** Maven.
+- **Entorno de Simulación de Hardware:** Wokwi Simulator.
+
 ---
- 
-## Configuración de la Base de Datos
- 
+
+## Configuración del Sistema
+
+### Base de Datos 
 El sistema se conecta a una base de datos PostgreSQL en la nube. Para configurar la conexión, edite el archivo `src/main/resources/application.properties`:
- 
+
 ```properties
 db.url=jdbc:postgresql://db.supabase.co:5432/postgres
 db.user=tu_usuario
 db.password=tu_password
+
 ```
- 
+
+### Nodo Sensor ESP32
+
+El firmware embebido del microcontrolador se comunica con el servidor remoto a través del endpoint batch expuesto por el controlador REST:
+
+```cpp
+const char* ssid = "Wokwi-GUEST"; 
+const char* serverUrl = "https://laventurosa.onrender.com/api/mediciones/batch";
+
+```
+
 ---
- 
+
 ## Instalación y Ejecución
- 
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/tu-usuario/LaVenturosa.git
-   ```
-2. Asegúrate de tener el **PostgreSQL Driver** incluido en las dependencias de tu IDE.
-3. Configura tus credenciales en `application.properties`.
-4. Ejecuta la clase `Main` (o el punto de entrada de JavaFX) para iniciar la aplicación.
+
+1. **Clonar el repositorio:**
+```bash
+git clone https://github.com/tu-usuario/LaVenturosa.git
+
+```
+
+
+2. **Cargar el Firmware en el Hardware:** El código fuente del microcontrolador se encuentra en la carpeta `telemetria-esp32/telemetria-esp32.ino`. Puede ejecutarse físicamente o utilizando el archivo de conexiones `diagram.json` en el simulador Wokwi.
+3. Asegúrate de tener el **PostgreSQL Driver** incluido en las dependencias de tu IDE a través de Maven.
+4. Configura tus credenciales correspondientes en `application.properties`.
+5. Ejecuta la clase `Main` (o el punto de entrada de JavaFX) para iniciar la aplicación del sistema.
+
 ---
- 
+
 ## Equipo de Desarrollo
- 
+
 Desarrollado por el equipo de **Ingeniería de Sistemas** de la Universidad de los Llanos:
- 
+
 | Desarrollador | Rol |
-|---------------|-----|
+| --- | --- |
 | Martín Pineda Jaramillo | Desarrollador |
 | Juan David Navarro Bermúdez | Desarrollador |
 | Catalina Pineda Posada | Desarrolladora |
 | Kevin Arturo Panesso | Desarrollador |
- 
+
 > **Institución:** Universidad de los Llanos (Unillanos)
 > **Programa:** Ingeniería de Sistemas
-> **Proyecto:** Sistema de Monitoreo de Variables Fisicoquímicas en una Laguna
+> **Curso:** Ingeniería de Software I
+> **Proyecto:** Sistema de Gestión y Telemetría de Variables Fisicoquímicas en una Laguna
