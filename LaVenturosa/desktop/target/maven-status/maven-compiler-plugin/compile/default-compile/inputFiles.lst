@@ -31,4 +31,5 @@ C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laven
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\dto\OperationResult.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\services\ConsultarHistorialUseCase.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\usecases\services\AgregarNuevaConfiguracionAlarmaUseCase.java
+C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\infrastructure\cache\ConfiguracionAlarmaCache.java
 C:\Users\kevin\Documents\LaVenturosa\laventurosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\HistorialPanel.java
