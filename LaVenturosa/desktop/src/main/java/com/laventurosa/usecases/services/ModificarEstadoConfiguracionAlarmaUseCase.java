@@ -12,9 +12,9 @@ public class ModificarEstadoConfiguracionAlarmaUseCase {
     }
 
     //En caso de que se vaya a habilitar o inhabilitar una configuración {nuevoEstado: false para inhabilitar, true para habilitar}
-    public OperationResult<ConfiguracionAlarma> execute(String email, boolean nuevoEstado) {
+    public OperationResult<ConfiguracionAlarma> execute(String email, String nivel_notificacion, boolean nuevoEstado) {
         try {
-            ConfiguracionAlarma config = configuracionAlarmaRepository.obtenerConfiguracionAlarma(email);
+            ConfiguracionAlarma config = new ConfiguracionAlarma(email, ConfiguracionAlarma.NivelNotificacion.valueOf(nivel_notificacion));
             config.setActivo(nuevoEstado);
             ConfiguracionAlarma resultConfig = configuracionAlarmaRepository.guardar(config);
             if (resultConfig != null) {
