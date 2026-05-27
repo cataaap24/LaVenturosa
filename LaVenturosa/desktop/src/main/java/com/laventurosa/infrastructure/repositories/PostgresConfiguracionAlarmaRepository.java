@@ -62,7 +62,7 @@ public class PostgresConfiguracionAlarmaRepository implements ConfiguracionAlarm
 
     @Override
     public List<ConfiguracionAlarma> listarTodas() {
-        String sqlInstruction = "SELECT * FROM configuracion_alarma ORDER BY id ASC";
+        String sqlInstruction = "SELECT * FROM configuracion_alarma ORDER BY email_destinatario ASC";
         List<ConfiguracionAlarma> configuracionAlarmas = new ArrayList<>();
         try (Connection conn = DatabaseConfig.obtenerConexion();
             PreparedStatement stmt = conn.prepareStatement(sqlInstruction)) {
