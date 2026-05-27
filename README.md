@@ -5,6 +5,8 @@
 
 Venturosa System es una solución de ingeniería de software diseñada para el **monitoreo en tiempo real**, **telemetría IoT** y la **gestión de datos ambientales** de una laguna. El sistema permite a técnicos ambientales supervisar variables críticas como el pH y el oxígeno disuelto, configurar alertas automatizadas y consultar históricos de datos para la toma de decisiones informadas.
 
+*<ins>Para esta primera entegra, el sistema solo gestiona la variable de pH.</ins>*
+
 ---
 
 ## Arquitectura del Proyecto
