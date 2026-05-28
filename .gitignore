@@ -5,6 +5,7 @@ target/
 *.war
 *.ear
 **/target/
+*.lst
 
 # --- IntelliJ IDEA ---
 .idea/

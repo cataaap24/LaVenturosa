@@ -1,6 +1,9 @@
 package com.laventurosa.usecases.services;
 
 import com.laventurosa.entities.ConfiguracionAlarma;
+import com.laventurosa.entities.EstadoCriticidad;
+import com.laventurosa.entities.Medicion;
+import com.laventurosa.entities.Variable;
 import com.laventurosa.infrastructure.cache.ConfiguracionAlarmaCache;
 import com.laventurosa.infrastructure.cache.EstadoLagunaCache;
 import com.laventurosa.infrastructure.repositories.PostgresConfiguracionAlarmaRepository;
@@ -115,25 +118,4 @@ public class VenturosaApp {
     }
      **/
 
-     /** Testeo
-     public void insertarDatosDePrueba() {
-        try {
-            Medicion prueba1 = new Medicion(
-                    Variable.fromNombre("pH"),
-                    8.2,
-                    OffsetDateTime.now(),
-                    EstadoCriticidad.NORMAL,
-                    "Sensor 1"
-            );
-
-            Medicion resultado = medicionRepository.guardar(prueba1);
-
-            if (resultado != null) {
-                System.out.println("[TEST] Datos guardados exitosamente: ID " + resultado.getId());
-            }
-        } catch (Exception e) {
-            System.err.println("[TEST] No se pudo guardar porque no hay conexión a la DB.");
-        }
-    }
-      **/
 }
