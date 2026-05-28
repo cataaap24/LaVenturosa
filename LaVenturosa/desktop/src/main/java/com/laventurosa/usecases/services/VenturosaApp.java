@@ -1,6 +1,7 @@
 package com.laventurosa.usecases.services;
 
 import com.laventurosa.entities.ConfiguracionAlarma;
+import com.laventurosa.infrastructure.cache.ConfiguracionAlarmaCache;
 import com.laventurosa.infrastructure.cache.EstadoLagunaCache;
 import com.laventurosa.infrastructure.repositories.PostgresConfiguracionAlarmaRepository;
 import com.laventurosa.infrastructure.repositories.PostgresMedicionRepository;
@@ -20,6 +21,7 @@ public class VenturosaApp {
     private MedicionRepository medicionRepository;
     private MedicionRepository cacheMedicionRepository;
     private ConfiguracionAlarmaRepository configuracionAlarmaRepository;
+    private ConfiguracionAlarmaCache configuracionAlarmaCache;
     private UmbralRepository umbralRepository;
     private ReporteService reporteService;
 
@@ -38,6 +40,7 @@ public class VenturosaApp {
         this.medicionRepository = new PostgresMedicionRepository();
         this.cacheMedicionRepository = new EstadoLagunaCache(medicionRepository);
         this.configuracionAlarmaRepository = new PostgresConfiguracionAlarmaRepository();
+        this.configuracionAlarmaCache = new ConfiguracionAlarmaCache(configuracionAlarmaRepository);
         this.umbralRepository = new PostgresUmbralRepository();
         this.reporteService = new PdfReporteService();
 

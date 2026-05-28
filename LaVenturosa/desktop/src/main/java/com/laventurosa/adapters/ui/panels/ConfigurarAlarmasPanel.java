@@ -82,9 +82,9 @@ public class ConfigurarAlarmasPanel implements AppAware {
 
                     btn.setOnAction(e -> {
                         String email = config.getEmailDestinatario();
-                        String nivel_notificacion = String.valueOf(config.getNivelNotificacion());
+                        String nivel = config.getNivelNotificacion().name();
                         boolean estadoActual = config.isActivo();
-                        OperationResult<ConfiguracionAlarma> result = app.modificarEstadoConfiguracionAlarmaExistente(email, nivel_notificacion, !estadoActual);
+                        OperationResult<ConfiguracionAlarma> result = app.modificarEstadoConfiguracionAlarmaExistente(email, nivel, !estadoActual);
                         if (result.isSuccess()) {
                             config.setActivo(!estadoActual);
                             tablaCorreos.refresh();
