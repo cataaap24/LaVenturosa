@@ -14,7 +14,6 @@ import java.util.List;
 public class PdfReporteService implements ReporteService {
     public PdfReporteService() {}
 
-    // Colores por estado
     private static final BaseColor COLOR_NORMAL      = new BaseColor(234, 243, 222);
     private static final BaseColor COLOR_ADVERTENCIA = new BaseColor(250, 238, 218);
     private static final BaseColor COLOR_CRITICO     = new BaseColor(252, 235, 235);
@@ -28,8 +27,10 @@ public class PdfReporteService implements ReporteService {
     @Override
     public void generarReporteMediciones(List<Medicion> mediciones, String rutaSalida) {
         Document doc = new Document(PageSize.A4.rotate(), 36, 36, 36, 36);
-        try {
-            PdfWriter.getInstance(doc, new FileOutputStream(rutaSalida));
+        
+        // Usamos try-with-resources para asegurar que el FileOutputStream se cierre SIEMPRE, pase lo que pase
+        try (FileOutputStream fos = new FileOutputStream(rutaSalida)) {
+            PdfWriter.getInstance(doc, fos);
             doc.open();
 
             // ── Fuentes ──────────────────────────────────────────────
@@ -106,9 +107,13 @@ public class PdfReporteService implements ReporteService {
             System.out.println("[PDF] Reporte generado en: " + rutaSalida);
 
         } catch (Exception e) {
-            throw new ExceptionConverter(e);
+            // Lanzamos una RuntimeException estándar para que el Caso de Uso la capture en su bloque catch
+            throw new RuntimeException("Fallo en la estructura o escritura del PDF", e);
         } finally {
-            doc.close();
+            // El documento siempre debe cerrarse para liberar la memoria de iText
+            if (doc.isOpen()) {
+                doc.close();
+            }
         }
     }
 
