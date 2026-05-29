@@ -1,0 +1,148 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Página-1" id="kRkeLPwvc_Y2IPyABji_">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-58" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="750" width="1227.5" x="220" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-14" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" value=": &lt;b&gt;&lt;u&gt;Alarm Configuration Class&lt;/u&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="1147.5" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-23" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Técnico ambiental" vertex="1">
+          <mxGeometry height="60" width="30" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-24" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value=": &lt;b&gt;&lt;u&gt;UI Class&lt;/u&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="100" x="320" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-54" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" source="F_lZDwP5ktHYbsdXXGGQ-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" target="F_lZDwP5ktHYbsdXXGGQ-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-25" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value=": &lt;b&gt;&lt;u&gt;Alarm Configuration Controller Class&lt;/u&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="90" width="80" x="740" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-26" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="630" width="15" x="7.5" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-27" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" source="F_lZDwP5ktHYbsdXXGGQ-26" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="7.5" y="110" as="sourcePoint" />
+            <mxPoint x="15" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-28" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="520" width="15" x="370" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-30" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" source="F_lZDwP5ktHYbsdXXGGQ-26" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=1.019;exitY=0.081;exitDx=0;exitDy=0;exitPerimeter=0;" target="F_lZDwP5ktHYbsdXXGGQ-28" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="22.5" y="160" as="sourcePoint" />
+            <mxPoint x="72.5" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-31" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1: Da clic en &quot;Agregar nuevo correo eléctronico&quot;" vertex="1">
+          <mxGeometry height="30" width="170" x="120" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-32" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0.986;exitY=0.059;exitDx=0;exitDy=0;exitPerimeter=0;endFill=0;startArrow=classic;startFill=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="22" y="250" as="sourcePoint" />
+            <mxPoint x="370" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-33" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2: Carga panel con campos para agregar el nuevo correo y seleccionar prioridad de alarmas" vertex="1">
+          <mxGeometry height="30" width="200" x="105" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-34" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0.986;exitY=0.059;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="22" y="330" as="sourcePoint" />
+            <mxPoint x="370" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-37" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3: Ingresa nuevo correo electrónico y selecciona una prioridad de alarmas" vertex="1">
+          <mxGeometry height="30" width="150" x="120" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-38" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4: Solicitar agregar nueva&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;configuración con los datos ingresados previamente&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="484" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-39" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="230" width="15" x="772.5" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-40" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0.986;exitY=0.059;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="385" y="370" as="sourcePoint" />
+            <mxPoint x="772.5" y="371.05000000000274" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-41" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="90" width="15" x="1180" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-42" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0.986;exitY=0.059;exitDx=0;exitDy=0;exitPerimeter=0;" target="F_lZDwP5ktHYbsdXXGGQ-41" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="787.5" y="430" as="sourcePoint" />
+            <mxPoint x="1175" y="431.05000000000274" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-44" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="5: Generar persistencia de la nueva configuración" vertex="1">
+          <mxGeometry height="30" width="180" x="911" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-45" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0.986;exitY=0.059;exitDx=0;exitDy=0;exitPerimeter=0;startArrow=classic;startFill=1;endFill=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="787.5" y="520" as="sourcePoint" />
+            <mxPoint x="1180" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-46" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="6: ok" vertex="1">
+          <mxGeometry height="30" width="180" x="911" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-47" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;endFill=0;startArrow=classic;startFill=1;" target="F_lZDwP5ktHYbsdXXGGQ-39" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="385" y="600" as="sourcePoint" />
+            <mxPoint x="772.5" y="601.0500000000027" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-49" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="7: Enviar mensaje &quot;Nueva configuración de alarma agregada correctamente&quot;" vertex="1">
+          <mxGeometry height="30" width="180" x="497" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-50" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0.986;exitY=0.059;exitDx=0;exitDy=0;exitPerimeter=0;endFill=0;startArrow=classic;startFill=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="22.5" y="690" as="sourcePoint" />
+            <mxPoint x="370.5" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-51" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="8: Mostrar en una ventana emergente el mensaje &quot;Nueva configuración de alarma agregada correctamente&quot;" vertex="1">
+          <mxGeometry height="30" width="230" x="90" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-52" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" source="F_lZDwP5ktHYbsdXXGGQ-28" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="377.38" y="120" as="sourcePoint" />
+            <mxPoint x="377.38" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-53" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="377" y="750" as="sourcePoint" />
+            <mxPoint x="377.19000000000005" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-55" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="780" y="750" as="sourcePoint" />
+            <mxPoint x="779.77" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-56" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" target="F_lZDwP5ktHYbsdXXGGQ-41">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1186.97" y="90" as="sourcePoint" />
+            <mxPoint x="1186.97" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-57" edge="1" parent="F_lZDwP5ktHYbsdXXGGQ-58" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1187" y="750" as="sourcePoint" />
+            <mxPoint x="1186.97" y="525" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
