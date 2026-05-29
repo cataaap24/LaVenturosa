@@ -20,30 +20,42 @@ public class GenerarReporteUseCase {
 
     public OperationResult execute(String ruta, OffsetDateTime desde, OffsetDateTime hasta) {
         if (ruta == null || ruta.isBlank()) {
-            return OperationResult.fail("Error, ruta invalida");
+            return OperationResult.fail("Error: La ruta de destino no puede estar vacía.");
         }
+        if ((desde == null && hasta != null) || (desde != null && hasta == null)) {
+            return OperationResult.fail("Error: Debe especificar ambas fechas (desde/hasta) o ninguna para el último mes.");
+        }
+
+        if (desde != null && hasta != null) {
+            OffsetDateTime ahora = OffsetDateTime.now(ZoneOffset.UTC);
+            if (hasta.isAfter(ahora.plusMinutes(1))) {
+                return OperationResult.fail("Error: La fecha final no puede ser superior a la fecha actual.");
+            }
+            
+            if (desde.isAfter(hasta)) {
+                return OperationResult.fail("Error: La fecha de inicio no puede ser posterior a la fecha final.");
+            }
+        }
+
+        List<Medicion> mediciones;
         try {
-            List<Medicion> mediciones;
-            if (desde == null && hasta == null) {
+            if (desde == null) {
                 mediciones = medicionRepository.obtenerUltimoMes();
-            }
-            else if (desde != null && hasta != null) {
-                //Verificar que la fecha y hora 'hasta' no sobrepase la fecha y hora actual
-                OffsetDateTime fechahora_actual = OffsetDateTime.now(ZoneOffset.UTC);
-                if (hasta.isAfter(fechahora_actual)) {
-                    return OperationResult.fail("Error, la fecha especificada es superior a la fecha actual");
-                } //Verificar que la fecha desde no este después de la fecha de inicio
-                else if (desde.isAfter(hasta)) {
-                    return OperationResult.fail("Error, la fecha de inicio es superior a la fecha del final");
-                }
-                mediciones = medicionRepository.obtenerPorRango(desde, hasta);
             } else {
-                return OperationResult.fail("Error, datos de fecha inválidos");
+                mediciones = medicionRepository.obtenerPorRango(desde, hasta);
             }
-            reporteService.generarReporteMediciones(mediciones, ruta);
-            return OperationResult.ok("Reporte generado correctamente");
         } catch (Exception e) {
-            return OperationResult.fail("Error al generar el reporte:" + e.getMessage());
+            return OperationResult.fail("Error interno: No se pudieron consultar las mediciones de la laguna.");
+        }
+        if (mediciones.isEmpty()) {
+            return OperationResult.fail("No se encontraron mediciones en el rango seleccionado para generar el reporte.");
+        }
+
+        try {
+            reporteService.generarReporteMediciones(mediciones, ruta);
+            return OperationResult.ok("Reporte generado correctamente.");
+        } catch (Exception e) {
+            return OperationResult.fail("Error interno: El sistema no pudo escribir o guardar el archivo del reporte.");
         }
     }
 }
