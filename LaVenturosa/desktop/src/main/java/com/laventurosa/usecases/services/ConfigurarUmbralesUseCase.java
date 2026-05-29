@@ -13,18 +13,21 @@ public class ConfigurarUmbralesUseCase {
     }
 
     public OperationResult execute(String punto, String nombreVar, double minC, double minA, double maxA, double maxC) {
-
+        Umbral nuevoUmbral;
         try {
             Variable variable = Variable.fromNombre(nombreVar);
 
-            Umbral nuevoUmbral = new Umbral(variable, punto, minC, minA, maxA, maxC);
-
+            nuevoUmbral = new Umbral(variable, punto, minC, minA, maxA, maxC);
+            } catch (IllegalArgumentException | NullPointerException e) {
+            // Logica de negocio
+            return OperationResult.fail("Datos de configuración inválidos: " + e.getMessage());
+        }
+        // Persistencia fuera del catch de negocio
+        try {
             umbralRepository.guardar(nuevoUmbral);
-
             return OperationResult.ok("Umbrales actualizados con éxito.");
-
-        } catch (IllegalArgumentException e) {
-            return OperationResult.fail(e.getMessage());
+        } catch (Exception e) {
+            return OperationResult.fail("Error: No se pudo guardar la configuración.");
         }
     }
 }
