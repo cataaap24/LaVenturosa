@@ -1,4 +1,4 @@
-package com.laventurosa.infraestructure.services;
+package com.laventurosa.usecases.services;
 
 public class AgregarNuevaConfiguracionAlarmaUseCaseTest {
 }
