@@ -1,0 +1,25 @@
+<mxfile host="Electron">
+  <diagram name="Página-1" id="9hBwRN-vD4sOvPo-40FH">
+    <mxGraphModel dx="1030" dy="603" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="24yZ79QioBRkU-SW-2Tg-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Técnico&lt;div&gt;ambiental&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="30" x="180" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="24yZ79QioBRkU-SW-2Tg-7" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Consultar historial" vertex="1">
+          <mxGeometry height="56" width="190" x="280" y="562" as="geometry" />
+        </mxCell>
+        <mxCell id="24yZ79QioBRkU-SW-2Tg-9" edge="1" parent="1" source="24yZ79QioBRkU-SW-2Tg-2" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="24yZ79QioBRkU-SW-2Tg-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="210" y="710" as="sourcePoint" />
+            <mxPoint x="349.9999999999998" y="748.0000000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fJj4i8zeURJAiLXO4I2k-1" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=130;height=20;" value="Venturosa System" vertex="1">
+          <mxGeometry height="120" width="230" x="260" y="530" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
