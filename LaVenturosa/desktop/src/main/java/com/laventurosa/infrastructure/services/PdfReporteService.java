@@ -11,11 +11,7 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-/**
- * CAPA: Infrastructure — Servicio
- * * Implementación de ReporteService combinando el diseño moderno, cálculo de estadísticas
- * y colores alternos, manteniendo la firma original con List<Medicion> y try-with-resources.
- */
+
 public class PdfReporteService implements ReporteService {
 
     public PdfReporteService() {}
