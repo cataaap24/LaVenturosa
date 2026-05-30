@@ -50,7 +50,6 @@ public class PdfReporteService implements ReporteService {
 
     @Override
     public void generarReporteMediciones(List<Medicion> mediciones, String rutaSalida) {
-        // Mantenemos orientación vertical A4 estándar del diseño nuevo
         Document doc = new Document(PageSize.A4, 36, 36, 36, 36);
         
         try (FileOutputStream fos = new FileOutputStream(rutaSalida)) {
@@ -135,7 +134,7 @@ public class PdfReporteService implements ReporteService {
     private void agregarTabla(Document doc, List<Medicion> mediciones) throws DocumentException {
         PdfPTable tabla = new PdfPTable(5);
         tabla.setWidthPercentage(100);
-        tabla.setWidths(new float[]{22f, 25f, 20f, 13f, 20f}); // Ajuste leve de columnas para optimizar espacio
+        tabla.setWidths(new float[]{22f, 25f, 20f, 13f, 20f}); 
 
         // Cabeceras
         List<String> cabeceras = List.of("Fecha y Hora (COT)", "Punto de monitoreo", "Variable", "Valor", "Estado");
@@ -160,14 +159,12 @@ public class PdfReporteService implements ReporteService {
                     .format(FORMATO_FECHA);
 
             String variableConUnidad = m.getVariable() != null ? m.getVariable().getNombre() : "N/A";
-            // Si tu entidad Variable maneja unidad (ej: m.getVariable().getUnidad()) puedes concatenarla aquí de forma dinámica
-
+         
             agregarCelda(tabla, fechaCOT, bg, font, Element.ALIGN_CENTER);
             agregarCelda(tabla, m.getPuntoMonitoreo(), bg, font, Element.ALIGN_LEFT);
             agregarCelda(tabla, variableConUnidad, bg, font, Element.ALIGN_LEFT);
             agregarCelda(tabla, String.format("%.2f", m.getValor()), bg, font, Element.ALIGN_CENTER);
             
-            // Columna de Estado (Usa name() o getEtiqueta() si tu enum viejo lo tiene)
             String textoEstado = m.getEstado() != null ? m.getEstado().name() : "NORMAL";
             agregarCelda(tabla, textoEstado, bg, font, Element.ALIGN_CENTER);
 
