@@ -51,32 +51,24 @@ public class PdfReporteService implements ReporteService {
     @Override
     public void generarReporteMediciones(List<Medicion> mediciones, String rutaSalida) {
         Document doc = new Document(PageSize.A4, 36, 36, 36, 36);
-        
+
         try (FileOutputStream fos = new FileOutputStream(rutaSalida)) {
             PdfWriter.getInstance(doc, fos);
             doc.open();
 
-            // 1. Encabezado
             agregarEncabezado(doc, mediciones.size());
-
-            // 2. Estadísticas Dinámicas
             agregarEstadisticas(doc, mediciones);
-
-            // 3. Tabla de Mediciones
             agregarTabla(doc, mediciones);
-
-            // 4. Pie de Página
             agregarPie(doc);
+
+            doc.close(); // ← movido aquí, ANTES de que fos se cierre
 
             System.out.println("[PDF] Reporte generado exitosamente en: " + rutaSalida);
 
         } catch (Exception e) {
             throw new RuntimeException("Fallo en la estructura o escritura del PDF", e);
-        } finally {
-            if (doc.isOpen()) {
-                doc.close();
-            }
         }
+        // ← el finally con doc.close() se elimina
     }
 
     private void agregarEncabezado(Document doc, int total) throws DocumentException {
@@ -91,10 +83,10 @@ public class PdfReporteService implements ReporteService {
 
         String fechaGen = java.time.OffsetDateTime.now(ZoneOffset.of("-05:00"))
                 .format(FORMATO_FECHA) + " (COT)";
-        
+
         doc.add(new Paragraph("Generado: " + fechaGen, F_INFO));
         doc.add(new Paragraph("Total mediciones: " + total, F_INFO));
-        
+
         Paragraph espacio = new Paragraph(" ");
         espacio.setSpacingAfter(5);
         doc.add(espacio);
@@ -102,12 +94,12 @@ public class PdfReporteService implements ReporteService {
 
     private void agregarEstadisticas(Document doc, List<Medicion> mediciones) throws DocumentException {
         List<String> puntos = List.of("Laguna-Entrada", "Laguna-Produccion", "Laguna-Canio");
-        
+
         for (String punto : puntos) {
             List<Medicion> filtrado = mediciones.stream()
                     .filter(m -> m.getPuntoMonitoreo() != null && m.getPuntoMonitoreo().equals(punto))
                     .toList();
-            
+
             if (filtrado.isEmpty()) continue;
 
             double prom = filtrado.stream().mapToDouble(Medicion::getValor).average().orElse(0);
@@ -117,15 +109,15 @@ public class PdfReporteService implements ReporteService {
 
             Paragraph pEstadistica = new Paragraph(
                     punto
-                    + "  —  Promedio: " + String.format("%.2f", prom)
-                    + "  |  Mín: "      + String.format("%.2f", min)
-                    + "  |  Máx: "      + String.format("%.2f", max)
-                    + "  |  Alertas: "  + alertas,
+                            + "  —  Promedio: " + String.format("%.2f", prom)
+                            + "  |  Mín: "      + String.format("%.2f", min)
+                            + "  |  Máx: "      + String.format("%.2f", max)
+                            + "  |  Alertas: "  + alertas,
                     F_INFO_I);
-            
+
             doc.add(pEstadistica);
         }
-        
+
         Paragraph espacio = new Paragraph(" ");
         espacio.setSpacingAfter(10);
         doc.add(espacio);
@@ -134,7 +126,7 @@ public class PdfReporteService implements ReporteService {
     private void agregarTabla(Document doc, List<Medicion> mediciones) throws DocumentException {
         PdfPTable tabla = new PdfPTable(5);
         tabla.setWidthPercentage(100);
-        tabla.setWidths(new float[]{22f, 25f, 20f, 13f, 20f}); 
+        tabla.setWidths(new float[]{22f, 25f, 20f, 13f, 20f});
 
         // Cabeceras
         List<String> cabeceras = List.of("Fecha y Hora (COT)", "Punto de monitoreo", "Variable", "Valor", "Estado");
@@ -159,12 +151,12 @@ public class PdfReporteService implements ReporteService {
                     .format(FORMATO_FECHA);
 
             String variableConUnidad = m.getVariable() != null ? m.getVariable().getNombre() : "N/A";
-         
+
             agregarCelda(tabla, fechaCOT, bg, font, Element.ALIGN_CENTER);
             agregarCelda(tabla, m.getPuntoMonitoreo(), bg, font, Element.ALIGN_LEFT);
             agregarCelda(tabla, variableConUnidad, bg, font, Element.ALIGN_LEFT);
             agregarCelda(tabla, String.format("%.2f", m.getValor()), bg, font, Element.ALIGN_CENTER);
-            
+
             String textoEstado = m.getEstado() != null ? m.getEstado().name() : "NORMAL";
             agregarCelda(tabla, textoEstado, bg, font, Element.ALIGN_CENTER);
 
@@ -178,7 +170,7 @@ public class PdfReporteService implements ReporteService {
         Paragraph espacio = new Paragraph(" ");
         espacio.setSpacingBefore(15);
         doc.add(espacio);
-        
+
         Paragraph pie = new Paragraph(
                 "Documento generado automáticamente por el Sistema de Monitoreo — Laguna La Venturosa.", F_PIE);
         pie.setAlignment(Element.ALIGN_CENTER);
