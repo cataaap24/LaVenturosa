@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Página-1" id="PhvUWl1KiNOqqbeH0J59">
-    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1369" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -17,7 +17,7 @@
             <mxPoint x="235" y="640" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yaFltYUnRs4YZfiddrAs-3" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value="&lt;u&gt;&lt;b&gt;:PanelStateUI&lt;/b&gt;&lt;/u&gt;&lt;div&gt;&lt;u&gt;&lt;b&gt;Class&lt;/b&gt;&lt;/u&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="yaFltYUnRs4YZfiddrAs-3" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value="&lt;u&gt;&lt;b&gt;:EstadoLaguna&lt;br&gt;&lt;/b&gt;&lt;/u&gt;&lt;div&gt;&lt;u&gt;&lt;b&gt;Panel&lt;/b&gt;&lt;/u&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="80" width="130" x="170" y="60" as="geometry" />
         </mxCell>
         <mxCell id="yaFltYUnRs4YZfiddrAs-15" edge="1" parent="1" source="yaFltYUnRs4YZfiddrAs-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;dashPattern=8 8;">
@@ -26,7 +26,7 @@
             <mxPoint x="460" y="650.7999877929688" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yaFltYUnRs4YZfiddrAs-7" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value="&lt;u&gt;&lt;b&gt;:VisualizeLagoonStatusUseCase&lt;/b&gt;&lt;/u&gt;&lt;div&gt;&lt;u&gt;&lt;b&gt;Class&lt;/b&gt;&lt;/u&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="yaFltYUnRs4YZfiddrAs-7" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value="&lt;b&gt;&lt;u&gt;:VisualizarEstadoLaguna&lt;/u&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;UseCase&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="110" width="200" x="360" y="45" as="geometry" />
         </mxCell>
         <mxCell id="yaFltYUnRs4YZfiddrAs-16" edge="1" parent="1" source="yaFltYUnRs4YZfiddrAs-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;dashPattern=8 8;">
@@ -34,7 +34,7 @@
             <mxPoint x="660" y="643.2000122070312" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yaFltYUnRs4YZfiddrAs-8" parent="1" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" value="&lt;u&gt;&lt;b&gt;:Lagoon&lt;/b&gt;&lt;/u&gt;&lt;div&gt;&lt;u&gt;&lt;b&gt;Class&lt;/b&gt;&lt;/u&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="yaFltYUnRs4YZfiddrAs-8" parent="1" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" value="&lt;u&gt;&lt;b&gt;:Variable&lt;br&gt;&lt;/b&gt;&lt;/u&gt;" vertex="1">
           <mxGeometry height="80" width="80" x="620" y="60" as="geometry" />
         </mxCell>
         <mxCell id="yaFltYUnRs4YZfiddrAs-17" edge="1" parent="1" source="yaFltYUnRs4YZfiddrAs-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;endArrow=none;endFill=0;">
@@ -42,7 +42,7 @@
             <mxPoint x="805" y="640" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yaFltYUnRs4YZfiddrAs-9" parent="1" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" value="&lt;b&gt;&lt;u&gt;:Measurement&lt;/u&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;Class&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="yaFltYUnRs4YZfiddrAs-9" parent="1" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" value="&lt;b&gt;&lt;u&gt;:Medicion&lt;/u&gt;&lt;/b&gt;" vertex="1">
           <mxGeometry height="90" width="95" x="757.5" y="60" as="geometry" />
         </mxCell>
         <mxCell id="yaFltYUnRs4YZfiddrAs-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
