@@ -24,6 +24,7 @@ C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laven
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\MainView.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\infrastructure\cache\UmbralCache.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\dto\EstadoLagunaDTO.java
+C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\services\EliminarConfiguracionAlarmaUseCase.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\services\ConfigurarUmbralesUseCase.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\ports\ConfiguracionAlarmaRepository.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\ports\UmbralRepository.java
@@ -35,4 +36,5 @@ C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laven
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\services\ConsultarHistorialUseCase.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\services\AgregarNuevaConfiguracionAlarmaUseCase.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\infrastructure\cache\ConfiguracionAlarmaCache.java
+C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\dto\ConfiguracionAlarmaDTO.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\HistorialPanel.java

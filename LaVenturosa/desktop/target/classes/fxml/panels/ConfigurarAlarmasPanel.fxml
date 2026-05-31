@@ -32,7 +32,7 @@
                                 <TableColumn fx:id="colCorreo" prefWidth="250.0" text="Email destinatario" />
                                 <TableColumn fx:id="colFrecuencia" prefWidth="200.0" text="Nivel de notificación" />
                                 <TableColumn fx:id="colActivo" prefWidth="150.0" text="Activo" />
-                                <TableColumn fx:id="colAcciones" prefWidth="150.0" />
+                                <TableColumn fx:id="colAcciones" prefWidth="150.0" text="Acciones" />
                             </columns>
                             <columnResizePolicy>
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

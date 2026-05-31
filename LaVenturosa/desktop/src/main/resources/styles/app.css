@@ -90,3 +90,53 @@
 .btn-guardar:hover {
     -fx-background-color: #4D7FFF;
 }
+
+.table-view {
+    -fx-border-color: #336BFF; /* Borde exterior azul que coincide con tus botones */
+    -fx-border-width: 2px;
+    -fx-background-color: white;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #2447A4; /* Azul oscuro corporativo que ya usas en tus títulos */
+    -fx-background-insets: 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 40px; /* Altura de la cabecera */
+    -fx-border-width: 0; /* Quita las líneas de separación en la cabecera si las hubiera */
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER;
+}
+
+.table-view .table-cell {
+    -fx-alignment: CENTER; /* Centra el contenido en todas las columnas como en el prototipo */
+    -fx-font-size: 13px;
+    -fx-text-fill: #333333;
+    -fx-border-color: transparent; /* Quita las líneas verticales entre columnas */
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-cell-size: 35px; /* Altura de cada fila para que respire el texto */
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #E8E8E8; 
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #C3DEF8; /* Usa el mismo azul claro de tus text-fields */
+}
+
+.table-view .table-row-cell:selected .table-cell {
+    -fx-text-fill: black; /* Evita que el texto se vuelva blanco y se pierda */
+}
