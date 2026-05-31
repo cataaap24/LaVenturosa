@@ -13,6 +13,7 @@ import com.laventurosa.infrastructure.services.PdfReporteService;
 import com.laventurosa.usecases.dto.EstadoLagunaDTO;
 import com.laventurosa.usecases.dto.MedicionDTO;
 import com.laventurosa.usecases.dto.OperationResult;
+import com.laventurosa.usecases.dto.UmbralDTO;
 import com.laventurosa.usecases.ports.ConfiguracionAlarmaRepository;
 import com.laventurosa.usecases.ports.MedicionRepository;
 import com.laventurosa.usecases.ports.ReporteService;
@@ -35,6 +36,7 @@ public class VenturosaApp {
     private GenerarReporteUseCase generarReporteUseCase;
     private AgregarNuevaConfiguracionAlarmaUseCase agregarNuevaConfiguracionAlarmaUseCase;
     private ModificarEstadoConfiguracionAlarmaUseCase modificarEstadoConfiguracionAlarmaUseCase;
+    private ConsultarUmbralActual consultarUmbralActual;
 
     public VenturosaApp() {
         inicializarComponentes();
@@ -54,6 +56,7 @@ public class VenturosaApp {
         this.generarReporteUseCase = new GenerarReporteUseCase(medicionRepository, reporteService);
         this.agregarNuevaConfiguracionAlarmaUseCase = new AgregarNuevaConfiguracionAlarmaUseCase(configuracionAlarmaRepository);
         this.modificarEstadoConfiguracionAlarmaUseCase = new ModificarEstadoConfiguracionAlarmaUseCase(configuracionAlarmaRepository);
+        this.consultarUmbralActual= new ConsultarUmbralActual(umbralRepository);
 
         System.out.println("[APP] Venturosa System inicializado con éxito.");
     }
@@ -92,9 +95,15 @@ public class VenturosaApp {
         return modificarEstadoConfiguracionAlarmaUseCase.execute(email, nivel_notificacion, nuevoEstado);
     }
 
+
+    public OperationResult<UmbralDTO> obtenerUmbralesActuales(String punto, String variable) {
+        return consultarUmbralActual.execute(punto,variable);
+    }
+
     /** Confirmar para uso
-    public Optional<Umbral> obtenerUmbralesActuales(String punto, String variable) {
-        return umbralRepository.obtenerPorPuntoYVariable(punto, variable);
+    public void apagarSistema() {
+        DatabaseConfig.cerrarConexion();
     }
      **/
+
 }
