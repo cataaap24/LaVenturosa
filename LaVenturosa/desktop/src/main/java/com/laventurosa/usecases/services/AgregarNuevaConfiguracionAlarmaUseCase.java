@@ -24,6 +24,8 @@ public class AgregarNuevaConfiguracionAlarmaUseCase {
         if (!EMAIL_PATTERN.matcher(email.trim()).matches()) {
             return OperationResult.fail("El email no tiene un formato válido.");
         }
+        //Validar que el correo no este ya registrado
+        if (configuracionAlarmaRepository.obtenerConfiguracionAlarma(email) != null) return OperationResult.fail("Error: este correo ya existe");
         try {
             ConfiguracionAlarma config = new ConfiguracionAlarma(email, ConfiguracionAlarma.NivelNotificacion.valueOf(nivel_notificacion));
             ConfiguracionAlarma resultConfig = configuracionAlarmaRepository.guardar(config);
