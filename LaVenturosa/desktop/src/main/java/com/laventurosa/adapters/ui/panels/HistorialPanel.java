@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+
 import com.laventurosa.adapters.ui.utils.*;
 
 import java.time.OffsetDateTime;
@@ -18,9 +19,12 @@ import java.util.List;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.control.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class HistorialPanel implements AppAware {
 
@@ -54,6 +58,23 @@ public class HistorialPanel implements AppAware {
     public void initialize() {
         tablaHistorial.setItems(observableList);
         colFecha.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getFechaHora()));
+
+        //Formatear a hora militar
+        DateTimeFormatter formateador = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+        colFecha.setCellFactory(col -> new TableCell<MedicionDTO, OffsetDateTime>() {
+            @Override
+            protected void updateItem(OffsetDateTime fecha, boolean empty) {
+                super.updateItem(fecha, empty);
+        
+                if (empty || fecha == null) {
+                    setText(null);
+                } else {
+                    setText(fecha.format(formateador));
+                }
+            }
+        });
+
         colPuntoMonitoreo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getPuntoMonitoreo()));
         colVariable.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getVariable()));
         colValue.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getValor()));
