@@ -61,7 +61,7 @@ public class PdfReporteService implements ReporteService {
             agregarTabla(doc, mediciones);
             agregarPie(doc);
 
-            doc.close(); // ← movido aquí, ANTES de que fos se cierre
+            doc.close(); 
 
             System.out.println("[PDF] Reporte generado exitosamente en: " + rutaSalida);
 
