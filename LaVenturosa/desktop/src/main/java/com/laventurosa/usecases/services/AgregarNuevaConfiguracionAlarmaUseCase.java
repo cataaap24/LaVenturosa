@@ -2,6 +2,7 @@ package com.laventurosa.usecases.services;
 
 import com.laventurosa.entities.ConfiguracionAlarma;
 import com.laventurosa.usecases.dto.OperationResult;
+import com.laventurosa.usecases.dto.ConfiguracionAlarmaDTO;
 import com.laventurosa.usecases.ports.ConfiguracionAlarmaRepository;
 
 import java.util.regex.Pattern;
@@ -16,7 +17,7 @@ public class AgregarNuevaConfiguracionAlarmaUseCase {
     }
 
     //En caso de que se vaya a agregar una nueva configuración
-    public OperationResult<ConfiguracionAlarma> execute(String email, String nivel_notificacion) {
+    public OperationResult<ConfiguracionAlarmaDTO> execute(String email, String nivel_notificacion) {
         if (email == null || email.isBlank() || nivel_notificacion.isBlank()) {
             return OperationResult.fail("Campos vacíos");
         }
@@ -26,14 +27,13 @@ public class AgregarNuevaConfiguracionAlarmaUseCase {
         try {
             ConfiguracionAlarma config = new ConfiguracionAlarma(email, ConfiguracionAlarma.NivelNotificacion.valueOf(nivel_notificacion));
             ConfiguracionAlarma resultConfig = configuracionAlarmaRepository.guardar(config);
+            ConfiguracionAlarmaDTO data = new ConfiguracionAlarmaDTO(resultConfig);
             if (resultConfig != null) {
-                return OperationResult.ok("Correo agregado correctamente");
+                return OperationResult.ok("Correo agregado correctamente", data);
             }
             return OperationResult.fail("Error al guardar el correo");
         } catch (Exception e) {
             return OperationResult.fail("Error al guardar el correo: " + e.getMessage());
         }
     }
-
-
 }

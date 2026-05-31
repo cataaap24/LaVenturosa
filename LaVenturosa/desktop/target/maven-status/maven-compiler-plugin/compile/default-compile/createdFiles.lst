@@ -5,6 +5,7 @@ com\laventurosa\usecases\ports\ConfiguracionAlarmaRepository.class
 com\laventurosa\entities\Medicion.class
 com\laventurosa\adapters\ui\MainView.class
 com\laventurosa\usecases\ports\ReporteService.class
+com\laventurosa\usecases\dto\ConfiguracionAlarmaDTO.class
 com\laventurosa\entities\EstadoCriticidad.class
 com\laventurosa\infrastructure\config\DatabaseConfig.class
 com\laventurosa\infrastructure\services\PdfReporteService.class
@@ -18,6 +19,7 @@ com\laventurosa\infrastructure\cache\ConfiguracionAlarmaCache.class
 com\laventurosa\usecases\services\VisualizarEstadoLagunaUseCase.class
 com\laventurosa\infrastructure\repositories\PostgresConfiguracionAlarmaRepository.class
 com\laventurosa\usecases\services\ModificarEstadoConfiguracionAlarmaUseCase.class
+com\laventurosa\usecases\services\EliminarConfiguracionAlarmaUseCase.class
 com\laventurosa\adapters\ui\panels\UmbralesDeVariablesPanel.class
 com\laventurosa\infrastructure\cache\MedicionCache.class
 com\laventurosa\entities\ConfiguracionAlarma$NivelNotificacion.class
