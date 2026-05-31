@@ -18,7 +18,7 @@
                     </font>
                 </Label>
 
-                <VBox spacing="15.0" styleClass="panel-choince-vq" style="-fx-padding: 30;">
+                <VBox spacing="15.0" style="-fx-padding: 30;" styleClass="panel-choince-vq">
                     <children>
                         <Label styleClass="text-label-general" text="Seleccione el rango de fechas:">
                             <font>
@@ -31,8 +31,12 @@
                                 <DatePicker fx:id="dateFin" promptText="Fecha Fin" />
                             </children>
                         </HBox>
-
                         <Button fx:id="generar_reporte" mnemonicParsing="false" onAction="#generarReporte" prefHeight="41.0" prefWidth="200.0" styleClass="btn-guardar" text="Exportar a PDF" />
+                        <Label prefWidth="577.0" text="Por defecto, si los campos de fecha no son completados, se generará automaticamente un reporte del último mes" wrapText="true">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
                     </children>
                 </VBox>
             </children>

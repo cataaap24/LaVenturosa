@@ -1,23 +1,14 @@
 package com.laventurosa.usecases.services;
 
 import com.laventurosa.entities.ConfiguracionAlarma;
-import com.laventurosa.entities.EstadoCriticidad;
-import com.laventurosa.entities.Medicion;
-import com.laventurosa.entities.Variable;
-import com.laventurosa.infrastructure.cache.ConfiguracionAlarmaCache;
-import com.laventurosa.infrastructure.cache.EstadoLagunaCache;
-import com.laventurosa.infrastructure.repositories.PostgresConfiguracionAlarmaRepository;
-import com.laventurosa.infrastructure.repositories.PostgresMedicionRepository;
-import com.laventurosa.infrastructure.repositories.PostgresUmbralRepository;
+import com.laventurosa.infrastructure.cache.*;
+import com.laventurosa.infrastructure.repositories.*;
 import com.laventurosa.infrastructure.services.PdfReporteService;
 import com.laventurosa.usecases.dto.EstadoLagunaDTO;
 import com.laventurosa.usecases.dto.MedicionDTO;
 import com.laventurosa.usecases.dto.OperationResult;
 import com.laventurosa.usecases.dto.UmbralDTO;
-import com.laventurosa.usecases.ports.ConfiguracionAlarmaRepository;
-import com.laventurosa.usecases.ports.MedicionRepository;
-import com.laventurosa.usecases.ports.ReporteService;
-import com.laventurosa.usecases.ports.UmbralRepository;
+import com.laventurosa.usecases.ports.*;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -28,6 +19,7 @@ public class VenturosaApp {
     private ConfiguracionAlarmaRepository configuracionAlarmaRepository;
     private ConfiguracionAlarmaCache configuracionAlarmaCache;
     private UmbralRepository umbralRepository;
+    private UmbralRepository cacheUmbralRepository;
     private ReporteService reporteService;
 
     private ConsultarHistorialUseCase consultarHistorialUseCase;
@@ -44,10 +36,11 @@ public class VenturosaApp {
 
     private void inicializarComponentes() {
         this.medicionRepository = new PostgresMedicionRepository();
-        this.cacheMedicionRepository = new EstadoLagunaCache(medicionRepository);
+        this.cacheMedicionRepository = new MedicionCache(medicionRepository);
         this.configuracionAlarmaRepository = new PostgresConfiguracionAlarmaRepository();
         this.configuracionAlarmaCache = new ConfiguracionAlarmaCache(configuracionAlarmaRepository);
         this.umbralRepository = new PostgresUmbralRepository();
+        this.cacheUmbralRepository = new UmbralCache(umbralRepository);
         this.reporteService = new PdfReporteService();
 
         this.visualizarEstadoLagunaUseCase = new VisualizarEstadoLagunaUseCase(cacheMedicionRepository);
@@ -79,6 +72,7 @@ public class VenturosaApp {
         return configuracionAlarmaRepository.listarTodas();
     }
 
+
     public OperationResult configurarUmbrales(String punto, String variable, double minC, double minA, double maxA, double maxC) {
         return configurarUmbralesUseCase.execute(punto, variable, minC, minA, maxA, maxC);
     }
@@ -86,6 +80,8 @@ public class VenturosaApp {
     public OperationResult generarReportePDF(String ruta, OffsetDateTime desde, OffsetDateTime hasta) {
         return generarReporteUseCase.execute(ruta, desde, hasta);
     }
+
+    //Implementar dtos en vez de pasar la entidad -Arturo-
 
     public OperationResult<ConfiguracionAlarma> agregarNuevaConfiguracionAlarma(String email, String nivel_notificacion) {
         return agregarNuevaConfiguracionAlarmaUseCase.execute(email, nivel_notificacion);
