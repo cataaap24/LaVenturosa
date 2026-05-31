@@ -14,103 +14,105 @@ import javafx.scene.paint.Color;
 import javafx.collections.FXCollections;
 
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.TreeSet;
+import java.util.Set;
 
 public class EstadoLagunaPanel implements AppAware {
 
-    @FXML private Label lblPH;
-    @FXML private Label lblEstadoPH;
-
+    @FXML private Label lblZona1;
     @FXML private Label lblPH1;
     @FXML private Label lblEstadoPH1;
+
+    @FXML private Label lblZona2;
+    @FXML private Label lblPH2;
+    @FXML private Label lblEstadoPH2;
+
+    @FXML private Label lblZona3;
+    @FXML private Label lblPH3;
+    @FXML private Label lblEstadoPH3;
 
     @FXML private LineChart<String, Number> grafica72Horas;
     @FXML private CategoryAxis ejeXTiempo;
 
     private VenturosaApp app;
-
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM HH:mm");
     private final java.time.ZoneId zonaColombia = java.time.ZoneId.of("America/Bogota");
+
+    private static final String ZONA_ENTRADA = "Laguna-Entrada";
+    private static final String ZONA_PRODUCCION = "Laguna-Produccion";
+    private static final String ZONA_CANIO = "Laguna-Canio";
 
     @Override
     public void setApp(VenturosaApp app) {
         this.app = app;
-        grafica72Horas.getData().clear();
-        cargarDatosReales();
+        if (this.app != null) {
+            cargarDatosReales();
+        }
     }
 
     private void cargarDatosReales() {
-        if (app == null) return;
+        grafica72Horas.getData().clear();
 
-        OperationResult<EstadoLagunaDTO> resSensor1 = app.consultarEstadoActual("Sensor 1");
-        OperationResult<EstadoLagunaDTO> resSensor2 = app.consultarEstadoActual("Sensor 2");
+        OperationResult<EstadoLagunaDTO> resEntrada = app.consultarEstadoActual(ZONA_ENTRADA);
+        OperationResult<EstadoLagunaDTO> resProduccion = app.consultarEstadoActual(ZONA_PRODUCCION);
+        OperationResult<EstadoLagunaDTO> resCanio = app.consultarEstadoActual(ZONA_CANIO);
 
-        actualizarLabelsTarjeta(lblPH, lblEstadoPH, resSensor1);
-        actualizarLabelsTarjeta(lblPH1, lblEstadoPH1, resSensor2);
+        actualizarTarjeta(lblZona1, lblPH1, lblEstadoPH1, "Laguna - Entrada", resEntrada);
+        actualizarTarjeta(lblZona2, lblPH2, lblEstadoPH2, "Laguna - Producción", resProduccion);
+        actualizarTarjeta(lblZona3, lblPH3, lblEstadoPH3, "Laguna - Caño", resCanio);
 
-        List<MedicionDTO> historialGlobalUnificado = new ArrayList<>();
+        Set<String> etiquetasTiempoOrdenadas = new TreeSet<>();
 
-        if (resSensor1.isSuccess() && resSensor1.getData().getHistorialReciente() != null) {
-            historialGlobalUnificado.addAll(resSensor1.getData().getHistorialReciente());
-        }
-        if (resSensor2.isSuccess() && resSensor2.getData().getHistorialReciente() != null) {
-            historialGlobalUnificado.addAll(resSensor2.getData().getHistorialReciente());
-        }
+        agregarCurvaGrafica("Sensor 1 (Entrada)", resEntrada, etiquetasTiempoOrdenadas);
+        agregarCurvaGrafica("Sensor 2 (Producción)", resProduccion, etiquetasTiempoOrdenadas);
+        agregarCurvaGrafica("Sensor 3 (Caño)", resCanio, etiquetasTiempoOrdenadas);
 
-        Collections.sort(historialGlobalUnificado, (m1, m2) -> m1.getFechaHora().compareTo(m2.getFechaHora()));
-
-        List<String> categoriasEjeX = new ArrayList<>();
-        for (MedicionDTO med : historialGlobalUnificado) {
-            String fechaFormateada = med.getFechaHora().atZoneSameInstant(zonaColombia).format(formatter);
-            if (!categoriasEjeX.contains(fechaFormateada)) {
-                categoriasEjeX.add(fechaFormateada);
-            }
-        }
-        ejeXTiempo.setCategories(FXCollections.observableArrayList(categoriasEjeX));
-
-        agregarSeriePorSensor("Sensor 1", historialGlobalUnificado);
-        agregarSeriePorSensor("Sensor 2", historialGlobalUnificado);
+        ejeXTiempo.setCategories(FXCollections.observableArrayList(etiquetasTiempoOrdenadas));
     }
 
-    private void agregarSeriePorSensor(String nombreSensor, List<MedicionDTO> historialUnificado) {
+    private void agregarCurvaGrafica(String nombreVisibleCurva, OperationResult<EstadoLagunaDTO> result, Set<String> etiquetasTiempo) {
+        if (!result.isSuccess() || result.getData().getHistorialReciente() == null) return;
+
         XYChart.Series<String, Number> serie = new XYChart.Series<>();
-        serie.setName(nombreSensor);
+        serie.setName(nombreVisibleCurva);
 
-        int puntosAgregados = 0;
+        for (MedicionDTO medicion : result.getData().getHistorialReciente()) {
+            String fechaFormateada = medicion.getFechaHora().atZoneSameInstant(zonaColombia).format(formatter);
 
-        for (MedicionDTO medicion : historialUnificado) {
-            // Condición de seguridad: sólo añadimos el punto si pertenece a este sensor
-            if (nombreSensor.equals(medicion.getPuntoMonitoreo())) {
-                String fechaFormateada = medicion.getFechaHora().atZoneSameInstant(zonaColombia).format(formatter);
-                serie.getData().add(new XYChart.Data<>(fechaFormateada, medicion.getValor()));
-                puntosAgregados++;
-            }
+            etiquetasTiempo.add(fechaFormateada);
+
+            serie.getData().add(new XYChart.Data<>(fechaFormateada, medicion.getValor()));
         }
 
-        if (puntosAgregados > 0) {
+        if (!serie.getData().isEmpty()) {
             grafica72Horas.getData().add(serie);
         }
     }
 
-
-    private void actualizarLabelsTarjeta(Label labelValor, Label labelEstado, OperationResult<EstadoLagunaDTO> result) {
-        if (result.isSuccess()) {
+    private void actualizarTarjeta(Label lblZona, Label labelValor, Label labelEstado, String tituloVisual, OperationResult<EstadoLagunaDTO> result) {
+        if (result.isSuccess() && result.getData() != null) {
             EstadoLagunaDTO data = result.getData();
-            labelValor.setText(data.getValor() + " pH");
+
+            lblZona.setText(tituloVisual);
+            labelValor.setText(String.format("%.2f pH", data.getValor()));
             labelEstado.setText("Estado: " + data.getEstado());
 
-            if ("CRITICO".equals(data.getEstado())) {
-                labelEstado.setTextFill(Color.RED);
-            } else if ("ADVERTENCIA".equals(data.getEstado())) {
-                labelEstado.setTextFill(Color.ORANGE);
-            } else {
-                labelEstado.setTextFill(Color.web("#27ae60"));
+            switch (String.valueOf(data.getEstado()).toUpperCase()) {
+                case "CRITICO":
+                    labelEstado.setTextFill(Color.RED);
+                    break;
+                case "ADVERTENCIA":
+                    labelEstado.setTextFill(Color.ORANGE);
+                    break;
+                default:
+                    labelEstado.setTextFill(Color.web("#27ae60")); // Verde éxito
+                    break;
             }
         } else {
+            lblZona.setText(tituloVisual);
             labelValor.setText("--");
-            labelEstado.setText(result.getMessage());
+            labelEstado.setText("Sin Datos");
+            labelEstado.setTextFill(Color.GRAY);
         }
     }
 }

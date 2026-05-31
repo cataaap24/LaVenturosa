@@ -1,57 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="750.0" prefWidth="700.0" style="-fx-background-color: #EDF4FB;" stylesheets="@../../styles/app.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.laventurosa.adapters.ui.panels.EstadoLagunaPanel">
+<AnchorPane prefHeight="780.0" prefWidth="950.0" style="-fx-background-color: #EDF4FB;" stylesheets="@../../styles/app.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.laventurosa.adapters.ui.panels.EstadoLagunaPanel">
    <children>
       <VBox spacing="20.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
          <children>
-            <Label text="Monitoreo Fisicoquímico de la Laguna - Estado laguna" textFill="#2447A4">
+            <Label text="Monitoreo Fisicoquímico de la Laguna - Estado General" textFill="#2447A4">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
 
-            <HBox spacing="40.0" alignment="CENTER">
+            <HBox alignment="CENTER" spacing="20.0">
                <children>
-                  <VBox fillWidth="false" HBox.hgrow="ALWAYS" styleClass="panel-choince-vq" style="-fx-padding: 20;">
+
+                  <VBox fillWidth="true" style="-fx-padding: 15;" styleClass="panel-choince-vq" HBox.hgrow="ALWAYS">
                      <children>
-                        <HBox prefWidth="240.0">
+                        <HBox alignment="CENTER_LEFT">
                            <children>
-                              <Label prefHeight="20.0" prefWidth="178.0" text="SENSOR 1" styleClass="text-label-general">
+                              <Label styleClass="text-label-general" text="SENSOR 1">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="20.0" prefWidth="179.0" text="Hora" textFill="#6f6868">
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Label text="En Vivo" textFill="#6f6868">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="12.0" />
                                  </font>
                               </Label>
                            </children>
                         </HBox>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="246.0" scaleShape="false" text="Zona">
+                        <Label fx:id="lblZona1" alignment="BOTTOM_LEFT" prefHeight="25.0" text="Laguna-Entrada" textFill="#555555">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="System Italic" size="13.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblPH" prefHeight="70.0" prefWidth="150.0" text="N/A" textFill="#2fa0eb">
+                        <Label fx:id="lblPH1" text="N/A" textFill="#2447A4">
                            <font>
-                              <Font name="System Bold" size="40.0" />
+                              <Font name="System Bold" size="36.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblEstadoPH" text="Estado: Normal" textFill="#27ae60">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
+                        <Label fx:id="lblEstadoPH1" text="Estado: --" textFill="#27ae60">
+                           <VBox.margin><Insets top="5.0" /></VBox.margin>
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
@@ -59,59 +56,124 @@
                      </children>
                   </VBox>
 
-                  <VBox fillWidth="false" HBox.hgrow="ALWAYS" styleClass="panel-choince-vq" style="-fx-padding: 20;">
+                  <VBox fillWidth="true" style="-fx-padding: 15;" styleClass="panel-choince-vq" HBox.hgrow="ALWAYS">
                      <children>
-                        <HBox prefWidth="240.0">
+                        <HBox alignment="CENTER_LEFT">
                            <children>
-                              <Label prefHeight="20.0" prefWidth="178.0" text="SENSOR 2" styleClass="text-label-general">
+                              <Label styleClass="text-label-general" text="SENSOR 2">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="20.0" prefWidth="179.0" text="Hora" textFill="#6f6868">
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Label text="En Vivo" textFill="#6f6868">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="12.0" />
                                  </font>
                               </Label>
                            </children>
                         </HBox>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="246.0" scaleShape="false" text="Zona">
+                        <Label fx:id="lblZona2" alignment="BOTTOM_LEFT" prefHeight="25.0" text="Laguna-Produccion" textFill="#555555">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="System Italic" size="13.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblPH1" prefHeight="70.0" prefWidth="150.0" text="N/A" textFill="#3498db">
+                        <Label fx:id="lblPH2" text="N/A" textFill="#2447A4">
                            <font>
-                              <Font name="System Bold" size="40.0" />
+                              <Font name="System Bold" size="36.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblEstadoPH1" text="Estado: Normal" textFill="#27ae60">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
+                        <Label fx:id="lblEstadoPH2" text="Estado: --" textFill="#27ae60">
+                           <VBox.margin><Insets top="5.0" /></VBox.margin>
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
                      </children>
                   </VBox>
+
+                  <VBox fillWidth="true" style="-fx-padding: 15;" styleClass="panel-choince-vq" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label styleClass="text-label-general" text="SENSOR 3">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Label text="En Vivo" textFill="#6f6868">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Label fx:id="lblZona3" alignment="BOTTOM_LEFT" prefHeight="25.0" text="Laguna-Canio" textFill="#555555">
+                           <font>
+                              <Font name="System Italic" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblPH3" text="N/A" textFill="#2447A4">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblEstadoPH3" text="Estado: --" textFill="#27ae60">
+                           <VBox.margin><Insets top="5.0" /></VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+
                </children>
             </HBox>
 
-            <VBox spacing="10.0" styleClass="panel-choince-vq" style="-fx-padding: 20;" VBox.vgrow="ALWAYS">
+            <VBox spacing="10.0" style="-fx-padding: 20;" styleClass="panel-choince-vq" VBox.vgrow="ALWAYS">
                <children>
-                  <Label styleClass="text-label-general" text="Historial de Mediciones (Últimas 72 Horas)">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                  </Label>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label styleClass="text-label-general" text="Historial de Mediciones (Últimas 72 Horas)">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
 
-                  <LineChart fx:id="grafica72Horas" animated="false" createSymbols="true" VBox.vgrow="ALWAYS">
+                        <Region HBox.hgrow="ALWAYS" />
+
+                        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                           <children>
+                              <HBox alignment="CENTER" spacing="5.0">
+                                 <children>
+                                    <Circle fill="#f3622d" radius="5.0" />
+                                    <Label style="-fx-font-weight: bold; -fx-font-size: 12;" text="Sensor 1" textFill="#555555" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="5.0">
+                                 <children>
+                                    <Circle fill="#f1c40f" radius="5.0" />
+                                    <Label style="-fx-font-weight: bold; -fx-font-size: 12;" text="Sensor 2" textFill="#555555" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="5.0">
+                                 <children>
+                                    <Circle fill="#94d200" radius="5.0" />
+                                    <Label style="-fx-font-weight: bold; -fx-font-size: 12;" text="Sensor 3" textFill="#555555" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+
+                  <LineChart fx:id="grafica72Horas" animated="false" createSymbols="true" legendVisible="false" prefHeight="263.0" prefWidth="848.0" VBox.vgrow="ALWAYS">
                      <xAxis>
-                        <CategoryAxis fx:id="ejeXTiempo" label="Tiempo (Fecha/Hora)" side="BOTTOM" />
+                        <CategoryAxis fx:id="ejeXTiempo" label="Tiempo (Fecha/Hora)" prefWidth="776.0" side="BOTTOM" />
                      </xAxis>
                      <yAxis>
-                        <NumberAxis fx:id="ejeYValores" label="Valor de Variable" side="LEFT" />
+                        <NumberAxis fx:id="ejeYValores" autoRanging="false" label="Valor de Variable (pH)" lowerBound="3.0" side="LEFT" tickUnit="1.0" upperBound="11.0" />
                      </yAxis>
                   </LineChart>
                </children>
