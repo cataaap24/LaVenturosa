@@ -34,6 +34,7 @@ com\laventurosa\entities\ConfiguracionAlarma.class
 com\laventurosa\usecases\dto\MedicionDTO.class
 com\laventurosa\usecases\dto\OperationResult.class
 com\laventurosa\adapters\ui\panels\HistorialPanel.class
+com\laventurosa\adapters\ui\panels\HistorialPanel$1.class
 com\laventurosa\adapters\ui\MainApp.class
 com\laventurosa\adapters\ui\panels\ConfigurarAlarmasPanel$2.class
 com\laventurosa\adapters\ui\utils\UIUtils.class
