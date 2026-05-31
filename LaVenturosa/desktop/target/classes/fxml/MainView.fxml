@@ -13,8 +13,10 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@../styles/app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.laventurosa.adapters.ui.MainView">
     <left>
-        <VBox fillWidth="true" prefHeight="600.0" prefWidth="216.0" spacing="10.0" style="-fx-background-color: #2447A4;" BorderPane.alignment="CENTER">
+        <VBox fillWidth="true" prefHeight="600.0" prefWidth="216.0" spacing="4.0" style="-fx-background-color: #223b7f;" BorderPane.alignment="CENTER">
             <children>
+
+                <!-- Logo -->
                 <HBox alignment="CENTER" prefHeight="40.0" prefWidth="170.0">
                     <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -32,18 +34,37 @@
                         </Label>
                     </children>
                     <VBox.margin>
-                        <Insets bottom="20.0" top="10.0" />
+                        <Insets bottom="10.0" top="10.0" />
                     </VBox.margin>
                 </HBox>
 
-                <Button fx:id="btnEstado" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarEstado" prefHeight="44.0" styleClass="button-lateral" text="• Estado de la laguna">
-               <font>
-                  <Font size="14.0" />
-               </font></Button>
-                <Button fx:id="btnHistorial" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarHistorial" styleClass="button-lateral" text="• Historial" />
-                <Button fx:id="btnReportes" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarReportes" styleClass="button-lateral" text="• Generar reporte" />
-                <Button fx:id="btnUmbrales" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarUmbrales" styleClass="button-lateral" text="• Umbrales de variables" />
-                <Button fx:id="btnAlarmas" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarAlarmas" styleClass="button-lateral" text="• Sistema de alarmas" />
+                <Label text="PRINCIPAL" textFill="#90CAF9">
+                    <font>
+                        <Font name="System Bold" size="10.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="10.0" top="10.0" bottom="2.0" />
+                    </VBox.margin>
+                </Label>
+
+                <Button fx:id="btnEstado" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarEstado" prefHeight="44.0" styleClass="button-lateral" text="Estado de la laguna">
+                    <font><Font size="14.0" /></font>
+                </Button>
+                <Button fx:id="btnHistorial" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarHistorial" styleClass="button-lateral" text="Historial" />
+                <Button fx:id="btnReportes" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarReportes" styleClass="button-lateral" text="Generar reporte" />
+
+                <Label text="CONFIGURACIÓN" textFill="#90CAF9">
+                    <font>
+                        <Font name="System Bold" size="10.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="10.0" top="16.0" bottom="2.0" />
+                    </VBox.margin>
+                </Label>
+
+                <Button fx:id="btnUmbrales" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarUmbrales" styleClass="button-lateral" text="Umbrales de variables" />
+                <Button fx:id="btnAlarmas" maxWidth="Infinity" mnemonicParsing="false" onAction="#mostrarAlarmas" styleClass="button-lateral" text="Sistema de alarmas" />
+
             </children>
             <padding>
                 <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
@@ -54,5 +75,3 @@
         <StackPane fx:id="contentArea" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
     </center>
 </BorderPane>
-
-

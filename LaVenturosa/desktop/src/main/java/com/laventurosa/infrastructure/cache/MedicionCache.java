@@ -10,12 +10,12 @@ import java.time.OffsetDateTime;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
-public class EstadoLagunaCache implements MedicionRepository {
+public class MedicionCache implements MedicionRepository {
     private final MedicionRepository medicionRepository;
 
     private final Cache<String, Optional<Medicion>> cacheUltima;
 
-    public EstadoLagunaCache(MedicionRepository medicionRepository) {
+    public MedicionCache(MedicionRepository medicionRepository) {
         this.medicionRepository = medicionRepository;
         this.cacheUltima = Caffeine.newBuilder()
                 .expireAfterWrite(5, TimeUnit.MINUTES)
