@@ -1,5 +1,7 @@
 package com.laventurosa.adapters.ui.panels;
 
+import java.util.Optional;
+
 import com.laventurosa.adapters.ui.utils.AppAware;
 import com.laventurosa.adapters.ui.utils.UIUtils;
 import com.laventurosa.usecases.dto.ConfiguracionAlarmaDTO;
@@ -14,6 +16,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -83,13 +86,23 @@ public class ConfigurarAlarmasPanel implements AppAware {
 
                 btnEliminar.setOnAction(e -> {
                     ConfiguracionAlarmaDTO config = getTableView().getItems().get(getIndex());
-                    OperationResult result = app.eliminarConfiguracionAlarma(config.getEmailDestinatario()); 
-                    
-                    if (result.isSuccess()) {
-                        getTableView().getItems().remove(config);
-                        UIUtils.showInfo("Eliminado", null, "Configuración eliminada correctamente");
-                    } else {
-                        UIUtils.showError("Error al eliminar", null, result.getMessage());
+    
+                    Alert alert = new Alert(AlertType.CONFIRMATION);
+                    alert.setTitle("Confirmar eliminación");
+                    alert.setHeaderText(null);
+                    alert.setContentText("¿Estás seguro de que deseas eliminar el correo: " + config.getEmailDestinatario() + "?");
+    
+                    Optional<ButtonType> resultConfirm = alert.showAndWait();
+    
+                    if (resultConfirm.isPresent() && resultConfirm.get() == ButtonType.OK) {
+                        OperationResult result = app.eliminarConfiguracionAlarma(config.getEmailDestinatario()); 
+        
+                        if (result.isSuccess()) {
+                            getTableView().getItems().remove(config);
+                            UIUtils.showInfo("Eliminado", null, "Configuración eliminada correctamente");
+                        } else {
+                            UIUtils.showError("Error al eliminar", null, result.getMessage());
+                        }
                     }
                 });
             }
