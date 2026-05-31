@@ -10,6 +10,7 @@ import com.laventurosa.infrastructure.repositories.PostgresConfiguracionAlarmaRe
 import com.laventurosa.infrastructure.repositories.PostgresMedicionRepository;
 import com.laventurosa.infrastructure.repositories.PostgresUmbralRepository;
 import com.laventurosa.infrastructure.services.PdfReporteService;
+import com.laventurosa.usecases.dto.EstadoLagunaDTO;
 import com.laventurosa.usecases.dto.MedicionDTO;
 import com.laventurosa.usecases.dto.OperationResult;
 import com.laventurosa.usecases.ports.ConfiguracionAlarmaRepository;
@@ -57,28 +58,13 @@ public class VenturosaApp {
         System.out.println("[APP] Venturosa System inicializado con éxito.");
     }
 
-    public OperationResult consultarEstadoActual(String puntoMonitoreo) {
+    public OperationResult<EstadoLagunaDTO> consultarEstadoActual(String puntoMonitoreo) {
         if (visualizarEstadoLagunaUseCase == null) {
             return OperationResult.fail("El sistema no está conectado a la base de datos.");
         }
         return visualizarEstadoLagunaUseCase.execute(puntoMonitoreo);
     }
 
-    /** Confirmar para uso
-    public OperationResult registrarNuevaMedicion(Medicion medicion) {
-        if (medicionRepository == null) {
-            return OperationResult.fail("Repositorio de datos no disponible.");
-        }
-
-        Medicion guardada = medicionRepository.guardar(medicion);
-        if (guardada != null) {
-            return OperationResult.ok("Medición almacenada correctamente en Supabase.");
-        }
-        return OperationResult.fail("Error al intentar guardar la medición.");
-    }
-     **/
-    
-    // Luego se delegará correctamente en el panel
     public OperationResult<List<MedicionDTO>> obtenerHistorial(OffsetDateTime desde, OffsetDateTime hasta) {
         if (consultarHistorialUseCase == null) {
             return OperationResult.fail("El caso de uso de historial no está inicializado.");
@@ -111,11 +97,4 @@ public class VenturosaApp {
         return umbralRepository.obtenerPorPuntoYVariable(punto, variable);
     }
      **/
-
-    /** Confirmar para uso
-    public void apagarSistema() {
-        DatabaseConfig.cerrarConexion();
-    }
-     **/
-
 }
