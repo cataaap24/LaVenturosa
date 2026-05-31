@@ -22,7 +22,6 @@ public class ResendNotificacionService implements NotificacionService {
     @Override
     public void enviar(String emailDestinatario, String asunto, String mensaje) {
         try {
-            // FORZAR HORA DE COLOMBIA AQUÍ TAMBIÉN
             String horaActual = ZonedDateTime.now(ZoneId.of("America/Bogota"))
                                 .format(DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss a"));
 
