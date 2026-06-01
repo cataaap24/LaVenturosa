@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net">
+<mxfile host="Electron">
   <diagram name="Página-1" id="6iVPeIQwC9PCcAWfQ2om">
-    <mxGraphModel dx="1968" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="583" math="0" shadow="0">
+    <mxGraphModel dx="1913" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="583" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -13,7 +13,7 @@
         <mxCell id="fhJASN3JQO2f0vZ6lhsw-6" edge="1" parent="1" source="fhJASN3JQO2f0vZ6lhsw-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.015;entryY=0.569;entryDx=0;entryDy=0;entryPerimeter=0;" target="fhJASN3JQO2f0vZ6lhsw-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="fhJASN3JQO2f0vZ6lhsw-2" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value=":ThresholdUI&lt;div&gt;Class&lt;/div&gt;" vertex="1">
+        <mxCell id="fhJASN3JQO2f0vZ6lhsw-2" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value=":UmbralUI&lt;div&gt;Class&lt;/div&gt;" vertex="1">
           <mxGeometry height="80" width="100" x="224" y="230" as="geometry" />
         </mxCell>
         <mxCell id="fhJASN3JQO2f0vZ6lhsw-8" edge="1" parent="1" source="fhJASN3JQO2f0vZ6lhsw-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.97;exitY=0.577;exitDx=0;exitDy=0;exitPerimeter=0;" target="fhJASN3JQO2f0vZ6lhsw-7">
@@ -21,7 +21,7 @@
             <mxPoint x="460" y="270" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="fhJASN3JQO2f0vZ6lhsw-7" parent="1" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" value=":Threshold Class" vertex="1">
+        <mxCell id="fhJASN3JQO2f0vZ6lhsw-7" parent="1" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" value=":Umbral&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Class&lt;/span&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="80" width="80" x="870" y="230" as="geometry" />
         </mxCell>
         <mxCell id="fhJASN3JQO2f0vZ6lhsw-9" edge="1" parent="1" style="endArrow=block;endFill=1;endSize=6;html=1;rounded=0;" value="">
@@ -51,7 +51,7 @@
         <mxCell id="fhJASN3JQO2f0vZ6lhsw-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Enviar datos para validación" vertex="1">
           <mxGeometry height="30" width="160" x="360" y="205.42" as="geometry" />
         </mxCell>
-        <mxCell id="fhJASN3JQO2f0vZ6lhsw-5" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value=":Threshold&lt;div&gt;Controller&amp;nbsp;&lt;/div&gt;&lt;div&gt;Class&lt;/div&gt;" vertex="1">
+        <mxCell id="fhJASN3JQO2f0vZ6lhsw-5" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value=":Umbral&lt;div&gt;Controller&amp;nbsp;&lt;/div&gt;&lt;div&gt;Class&lt;/div&gt;" vertex="1">
           <mxGeometry height="93.75" width="90" x="570" y="216.25" as="geometry" />
         </mxCell>
         <mxCell id="fhJASN3JQO2f0vZ6lhsw-16" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.322;exitY=0.112;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.778;entryY=0.198;entryDx=0;entryDy=0;entryPerimeter=0;" target="fhJASN3JQO2f0vZ6lhsw-5">
