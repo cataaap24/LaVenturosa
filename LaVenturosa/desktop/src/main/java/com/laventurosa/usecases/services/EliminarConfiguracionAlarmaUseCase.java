@@ -11,7 +11,6 @@ public class EliminarConfiguracionAlarmaUseCase {
         this.configuracionAlarmaRepository = configuracionAlarmaRepository;
     }
 
-    //En caso de que se vaya a agregar una nueva configuración
     public OperationResult<ConfiguracionAlarma> execute(String email) {
         if (email == null || email.isBlank()) {
             return OperationResult.fail("Campos vacíos");
