@@ -26,16 +26,14 @@ Para facilitar la revisión y evaluación de esta entrega, a continuación se co
 
  ---
 ## Arquitectura del Proyecto
+El backend en Java está organizado bajo la estructura de paquetes requerida por la cátedra, implementando los conceptos de **Clean Architecture** mediante las siguientes carpetas principales:
 
-El proyecto está construido bajo los principios de **Clean Architecture** y **Arquitectura Hexagonal**, lo que permite un desacoplamiento total entre la lógica de negocio, las interfaces de usuario y los dispositivos de captura de datos (Hardware).
-
-| Capa | Descripción | Ejemplos del Componente |
+| Carpeta Raíz | Paquetes Internos | Descripción y Ejemplos de Componentes del Proyecto |
 | :--- | :--- | :--- |
-| **Entities (Dominio)** | Objetos de negocio puros e invariables. | `Medicion`, `Variable`, `Umbral` |
-| **Use Cases (Ejemplos)** | Lógica de los procesos y reglas de negocio del sistema. | `RegistrarMedicionUseCase`, `VisualizarEstado`, `ConsultarHistorial`, `ConfigurarUmbrales` |
-| **Ports (Puertos)** | Interfaces que definen la comunicación entre el núcleo y el exterior. | `MedicionRepository`, `NotificacionService` |
-| **Infrastructure (Adaptadores)** | Implementaciones reales de los puertos e interfaces del sistema. | `PostgresMedicionRepository`, `ResendNotificacionService`, `MedicionRestController` (API para IoT), Interfaz JavaFX |
-
+| **entities** | *(Raíz de la capa)* | **Dominio puro.** Contiene los modelos y objetos con sus reglas lógicas de negocio independientes de la tecnología.<br> - *Componentes:* `Medicion.java`, `Umbral.java`, `Variable.java`, `ConfiguracionAlarma.java` |
+| **usecases** | `ports`, `services`, `dto` | **Capa de Aplicación.** Modela las acciones y casos de uso del sistema. <br> - **ports:** Interfaces que definen los contratos (`MedicionRepository`, `NotificacionService`).<br> - **services:** Implementaciones de la lógica de aplicación como `RegistrarMedicionUseCase`. |
+| **adapters** | `ui` | **Adaptadores de Interfaz.** Puentes de entrada y salida encargados de interactuar directamente con el usuario final.<br> - *Componentes:* Interfaz gráfica en JavaFX (`MainApp.java`, `MainView.java`) y los páneles de visualización. |
+| **infrastructure** | `repositories`, `services` | **Capa de Infraestructura.** Contiene todas las tecnologías concretas, librerías, frameworks y servicios externos que soportan el sistema.<br> - *Componentes:* Conexiones JDBC/JPA para PostgreSQL (Supabase), cliente HTTP para la API de **Resend**, configuraciones generales y caché. |
 ---
 
 ## Módulo de Telemetría e Internet de las Cosas (IoT)
