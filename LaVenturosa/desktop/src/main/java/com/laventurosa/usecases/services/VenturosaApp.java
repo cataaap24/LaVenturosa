@@ -12,11 +12,11 @@ import java.util.List;
 
 public class VenturosaApp {
     private MedicionRepository medicionRepository;
-    private MedicionRepository cacheMedicionRepository;
+    private MedicionCache cacheMedicionRepository;
     private ConfiguracionAlarmaRepository configuracionAlarmaRepository;
     private ConfiguracionAlarmaCache cacheConfiguracionAlarma;
     private UmbralRepository umbralRepository;
-    private UmbralRepository cacheUmbralRepository;
+    private UmbralCache cacheUmbralRepository;
     private ReporteService reporteService;
 
     private ConsultarHistorialUseCase consultarHistorialUseCase;
@@ -96,6 +96,10 @@ public class VenturosaApp {
 
     public OperationResult<UmbralDTO> obtenerUmbralesActuales(String punto, String variable) {
         return consultarUmbralActual.execute(punto,variable);
+    }
+
+    public void limpiarCacheMediciones() {
+        cacheMedicionRepository.limpiarCache();
     }
 
     /** Confirmar para uso

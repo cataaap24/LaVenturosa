@@ -5,17 +5,22 @@ import com.laventurosa.usecases.services.VenturosaApp;
 import com.laventurosa.usecases.dto.OperationResult;
 import com.laventurosa.usecases.dto.EstadoLagunaDTO;
 import com.laventurosa.usecases.dto.MedicionDTO;
+
 import javafx.fxml.FXML;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
+import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 
 import java.time.format.DateTimeFormatter;
 import java.util.TreeSet;
 import java.util.Set;
+
+import com.laventurosa.adapters.ui.utils.UIUtils;
 
 public class EstadoLagunaPanel implements AppAware {
 
@@ -33,6 +38,7 @@ public class EstadoLagunaPanel implements AppAware {
 
     @FXML private LineChart<String, Number> grafica72Horas;
     @FXML private CategoryAxis ejeXTiempo;
+    @FXML private Button btnRefrescar;
 
     private VenturosaApp app;
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM HH:mm");
@@ -46,6 +52,18 @@ public class EstadoLagunaPanel implements AppAware {
     public void setApp(VenturosaApp app) {
         this.app = app;
         if (this.app != null) {
+            cargarDatosReales();
+        }
+    }
+
+    @FXML
+    void refrescarDatos(ActionEvent event) {
+        if (this.app != null) {
+            System.out.println("[UI] Botón Refrescar presionado. Forzando actualización de la laguna...");
+            
+            app.limpiarCacheMediciones();
+            UIUtils.showInfo("Datos actualizados", null, "Datos actualizados.");
+            
             cargarDatosReales();
         }
     }

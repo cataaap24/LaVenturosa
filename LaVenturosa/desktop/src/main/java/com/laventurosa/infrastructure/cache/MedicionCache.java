@@ -60,4 +60,9 @@ public class MedicionCache implements MedicionRepository {
     public List<Medicion> obtenerPorRangoYVariable(OffsetDateTime desde, OffsetDateTime hasta, String variable) {
         return medicionRepository.obtenerPorRangoYVariable(desde, hasta, variable);
     }
+
+    public void limpiarCache() {
+        this.cacheUltima.invalidateAll(); // Borra absolutamente todo lo que esté en memoria
+        System.out.println("[CACHE] Toda la caché ha sido limpiada manualmente.");
+    }
 }
