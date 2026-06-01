@@ -23,7 +23,7 @@ public class MedicionDTO {
 
     public Long getId() { return id; }
     public String getVariable() { return variable; }
-    public double getValor() { return valor; }
+    public Double getValor() { return valor; }
     public OffsetDateTime getFechaHora() { return fechaHora; }
     public EstadoCriticidad getEstado() { return estado; }
     public String getPuntoMonitoreo() { return puntoMonitoreo; }

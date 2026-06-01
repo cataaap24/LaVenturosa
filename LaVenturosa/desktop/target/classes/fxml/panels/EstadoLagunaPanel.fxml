@@ -19,7 +19,6 @@
 
             <HBox alignment="CENTER" spacing="20.0">
                <children>
-
                   <VBox fillWidth="true" style="-fx-padding: 15;" styleClass="panel-choince-vq" HBox.hgrow="ALWAYS">
                      <children>
                         <HBox alignment="CENTER_LEFT">
@@ -129,6 +128,10 @@
                   </VBox>
 
                </children>
+               <Button fx:id="btnRefrescar" mnemonicParsing="false" onAction="#refrescarDatos" styleClass="btn-guardar" text="🔄">
+                  <HBox.margin>
+                      <Insets left="10.0" /> </HBox.margin>
+               </Button>
             </HBox>
 
             <VBox spacing="10.0" style="-fx-padding: 20;" styleClass="panel-choince-vq" VBox.vgrow="ALWAYS">
