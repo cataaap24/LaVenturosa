@@ -1,13 +1,13 @@
-<mxfile host="Electron">
+<mxfile host="app.diagrams.net">
   <diagram name="Página-1" id="C0V7g4KVSsHiYMVCmc80">
-    <mxGraphModel dx="710" dy="416" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="MKi14qcUdK7WWz-RzRyH-1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Técnico ambiental" vertex="1">
           <mxGeometry height="60" width="30" x="120" y="370" as="geometry" />
         </mxCell>
-        <mxCell id="MKi14qcUdK7WWz-RzRyH-2" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value=": &lt;b&gt;&lt;u&gt;Interfaz agregar nuevo correo&lt;/u&gt;&lt;/b&gt;" vertex="1">
+        <mxCell id="MKi14qcUdK7WWz-RzRyH-2" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value=": &lt;b&gt;&lt;u&gt;UI Class&lt;/u&gt;&lt;/b&gt;" vertex="1">
           <mxGeometry height="80" width="100" x="364" y="360" as="geometry" />
         </mxCell>
         <mxCell id="MKi14qcUdK7WWz-RzRyH-3" edge="1" parent="1" source="MKi14qcUdK7WWz-RzRyH-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.002;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" target="MKi14qcUdK7WWz-RzRyH-2">
@@ -20,7 +20,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="MKi14qcUdK7WWz-RzRyH-4" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value=": &lt;b&gt;&lt;u&gt;Controlador Configuración Alarma&lt;/u&gt;&lt;/b&gt;" vertex="1">
+        <mxCell id="MKi14qcUdK7WWz-RzRyH-4" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value=": &lt;b&gt;&lt;u&gt;Alarm Configuration Controller Class&lt;/u&gt;&lt;/b&gt;" vertex="1">
           <mxGeometry height="90" width="80" x="590" y="350" as="geometry" />
         </mxCell>
         <mxCell id="MKi14qcUdK7WWz-RzRyH-5" edge="1" parent="1" source="MKi14qcUdK7WWz-RzRyH-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.556;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" target="MKi14qcUdK7WWz-RzRyH-4">
@@ -56,8 +56,8 @@
             <mxPoint x="560" y="390" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="MKi14qcUdK7WWz-RzRyH-14" parent="1" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Configuración Alarma&lt;/u&gt;&lt;/b&gt;" vertex="1">
-          <mxGeometry height="80" width="90" x="810" y="360" as="geometry" />
+        <mxCell id="MKi14qcUdK7WWz-RzRyH-14" parent="1" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" value=": &lt;b&gt;&lt;u&gt;Alarm Configuration Class&lt;/u&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="810" y="360" as="geometry" />
         </mxCell>
         <mxCell id="MKi14qcUdK7WWz-RzRyH-15" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;startArrow=classic;startFill=1;endFill=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
