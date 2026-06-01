@@ -1,6 +1,7 @@
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\infrastructure\cache\MedicionCache.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\entities\ConfiguracionAlarma.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\infrastructure\repositories\PostgresMedicionRepository.java
+C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\services\ConsultarUmbralUseCase.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\utils\AppAware.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\infrastructure\repositories\PostgresUmbralRepository.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\panels\EstadoLagunaPanel.java
@@ -14,7 +15,6 @@ C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laven
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\infrastructure\services\PdfReporteService.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\dto\UmbralDTO.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\services\GenerarReporteUseCase.java
-C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\services\ConsultarUmbralActual.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\adapters\ui\MainApp.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\usecases\services\VenturosaApp.java
 C:\Users\kevin\Documents\LaVenturosa\LaVenturosa\desktop\src\main\java\com\laventurosa\entities\Medicion.java
