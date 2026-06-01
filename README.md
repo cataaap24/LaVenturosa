@@ -21,6 +21,7 @@ Para facilitar la revisión y evaluación de esta entrega, a continuación se co
 | 🎨 **Prototipo Navegable** | [Prototipo en Figma](https://www.figma.com/proto/qbxutAtIai3xAZB1z3ycD2/Dise%C3%B1o-Monitoreo?node-id=0-1&t=8RR7y56Ez6YXLyeS-1) | Interfaz gráfica interactiva y propuesta de UX para el sistema de monitoreo. |
 | 🎬 **Videos de Pruebas de Aceptación** | [Evidencias en Video (GitHub)](https://github.com/cataaap24/LaVenturosa/blob/main/docs/videos/VIDEOS.md) | **Nota:** Deben visualizarse directamente desde el repositorio de GitHub para verificar la ejecución de los escenarios de prueba. |
 | 🌐 **Simulador de Hardware** | [Circuito Vivo en Wokwi](https://wokwi.com/projects/431478408378378241) | Entorno interactivo para simular el funcionamiento del ESP32 y el envío de datos de pH. |
+| 📊 **Tablero Kanban de Gestión** | [Ver Tablero del Proyecto (Público)](https://github.com/users/cataaap24/projects/2) | Seguimiento de requerimientos, historias de usuario, asignación de tareas (Martín, Juan, Kevin, Catalina) y flujo de desarrollo en tiempo real. |
 
 > 📌 **Nota para la revisión:** Todos los archivos de documentación (`.docx`) y las evidencias, así como los diagramas en Draw.io se encuentran organizados dentro de la carpeta `/docs` en la raíz de este repositorio para su descarga o lectura directa.
 
