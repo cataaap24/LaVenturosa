@@ -39,7 +39,7 @@ public class GenerarReporteUseCase {
 
         List<Medicion> mediciones;
         try {
-            if (desde == null) {
+            if (desde == null && hasta == null) {
                 mediciones = medicionRepository.obtenerUltimoMes();
             } else {
                 mediciones = medicionRepository.obtenerPorRango(desde, hasta);

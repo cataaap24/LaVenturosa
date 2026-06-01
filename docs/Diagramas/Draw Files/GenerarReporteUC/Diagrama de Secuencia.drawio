@@ -1,12 +1,12 @@
 <mxfile host="Electron">
   <diagram name="Página-1" id="RnKuuIO-vjkDz7Ufz8MY">
-    <mxGraphModel dx="1585" dy="963" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4120" dy="2412" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-10" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;dashPattern=8 8;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="85.00000000000023" y="900" as="targetPoint" />
+            <mxPoint x="85" y="920" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Usuario" vertex="1">
@@ -14,10 +14,10 @@
         </mxCell>
         <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-11" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;dashPattern=8 8;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="320.0000000000002" y="910" as="targetPoint" />
+            <mxPoint x="320" y="920" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-5" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value="&lt;b&gt;&lt;u&gt;:ReportUI&lt;/u&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;Class&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-5" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Generar Reporte Panel&lt;/u&gt;&lt;/b&gt;" vertex="1">
           <mxGeometry height="80" width="100" x="270" y="100" as="geometry" />
         </mxCell>
         <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-12" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;dashPattern=8 8;">
@@ -25,24 +25,21 @@
             <mxPoint x="580" y="920" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-6" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value="&lt;u&gt;&lt;b&gt;:GenerateReportUseCase&lt;/b&gt;&lt;/u&gt;" vertex="1">
-          <mxGeometry height="100" width="160" x="500" y="90" as="geometry" />
+        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-6" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;VenturosaApp&lt;/u&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="100" x="530" y="80" as="geometry" />
         </mxCell>
         <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-13" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;dashPattern=8 8;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="840" y="920" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-7" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value="&lt;b&gt;&lt;u&gt;:Lagoon&lt;/u&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;Class&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="80" width="100" x="790" y="110" as="geometry" />
-        </mxCell>
         <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-14" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;endArrow=none;endFill=0;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1050" y="930" as="targetPoint" />
+            <mxPoint x="1160" y="920" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-8" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value="&lt;b&gt;&lt;u&gt;:Measurement&lt;/u&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;Class&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="95" width="120" x="990" y="100" as="geometry" />
+        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-8" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Medicion Repository&lt;/u&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="95" width="120" x="1090" y="102.5" as="geometry" />
         </mxCell>
         <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
           <mxGeometry height="650" width="30" x="70" y="200" as="geometry" />
@@ -65,86 +62,175 @@
         <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
           <mxGeometry height="490" width="30" x="565" y="275" as="geometry" />
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-25" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;dashPattern=8 8;" target="Ik-4V9fDDG_UOGhaKw9Z-21" value="">
+        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-25" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;dashPattern=8 8;" target="Ik-4V9fDDG_UOGhaKw9Z-21" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="840" y="190" as="sourcePoint" />
             <mxPoint x="840" y="920" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="135" width="30" x="825" y="300" as="geometry" />
+          <mxGeometry height="370" width="30" x="825" y="300" as="geometry" />
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-27" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;endArrow=none;endFill=0;" target="Ik-4V9fDDG_UOGhaKw9Z-22" value="">
+        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-27" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;endArrow=none;endFill=0;exitX=0.585;exitY=1.006;exitDx=0;exitDy=0;exitPerimeter=0;" target="Ik-4V9fDDG_UOGhaKw9Z-22" value="">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1050" y="195" as="sourcePoint" />
-            <mxPoint x="1050" y="930" as="targetPoint" />
+            <mxPoint x="1160" y="207.5" as="sourcePoint" />
+            <mxPoint x="1160" y="937.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="135" width="30" x="1035" y="467.5" as="geometry" />
+          <mxGeometry height="92.5" width="30" x="1145" y="397.5" as="geometry" />
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-28" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-16" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;entryX=0.037;entryY=0.061;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.071;exitY=0.115;exitDx=0;exitDy=0;exitPerimeter=0;" target="Ik-4V9fDDG_UOGhaKw9Z-17" value="1. Usuario&amp;nbsp; interactua con la&lt;div&gt;interfaz y da clic en generar reporte&lt;/div&gt;&lt;div&gt;con una fecha inicio limite&lt;/div&gt;">
-          <mxGeometry relative="1" width="100" y="40" as="geometry">
-            <mxPoint as="offset" />
-            <Array as="points" />
-            <mxPoint x="150" y="273.82" as="sourcePoint" />
-            <mxPoint x="290" y="273.82" as="targetPoint" />
+        <mxCell id="6-8MNJn2koafFyRKq_s2-1" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-16" style="endArrow=classic;html=1;rounded=0;exitX=1.005;exitY=0.061;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="Ik-4V9fDDG_UOGhaKw9Z-17" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="290" y="330" as="sourcePoint" />
+            <mxPoint x="340" y="280" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-29" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-17" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;exitX=0.037;exitY=0.934;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.031;entryY=0.866;entryDx=0;entryDy=0;entryPerimeter=0;" target="Ik-4V9fDDG_UOGhaKw9Z-16" value="8. Reporte presentado en Formato&amp;nbsp;&lt;div&gt;descargable en la interfaz&lt;/div&gt;">
-          <mxGeometry relative="1" width="100" x="-0.0036" y="28" as="geometry">
-            <mxPoint as="offset" />
-            <Array as="points" />
-            <mxPoint x="260" y="763.8199999999999" as="sourcePoint" />
-            <mxPoint x="140" y="763.8199999999999" as="targetPoint" />
+        <mxCell id="6-8MNJn2koafFyRKq_s2-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;" value="1: El usuario ingresa el rango de fechas (si no ingresa, será un reporte mensual)" vertex="1">
+          <mxGeometry height="30" width="140" x="130" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-3" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-17" style="endArrow=classic;html=1;rounded=0;exitX=1.005;exitY=0.062;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="Ik-4V9fDDG_UOGhaKw9Z-19" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="410" y="300" as="sourcePoint" />
+            <mxPoint x="460" y="250" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-30" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-17" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;exitX=1.001;exitY=0.123;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.015;entryY=0.071;entryDx=0;entryDy=0;entryPerimeter=0;" target="Ik-4V9fDDG_UOGhaKw9Z-19" value="2. Solicitud Reporte de&amp;nbsp;&lt;div&gt;mediciones&lt;/div&gt;">
-          <mxGeometry relative="1" width="100" y="20" as="geometry">
-            <mxPoint as="offset" />
-            <Array as="points" />
-            <mxPoint x="364" y="310" as="sourcePoint" />
-            <mxPoint x="464" y="310" as="targetPoint" />
+        <mxCell id="6-8MNJn2koafFyRKq_s2-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;" value="2: generarReportePDF(ruta, fecha_inicio, fecha_fin)" vertex="1">
+          <mxGeometry height="30" width="180" x="360" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-5" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Generar Reporte Use Case&lt;/u&gt;&amp;nbsp;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="100" x="790" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-6" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1.005;exitY=0.062;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="595" y="300" as="sourcePoint" />
+            <mxPoint x="825" y="300" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-31" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-19" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;entryX=1.049;entryY=0.872;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.044;exitY=0.928;exitDx=0;exitDy=0;exitPerimeter=0;" target="Ik-4V9fDDG_UOGhaKw9Z-17" value="7. Entrega Reporte de&lt;div&gt;mediciones&lt;/div&gt;">
-          <mxGeometry relative="1" width="100" x="0.1111" y="30" as="geometry">
-            <mxPoint as="offset" />
-            <Array as="points" />
-            <mxPoint x="570" y="709" as="sourcePoint" />
-            <mxPoint x="450" y="710" as="targetPoint" />
+        <mxCell id="6-8MNJn2koafFyRKq_s2-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;" value="3: execute(ruta, desde, hasta)" vertex="1">
+          <mxGeometry height="30" width="180" x="620" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-8" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1.005;exitY=0.062;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.006;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;" target="Ik-4V9fDDG_UOGhaKw9Z-21" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="890" y="315" />
+              <mxPoint x="890" y="337" />
+              <mxPoint x="880" y="337" />
+            </Array>
+            <mxPoint x="855" y="315" as="sourcePoint" />
+            <mxPoint x="860" y="340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-32" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-19" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;exitX=0.975;exitY=0.118;exitDx=0;exitDy=0;exitPerimeter=0;" value="3. Solicitud Datos Laguna">
-          <mxGeometry relative="1" width="100" x="0.0075" y="23" as="geometry">
-            <mxPoint as="offset" />
-            <Array as="points" />
-            <mxPoint x="670" y="450" as="sourcePoint" />
-            <mxPoint x="824" y="333" as="targetPoint" />
+        <mxCell id="6-8MNJn2koafFyRKq_s2-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;" value="4: Revisar fechas" vertex="1">
+          <mxGeometry height="30" width="70" x="880" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-10" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-21" style="endArrow=classic;html=1;rounded=0;exitX=1.025;exitY=0.263;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="Ik-4V9fDDG_UOGhaKw9Z-22" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="855" y="384.83" as="sourcePoint" />
+            <mxPoint x="1085" y="384.83" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-33" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-21" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;exitX=0.004;exitY=0.81;exitDx=0;exitDy=0;exitPerimeter=0;" value="4. Entrega Datos Laguna">
-          <mxGeometry relative="1" width="100" x="0.0286" y="-21" as="geometry">
-            <mxPoint as="offset" />
-            <Array as="points" />
-            <mxPoint x="840" y="450" as="sourcePoint" />
-            <mxPoint x="597" y="410" as="targetPoint" />
+        <mxCell id="6-8MNJn2koafFyRKq_s2-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;" value="5: Si desde y hasta son null (obtenerUltimosMes())&lt;div&gt;Si desde y hasta tienen valor&lt;/div&gt;&lt;div&gt;(obtenerPorRango(desde, hasta))&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="250" x="880" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-13" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1.005;exitY=0.062;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.003;entryY=0.175;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1210" y="428" />
+              <mxPoint x="1210" y="450" />
+              <mxPoint x="1200" y="450" />
+            </Array>
+            <mxPoint x="1175" y="428" as="sourcePoint" />
+            <mxPoint x="1175" y="450" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-34" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-19" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;exitX=1.124;exitY=0.435;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.01;entryY=0.146;entryDx=0;entryDy=0;entryPerimeter=0;" target="Ik-4V9fDDG_UOGhaKw9Z-22" value="5. Solicitud de mediciones&amp;nbsp;&lt;div&gt;almacenadas&lt;/div&gt;">
-          <mxGeometry relative="1" width="100" y="20" as="geometry">
-            <mxPoint as="offset" />
-            <Array as="points" />
-            <mxPoint x="720" y="530" as="sourcePoint" />
-            <mxPoint x="860" y="530" as="targetPoint" />
+        <mxCell id="6-8MNJn2koafFyRKq_s2-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;" value="6: Ejecutar consulta de mediciones (List&amp;lt;Medicion&amp;gt; mediciones)" vertex="1">
+          <mxGeometry height="30" width="120" x="1210" y="428.75" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-15" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=1.005;exitY=0.466;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;endFill=0;startArrow=classic;startFill=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="855" y="490" as="sourcePoint" />
+            <mxPoint x="1145" y="490" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-35" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-22" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1.02;entryY=0.603;entryDx=0;entryDy=0;entryPerimeter=0;" target="Ik-4V9fDDG_UOGhaKw9Z-19" value="6. Entrega mediciones en&amp;nbsp;&lt;div&gt;persistencia&lt;/div&gt;">
-          <mxGeometry relative="1" width="100" x="0.0238" y="-20" as="geometry">
-            <mxPoint as="offset" />
-            <Array as="points" />
-            <mxPoint x="840" y="540" as="sourcePoint" />
-            <mxPoint x="700" y="540" as="targetPoint" />
+        <mxCell id="6-8MNJn2koafFyRKq_s2-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;" value="7: Retornar mediciones obtenidas de la consulta&lt;div&gt;(List&amp;lt;Medicion&amp;gt; mediciones)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="250" x="880" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-17" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Reporte Service&lt;/u&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="95" width="120" x="1370" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-19" edge="1" parent="1" source="6-8MNJn2koafFyRKq_s2-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;endArrow=none;endFill=0;exitX=0.545;exitY=1.015;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="6-8MNJn2koafFyRKq_s2-20" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1430" y="200" as="sourcePoint" />
+            <mxPoint x="1430" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="92.5" width="30" x="1420" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-21" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1.025;exitY=0.263;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="6-8MNJn2koafFyRKq_s2-20" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="855" y="550" as="sourcePoint" />
+            <mxPoint x="1144" y="551" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-22" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=1.025;exitY=0.263;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;endFill=0;startArrow=classic;startFill=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="855" y="642.5" as="sourcePoint" />
+            <mxPoint x="1420" y="642.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;" value="8: generarReportesMediciones(mediciones, ruta)" vertex="1">
+          <mxGeometry height="30" width="250" x="1035" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-24" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1.005;exitY=0.062;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.003;entryY=0.175;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1485" y="585" />
+              <mxPoint x="1485" y="607" />
+              <mxPoint x="1475" y="607" />
+            </Array>
+            <mxPoint x="1450" y="585" as="sourcePoint" />
+            <mxPoint x="1450" y="607" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;" value="9: Generar archivo PDF en local (ruta especificada)" vertex="1">
+          <mxGeometry height="30" width="90" x="1500" y="581.25" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;" value="10: ok (Reporte generado correctamente)" vertex="1">
+          <mxGeometry height="30" width="250" x="1035" y="612.5" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-28" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=1.005;exitY=0.062;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;endFill=0;startArrow=classic;startFill=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="595" y="670" as="sourcePoint" />
+            <mxPoint x="825" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-30" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;" value="11: ok (Reporte generado correctamente)" vertex="1">
+          <mxGeometry height="30" width="250" x="585" y="642.5" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-31" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=1.005;exitY=0.062;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endFill=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="335" y="765" as="sourcePoint" />
+            <mxPoint x="565" y="765" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-32" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;" value="12: ok (Reporte generado correctamente)" vertex="1">
+          <mxGeometry height="30" width="250" x="325" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-33" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;" value="13: Lanzar venta con mensaje &quot;Reporte generado correctamente" vertex="1">
+          <mxGeometry height="30" width="195" x="110" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-34" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=1.005;exitY=0.061;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;endFill=0;startArrow=classic;startFill=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="100" y="800" as="sourcePoint" />
+            <mxPoint x="305" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6-8MNJn2koafFyRKq_s2-35" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1434.33" y="642.5" as="sourcePoint" />
+            <mxPoint x="1434" y="920" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
