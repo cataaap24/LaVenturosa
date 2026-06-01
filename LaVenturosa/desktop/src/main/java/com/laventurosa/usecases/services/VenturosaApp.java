@@ -26,7 +26,7 @@ public class VenturosaApp {
     private AgregarNuevaConfiguracionAlarmaUseCase agregarNuevaConfiguracionAlarmaUseCase;
     private ModificarEstadoConfiguracionAlarmaUseCase modificarEstadoConfiguracionAlarmaUseCase;
     private EliminarConfiguracionAlarmaUseCase eliminarConfiguracionAlarmaUseCase;
-    private ConsultarUmbralActual consultarUmbralActual;
+    private ConsultarUmbralUseCase consultarUmbralActual;
 
     public VenturosaApp() {
         inicializarComponentes();
@@ -48,7 +48,7 @@ public class VenturosaApp {
         this.agregarNuevaConfiguracionAlarmaUseCase = new AgregarNuevaConfiguracionAlarmaUseCase(cacheConfiguracionAlarma);
         this.modificarEstadoConfiguracionAlarmaUseCase = new ModificarEstadoConfiguracionAlarmaUseCase(cacheConfiguracionAlarma);
         this.eliminarConfiguracionAlarmaUseCase = new EliminarConfiguracionAlarmaUseCase(cacheConfiguracionAlarma);
-        this.consultarUmbralActual= new ConsultarUmbralActual(cacheUmbralRepository);
+        this.consultarUmbralActual= new ConsultarUmbralUseCase(cacheUmbralRepository);
 
         System.out.println("[APP] Venturosa System inicializado con éxito.");
     }

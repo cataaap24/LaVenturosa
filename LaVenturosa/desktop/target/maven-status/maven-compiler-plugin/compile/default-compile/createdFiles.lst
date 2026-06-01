@@ -1,4 +1,3 @@
-com\laventurosa\usecases\services\ConsultarUmbralActual.class
 com\laventurosa\adapters\ui\panels\ConfigurarAlarmasPanel$1.class
 com\laventurosa\infrastructure\repositories\PostgresUmbralRepository.class
 com\laventurosa\usecases\ports\ConfiguracionAlarmaRepository.class
