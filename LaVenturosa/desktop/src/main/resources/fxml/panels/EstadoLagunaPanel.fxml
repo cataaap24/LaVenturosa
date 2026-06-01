@@ -29,7 +29,7 @@
                                  </font>
                               </Label>
                               <Region HBox.hgrow="ALWAYS" />
-                              <Label text="En Vivo" textFill="#6f6868">
+                              <Label fx:id="lblHora1" text="--:--" textFill="#6f6868">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
@@ -65,7 +65,7 @@
                                  </font>
                               </Label>
                               <Region HBox.hgrow="ALWAYS" />
-                              <Label text="En Vivo" textFill="#6f6868">
+                              <Label fx:id="lblHora2" text="--:--" textFill="#6f6868">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
@@ -101,7 +101,7 @@
                                  </font>
                               </Label>
                               <Region HBox.hgrow="ALWAYS" />
-                              <Label text="En Vivo" textFill="#6f6868">
+                              <Label fx:id="lblHora3" text="--:--" textFill="#6f6868">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
@@ -130,7 +130,7 @@
                </children>
                <Button fx:id="btnRefrescar" mnemonicParsing="false" onAction="#refrescarDatos" styleClass="btn-guardar" text="🔄">
                   <HBox.margin>
-                      <Insets left="10.0" /> </HBox.margin>
+                     <Insets left="10.0" /> </HBox.margin>
                </Button>
             </HBox>
 
