@@ -27,14 +27,17 @@ public class EstadoLagunaPanel implements AppAware {
     @FXML private Label lblZona1;
     @FXML private Label lblPH1;
     @FXML private Label lblEstadoPH1;
+    @FXML private Label lblHora1;
 
     @FXML private Label lblZona2;
     @FXML private Label lblPH2;
     @FXML private Label lblEstadoPH2;
+    @FXML private Label lblHora2;
 
     @FXML private Label lblZona3;
     @FXML private Label lblPH3;
     @FXML private Label lblEstadoPH3;
+    @FXML private Label lblHora3;
 
     @FXML private LineChart<String, Number> grafica72Horas;
     @FXML private CategoryAxis ejeXTiempo;
@@ -75,9 +78,9 @@ public class EstadoLagunaPanel implements AppAware {
         OperationResult<EstadoLagunaDTO> resProduccion = app.consultarEstadoActual(ZONA_PRODUCCION);
         OperationResult<EstadoLagunaDTO> resCanio = app.consultarEstadoActual(ZONA_CANIO);
 
-        actualizarTarjeta(lblZona1, lblPH1, lblEstadoPH1, "Laguna - Entrada", resEntrada);
-        actualizarTarjeta(lblZona2, lblPH2, lblEstadoPH2, "Laguna - Producción", resProduccion);
-        actualizarTarjeta(lblZona3, lblPH3, lblEstadoPH3, "Laguna - Caño", resCanio);
+        actualizarTarjeta(lblZona1, lblPH1, lblEstadoPH1, lblHora1, "Laguna - Entrada", resEntrada);
+        actualizarTarjeta(lblZona2, lblPH2, lblEstadoPH2, lblHora2, "Laguna - Producción", resProduccion);
+        actualizarTarjeta(lblZona3, lblPH3, lblEstadoPH3, lblHora3, "Laguna - Caño", resCanio);
 
         Set<String> etiquetasTiempoOrdenadas = new TreeSet<>();
 
@@ -107,13 +110,16 @@ public class EstadoLagunaPanel implements AppAware {
         }
     }
 
-    private void actualizarTarjeta(Label lblZona, Label labelValor, Label labelEstado, String tituloVisual, OperationResult<EstadoLagunaDTO> result) {
+    private void actualizarTarjeta(Label lblZona, Label labelValor, Label labelEstado, Label labelHora, String tituloVisual, OperationResult<EstadoLagunaDTO> result) {
         if (result.isSuccess() && result.getData() != null) {
             EstadoLagunaDTO data = result.getData();
 
             lblZona.setText(tituloVisual);
             labelValor.setText(String.format("%.2f pH", data.getValor()));
             labelEstado.setText("Estado: " + data.getEstado());
+
+            String horaFormateada = data.getFechaHora().atZoneSameInstant(zonaColombia).format(formatter);
+            labelHora.setText(horaFormateada);
 
             switch (String.valueOf(data.getEstado()).toUpperCase()) {
                 case "CRITICO":
@@ -123,7 +129,7 @@ public class EstadoLagunaPanel implements AppAware {
                     labelEstado.setTextFill(Color.ORANGE);
                     break;
                 default:
-                    labelEstado.setTextFill(Color.web("#27ae60")); // Verde éxito
+                    labelEstado.setTextFill(Color.web("#27ae60")); 
                     break;
             }
         } else {
@@ -131,6 +137,7 @@ public class EstadoLagunaPanel implements AppAware {
             labelValor.setText("--");
             labelEstado.setText("Sin Datos");
             labelEstado.setTextFill(Color.GRAY);
+            labelHora.setText("--:--");
         }
     }
 }
