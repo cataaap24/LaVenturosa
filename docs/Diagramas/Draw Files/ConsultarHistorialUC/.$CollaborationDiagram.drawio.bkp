@@ -1,13 +1,13 @@
 <mxfile host="Electron">
   <diagram name="Página-1" id="9hBwRN-vD4sOvPo-40FH">
-    <mxGraphModel dx="936" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1471" dy="861" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="24yZ79QioBRkU-SW-2Tg-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Técnico&lt;div&gt;ambiental&lt;/div&gt;" vertex="1">
           <mxGeometry height="60" width="30" x="80" y="555" as="geometry" />
         </mxCell>
-        <mxCell id="I9hPnXZZpZieb8O_mfiF-1" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Interfaz Consultar Historial&lt;/u&gt;&lt;br&gt;&lt;/b&gt;" vertex="1">
+        <mxCell id="I9hPnXZZpZieb8O_mfiF-1" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Record UI&lt;/u&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;Class&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="80" width="100" x="320" y="545" as="geometry" />
         </mxCell>
         <mxCell id="I9hPnXZZpZieb8O_mfiF-2" edge="1" parent="1" source="24yZ79QioBRkU-SW-2Tg-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.001;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" target="I9hPnXZZpZieb8O_mfiF-1">
@@ -22,7 +22,7 @@
         <mxCell id="I9hPnXZZpZieb8O_mfiF-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1: El técnico ambiental ingresa las fechas" vertex="1">
           <mxGeometry height="30" width="180" x="140" y="490" as="geometry" />
         </mxCell>
-        <mxCell id="I9hPnXZZpZieb8O_mfiF-5" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Controlador Historial&lt;/u&gt;&lt;/b&gt;" vertex="1">
+        <mxCell id="I9hPnXZZpZieb8O_mfiF-5" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Record&lt;/u&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;Controller Class&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="95" width="90" x="610" y="530" as="geometry" />
         </mxCell>
         <mxCell id="I9hPnXZZpZieb8O_mfiF-7" edge="1" parent="1" source="I9hPnXZZpZieb8O_mfiF-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.579;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" target="I9hPnXZZpZieb8O_mfiF-5">
@@ -70,10 +70,10 @@
             <mxPoint x="940" y="520" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="I9hPnXZZpZieb8O_mfiF-17" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Controlador Medición&lt;/u&gt;&lt;/b&gt;" vertex="1">
+        <mxCell id="I9hPnXZZpZieb8O_mfiF-17" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Measurement Controller Class&lt;/u&gt;&lt;/b&gt;" vertex="1">
           <mxGeometry height="95" width="93" x="860" y="530" as="geometry" />
         </mxCell>
-        <mxCell id="I9hPnXZZpZieb8O_mfiF-18" parent="1" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Medición&lt;/u&gt;&lt;/b&gt;" vertex="1">
+        <mxCell id="I9hPnXZZpZieb8O_mfiF-18" parent="1" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Measurement&lt;/u&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;Class&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="87.5" width="90" x="1110" y="541" as="geometry" />
         </mxCell>
         <mxCell id="I9hPnXZZpZieb8O_mfiF-19" edge="1" parent="1" source="I9hPnXZZpZieb8O_mfiF-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.002;entryY=0.587;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.001;exitY=0.585;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;" target="I9hPnXZZpZieb8O_mfiF-17">
