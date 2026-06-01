@@ -9,6 +9,21 @@ Venturosa System es una solución de ingeniería de software diseñada para el *
 
 ---
 
+##  Ficha de Acceso Rápido (Evaluación Docente)
+
+Para facilitar la revisión y evaluación de esta entrega, a continuación se consolidan los accesos directos a todos los entregables, prototipos, documentación y evidencias de funcionamiento:
+
+| Recurso | Enlace de Acceso | Contenido e Instrucciones de Revisión |
+| :--- | :--- | :--- |
+| 📄 **Documentación Completa** | [Google Docs (Lectura Directa)](https://docs.google.com/document/d/1KMZWIi8ZRfE38u4rVwSe4gZvG64ljC0VW4xI18SicUY/edit?usp=sharing) <br><br> *Alternativa:* `docs/entregaSoftware.docx` | **Documento principal del proyecto.** Contiene el desarrollo metodológico y técnico estructurado en 11 puntos:<br>1. Introducción \| 2. Modelo del Dominio \| 3. Casos de Uso \| 4. Diagrama de Máquina de Estados \| 5. Arquitectura del Sistema \| 6. Prototipo de Interfaz \| 7. Principios de Diseño Aplicados \| 8. GitHub \| 9. Testing \| 10. Conclusiones \| 11. Referencias.<br><br>💡 **Tip de Navegación:** En Google Docs, active la opción **Ver > Mostrar barra lateral de pestañas y esquemas** para saltar rápidamente entre las secciones. |
+| 📋 **Casos de Uso Detallados** | `docs/SoftwareSoloUC-breve.docx` *(en repositorio)* | Documento técnico complementario enfocado exclusivamente en la especificación detallada, flujos (principales/alternos) y diagramas de cada Caso de Uso (UC). |
+| 🎨 **Prototipo Navegable** | [Prototipo en Figma](https://www.figma.com/proto/qbxutAtIai3xAZB1z3ycD2/Dise%C3%B1o-Monitoreo?node-id=0-1&t=8RR7y56Ez6YXLyeS-1) | Interfaz gráfica interactiva y propuesta de UX para el sistema de monitoreo. |
+| 🎬 **Videos de Pruebas de Aceptación** | [Evidencias en Video (GitHub)](https://github.com/cataaap24/LaVenturosa/blob/main/docs/videos/VIDEOS.md) | **Nota:** Deben visualizarse directamente desde el repositorio de GitHub para verificar la ejecución de los escenarios de prueba. |
+| 🌐 **Simulador de Hardware** | [Circuito Vivo en Wokwi](https://wokwi.com/projects/431478408378378241) | Entorno interactivo para simular el funcionamiento del ESP32 y el envío de datos de pH. |
+
+> 📌 **Nota para la revisión:** Todos los archivos de documentación (`.docx`) y las evidencias, así como los diagramas en Draw.io se encuentran organizados dentro de la carpeta `/docs` en la raíz de este repositorio para su descarga o lectura directa.
+
+ ---
 ## Arquitectura del Proyecto
 
 El proyecto está construido bajo los principios de **Clean Architecture** y **Arquitectura Hexagonal**, lo que permite un desacoplamiento total entre la lógica de negocio, las interfaces de usuario y los dispositivos de captura de datos (Hardware).
@@ -22,7 +37,7 @@ El proyecto está construido bajo los principios de **Clean Architecture** y **A
 
 ---
 
-## 📡 Módulo de Telemetría e Internet de las Cosas (IoT)
+## Módulo de Telemetría e Internet de las Cosas (IoT)
 
 El sistema integra un nodo sensor inalámbrico simulado en **Wokwi** basado en el microcontrolador **ESP32**, el cual actúa como una estación externa encargada de recopilar de manera remota los datos fisicoquímicos en tres puntos estratégicos de la laguna.
 
