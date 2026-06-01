@@ -89,8 +89,37 @@ El sistema integra un nodo sensor inalámbrico simulado en **Wokwi** basado en e
 ## Configuración del Sistema
 
 ### Base de Datos 
-El sistema se conecta a una base de datos PostgreSQL en la nube. Para configurar la conexión, edite el archivo `src/main/resources/application.properties`:
+El sistema requiere una base de datos PostgreSQL (remota en Supabase o local). El esquema estructural se encuentra en `bd/init_db.sql` y define el siguiente modelo físico:
 
+```sql
+-- Script de inicialización de la Base de Datos
+CREATE TABLE IF NOT EXISTS medicion (
+    id BIGSERIAL PRIMARY KEY, 
+    variable TEXT NOT NULL,
+    valor FLOAT8,
+    fecha_hora TIMESTAMP,
+    estado TEXT,
+    punto_monitoreo TEXT
+);
+
+CREATE TABLE IF NOT EXISTS umbral (
+    id BIGSERIAL PRIMARY KEY, 
+    variable VARCHAR(255) NOT NULL,
+    punto_monitoreo TEXT,
+    min_critico FLOAT8,
+    min_advertencia FLOAT8,
+    max_advertencia FLOAT8,
+    max_critico FLOAT8
+);
+
+CREATE TABLE IF NOT EXISTS configuracion_alarma (
+    id BIGSERIAL PRIMARY KEY, 
+    email_destinatario VARCHAR(255) NOT NULL,
+    nivel_notificacion VARCHAR(100),
+    activo BOOL
+);
+```
+Para configurar la conexión, edite el archivo `src/main/resources/application.properties`:
 ```properties
 db.url=jdbc:postgresql://db.supabase.co:5432/postgres
 db.user=tu_usuario
