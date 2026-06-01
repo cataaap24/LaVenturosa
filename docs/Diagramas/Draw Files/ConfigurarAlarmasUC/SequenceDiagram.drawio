@@ -1,0 +1,213 @@
+<mxfile host="Electron">
+  <diagram name="Página-1" id="kRkeLPwvc_Y2IPyABji_">
+    <mxGraphModel dx="2289" dy="1340" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-23" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;container=0;" value="Técnico ambiental" vertex="1">
+          <mxGeometry height="60" width="30" x="220" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-24" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;container=0;" value="&lt;b&gt;: &lt;u&gt;Configurar Alarmas Panel&lt;/u&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="100" x="540" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-54" edge="1" parent="1" source="F_lZDwP5ktHYbsdXXGGQ-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" target="F_lZDwP5ktHYbsdXXGGQ-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-25" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;container=0;" value="&lt;b&gt;: &lt;u&gt;Venturosa App&lt;/u&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="90" width="80" x="820" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;container=0;" value="" vertex="1">
+          <mxGeometry height="660" width="15" x="227.5" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-27" edge="1" parent="1" source="F_lZDwP5ktHYbsdXXGGQ-26" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="227.5" y="350" as="sourcePoint" />
+            <mxPoint x="235" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;container=0;" value="" vertex="1">
+          <mxGeometry height="570" width="15" x="590" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-30" edge="1" parent="1" source="F_lZDwP5ktHYbsdXXGGQ-26" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0.922;exitY=0.076;exitDx=0;exitDy=0;exitPerimeter=0;" target="F_lZDwP5ktHYbsdXXGGQ-28" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="242.5" y="400" as="sourcePoint" />
+            <mxPoint x="292.5" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="1: Da clic en &quot;Agregar nuevo correo eléctronico&quot;" vertex="1">
+          <mxGeometry height="30" width="170" x="340" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;container=0;" value="" vertex="1">
+          <mxGeometry height="340" width="15" x="852.5" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-50" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0.986;exitY=0.059;exitDx=0;exitDy=0;exitPerimeter=0;endFill=0;startArrow=classic;startFill=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="242.5" y="980" as="sourcePoint" />
+            <mxPoint x="590.5" y="980" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-52" edge="1" parent="1" source="F_lZDwP5ktHYbsdXXGGQ-28" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="597.38" y="360" as="sourcePoint" />
+            <mxPoint x="597.38" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-53" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="597" y="1080" as="sourcePoint" />
+            <mxPoint x="596.98" y="980" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F_lZDwP5ktHYbsdXXGGQ-55" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="860" y="1080" as="sourcePoint" />
+            <mxPoint x="859.5699999999999" y="950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-1" edge="1" parent="1" source="F_lZDwP5ktHYbsdXXGGQ-26" style="endArrow=none;html=1;rounded=0;entryX=0.021;entryY=0.175;entryDx=0;entryDy=0;exitX=1.011;exitY=0.225;exitDx=0;exitDy=0;exitPerimeter=0;endFill=0;startArrow=classic;startFill=1;entryPerimeter=0;" target="F_lZDwP5ktHYbsdXXGGQ-28" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="243" y="501" as="sourcePoint" />
+            <mxPoint x="590" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="2: Mostrar ventana emergente con campos para ingresar correo y seleccionar el nivel de prioridad" vertex="1">
+          <mxGeometry height="30" width="170" x="340" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-3" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1.008;exitY=0.317;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="242.62" y="585" as="sourcePoint" />
+            <mxPoint x="590" y="586" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="3: Ingresar correo válido y selección del nivel de prioridad" vertex="1">
+          <mxGeometry height="30" width="170" x="340" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-5" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1.008;exitY=0.317;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="F_lZDwP5ktHYbsdXXGGQ-39" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="605" y="610" as="sourcePoint" />
+            <mxPoint x="850" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="4: agregarNuevaConfiguracionAlarma(correo, nivelNotificacion)" vertex="1">
+          <mxGeometry height="30" width="300" x="580" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-7" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;container=0;" value="&lt;b&gt;: &lt;u&gt;Agregar Nueva Configuracion Alarma Use Case&lt;/u&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="97.5" width="200" x="1070" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;container=0;" value="" vertex="1">
+          <mxGeometry height="290" width="15" x="1162.5" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-9" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1.008;exitY=0.317;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="NBSttThGCMCXf-Hg5kPq-8" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="867.5" y="630" as="sourcePoint" />
+            <mxPoint x="1115.5" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="5: execute (email, nivel_notificacion)" vertex="1">
+          <mxGeometry height="30" width="300" x="867.5" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-11" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.99;entryY=0.2;entryDx=0;entryDy=0;entryPerimeter=0;" target="NBSttThGCMCXf-Hg5kPq-8" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1220" y="650" />
+              <mxPoint x="1220" y="688" />
+            </Array>
+            <mxPoint x="1177.5" y="650" as="sourcePoint" />
+            <mxPoint x="1220" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="6: Validar email y verificar que no este duplicado" vertex="1">
+          <mxGeometry height="30" width="180" x="1230" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-15" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;container=0;" value="&lt;b&gt;: &lt;u&gt;Configuracion Alarma Repository&lt;/u&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="90" width="160" x="1470" y="243.75" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;container=0;" value="" vertex="1">
+          <mxGeometry height="140" width="15" x="1542.5" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-17" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1.008;exitY=0.317;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="NBSttThGCMCXf-Hg5kPq-16" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1177.5" y="720" as="sourcePoint" />
+            <mxPoint x="1473" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="7: guardar(config) [config: Instancia de ConfiguracionAlarma]" vertex="1">
+          <mxGeometry height="30" width="260" x="1241" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="8: Persistencia en la base de datos y retornar el id del nuevo registro de la consulta. Instanciar el objecto y retornarlo (resultConfig: ConfiguracionAlarma)" vertex="1">
+          <mxGeometry height="30" width="180" x="1610" y="775" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-20" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1600" y="770" />
+              <mxPoint x="1600" y="808" />
+            </Array>
+            <mxPoint x="1557.5" y="770" as="sourcePoint" />
+            <mxPoint x="1558" y="808" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-21" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=1.008;exitY=0.317;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;endFill=0;startArrow=classic;startFill=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1177" y="860" as="sourcePoint" />
+            <mxPoint x="1542.5" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="9: ok, Correo agregado correctamente, data: resultConfig mapeado a ConfiguracionAlarmaDTO" vertex="1">
+          <mxGeometry height="30" width="229" x="1256.5" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-24" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=1.008;exitY=0.317;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;endFill=0;startArrow=classic;startFill=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="867" y="920" as="sourcePoint" />
+            <mxPoint x="1162.5" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="10: ok, Correo agregado correctamente, data: resultConfig mapeado a ConfiguracionAlarmaDTO" vertex="1">
+          <mxGeometry height="30" width="229" x="910" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-26" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=1.008;exitY=0.317;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;endFill=0;startArrow=classic;startFill=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="604.5" y="950" as="sourcePoint" />
+            <mxPoint x="852.5" y="950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="11: ok, Correo agregado correctamente, data: resultConfig mapeado a ConfiguracionAlarmaDTO" vertex="1">
+          <mxGeometry height="30" width="229" x="623.5" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="12: Lanzar una ventana emergente con el mensaje &quot;Correo agregado correctamente&quot; y actualizar vista de correos" vertex="1">
+          <mxGeometry height="30" width="229" x="299" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-29" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="235" y="1080" as="sourcePoint" />
+            <mxPoint x="234.57999999999998" y="1020" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-30" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" target="NBSttThGCMCXf-Hg5kPq-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1169.33" y="337.5" as="sourcePoint" />
+            <mxPoint x="1169.33" y="617.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-31" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="NBSttThGCMCXf-Hg5kPq-8" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1170" y="1080" as="sourcePoint" />
+            <mxPoint x="1169.33" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-32" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" target="NBSttThGCMCXf-Hg5kPq-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1549.47" y="333.75" as="sourcePoint" />
+            <mxPoint x="1550.14" y="626.25" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NBSttThGCMCXf-Hg5kPq-33" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="NBSttThGCMCXf-Hg5kPq-16" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1550" y="1080" as="sourcePoint" />
+            <mxPoint x="1549.57" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,6 +1,6 @@
 <mxfile host="Electron">
   <diagram name="Página-1" id="RnKuuIO-vjkDz7Ufz8MY">
-    <mxGraphModel dx="4120" dy="2412" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2575" dy="1508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -38,9 +38,6 @@
             <mxPoint x="1160" y="920" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-8" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Medicion Repository&lt;/u&gt;&lt;/b&gt;" vertex="1">
-          <mxGeometry height="95" width="120" x="1090" y="102.5" as="geometry" />
-        </mxCell>
         <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
           <mxGeometry height="650" width="30" x="70" y="200" as="geometry" />
         </mxCell>
@@ -71,9 +68,9 @@
         <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
           <mxGeometry height="370" width="30" x="825" y="300" as="geometry" />
         </mxCell>
-        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-27" edge="1" parent="1" source="Ik-4V9fDDG_UOGhaKw9Z-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;endArrow=none;endFill=0;exitX=0.585;exitY=1.006;exitDx=0;exitDy=0;exitPerimeter=0;" target="Ik-4V9fDDG_UOGhaKw9Z-22" value="">
+        <mxCell id="Ik-4V9fDDG_UOGhaKw9Z-27" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;endArrow=none;endFill=0;exitX=0.585;exitY=1.006;exitDx=0;exitDy=0;exitPerimeter=0;" target="Ik-4V9fDDG_UOGhaKw9Z-22" value="">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1160" y="207.5" as="sourcePoint" />
+            <mxPoint x="1160.2000000000003" y="198.06999999999994" as="sourcePoint" />
             <mxPoint x="1160" y="937.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
@@ -156,12 +153,9 @@
         <mxCell id="6-8MNJn2koafFyRKq_s2-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;" value="7: Retornar mediciones obtenidas de la consulta&lt;div&gt;(List&amp;lt;Medicion&amp;gt; mediciones)&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="250" x="880" y="450" as="geometry" />
         </mxCell>
-        <mxCell id="6-8MNJn2koafFyRKq_s2-17" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Reporte Service&lt;/u&gt;&lt;/b&gt;" vertex="1">
-          <mxGeometry height="95" width="120" x="1370" y="105" as="geometry" />
-        </mxCell>
-        <mxCell id="6-8MNJn2koafFyRKq_s2-19" edge="1" parent="1" source="6-8MNJn2koafFyRKq_s2-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;endArrow=none;endFill=0;exitX=0.545;exitY=1.015;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="6-8MNJn2koafFyRKq_s2-20" value="">
+        <mxCell id="6-8MNJn2koafFyRKq_s2-19" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;endArrow=none;endFill=0;exitX=0.545;exitY=1.015;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="6-8MNJn2koafFyRKq_s2-20" value="">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1430" y="200" as="sourcePoint" />
+            <mxPoint x="1435.4" y="201.42499999999995" as="sourcePoint" />
             <mxPoint x="1430" y="540" as="targetPoint" />
           </mxGeometry>
         </mxCell>
@@ -232,6 +226,12 @@
             <mxPoint x="1434.33" y="642.5" as="sourcePoint" />
             <mxPoint x="1434" y="920" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="EAAA6v26Gg7jCHYenxSE-2" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Medicion Repository&lt;/u&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="100" x="1110" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="EAAA6v26Gg7jCHYenxSE-3" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" value="&lt;b&gt;: &lt;u&gt;Reporte Service&lt;/u&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="100" x="1385" y="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

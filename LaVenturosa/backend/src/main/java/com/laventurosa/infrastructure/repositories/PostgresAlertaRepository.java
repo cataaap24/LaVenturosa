@@ -1,11 +1,9 @@
 package com.laventurosa.infrastructure.repositories;
 
-import com.laventurosa.entities.*;
-import com.laventurosa.infrastructure.config.DatabaseConfig;
-import com.laventurosa.usecases.ports.AlertaRepository;
+import java.util.List;
 
-import java.sql.*;
-import java.util.*;
+import com.laventurosa.entities.Alerta;
+import com.laventurosa.usecases.ports.AlertaRepository;
 
 public class PostgresAlertaRepository implements AlertaRepository {
 
