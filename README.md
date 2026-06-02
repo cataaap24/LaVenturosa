@@ -157,4 +157,4 @@ Desarrollado por el equipo de **Ingeniería de Sistemas** de la Universidad de l
 > **Institución:** Universidad de los Llanos (Unillanos)
 > **Programa:** Ingeniería de Sistemas
 > **Curso:** Ingeniería de Software I
-> **Proyecto:** Sistema de Gestión y Telemetría de Variables Fisicoquímicas en una Laguna
+> **Proyecto:** Sistema de Gestión de Variables Fisicoquímicas en una Laguna
