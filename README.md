@@ -59,17 +59,6 @@ El sistema integra un nodo sensor inalámbrico simulado en **Wokwi** basado en e
 > 🌐 **Simulación del Hardware en Vivo:** Puede ver, inspeccionar y ejecutar el circuito de telemetría directamente desde el navegador en el siguiente enlace:  
 >  **https://wokwi.com/projects/431478408378378241**
 
----
-
-## Funcionalidades Principales
-
-| ID | Caso de Uso | Descripción | Componente Relacionado |
-|----|-------------|-------------|------------------------|
-| UC-01 | **Visualizar Estado de la Laguna** | Presentación visual de los datos más recientes, comparándolos con umbrales para determinar si el estado es *Normal*, *Advertencia* o *Crítico* | Interfaz JavaFX / API REST |
-| UC-02 | **Consultar Historial** | Filtrado de mediciones por rangos de fecha y puntos de monitoreo específicos | Base de Datos PostgreSQL |
-| UC-03 | **Generar Reporte** | Generación de documentos que evidencian el comportamiento de las variables fisicoquímicas en un periodo determinado  | Lógica del Sistema |
-| UC-04 | **Configurar Umbrales** | Permite al técnico establecer los límites lógicos de las variables para cada punto de monitoreo | Lógica de Dominio |
-| UC-05 | **Configurar Sistema de Alarmas** | Gestión de notificaciones automáticas por correo electrónico (vía API Resend) basadas en la criticidad extrema de los datos | Adaptador de Infraestructura |
 
 ---
 
